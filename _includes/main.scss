@@ -170,7 +170,7 @@ a {
   padding:15px;
 }
 
-.box table, table.table {
+.box table, table.table, .post table {
   width:100%;
   font-size:1em;
   margin-left:-0.375em;
@@ -180,7 +180,7 @@ a {
       padding:0.375em;
       line-height:1.5em;
       vertical-align:top;
-      text-wrap:normal;
+      white-space: normal;
     }
     th {
       font-weight:normal;
@@ -372,6 +372,10 @@ img.icon {
   pre {
     padding-left:1.5em;
   }
+}
+
+html .post table tr td {
+  text-align:justify;
 }
 
 //{% endraw %}

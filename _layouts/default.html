@@ -20,7 +20,7 @@
     <meta property="og:url" content="{{ page.url | replace:'/index.html','' | absolute_url }}" />
     <meta property="og:description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}" />
     <link rel="apple-touch-icon-precomposed" href="{{ "/assets/avatar.jpg" | absolute_url }}" />
-    <link rel="icon" href="{{ "/assets/avatar-32.png"|absolute_url }}" />
+    <link rel="icon" href="{% base64 /assets/avatar-32.png %}" />
     <meta name="twitter:card" content="{{ page.twitter_card | default: "summary" }}" />
     <meta name="twitter:description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}" />
     <meta name="twitter:site" content="@janoszen" />
@@ -42,7 +42,7 @@
 
     <script type="application/ld+json">
     {
-      "@context": "http://schema.org/",
+      "@context": "https://schema.org/",
       "@type": "Person",
       "mainEntityOfPage": "https://pasztor.at/",
       "givenName": "Janos",

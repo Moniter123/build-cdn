@@ -3,21 +3,6 @@ layout: default
 ---
 
 {% assign date_format = "%b %-d, %Y" %}
-<script type="application/ld+json">
-{
-  "@context":"http://schema.org",
-  "@type":"BlogPosting",
-  "title": "{{ page.title | escape }}",
-  "datePublished": "{{ page.date | date: date_format }}",
-  "url": "{{page.url|absolute_url}}",
-  "author": {
-    "@type": "Person",
-    "name": "Janos Pasztor",
-    "url": "https://pasztor.at/"
-  }
-}
-</script>
-{% assign date_format = "%b %-d, %Y" %}
 <div class="page">
     {% include menu.html %}
 
@@ -36,6 +21,7 @@ layout: default
                     <span class="line">
                         published <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: date_format }}</time>
                     </span>
+                    <meta itemprop="mainEntityOfPage" content="{{ page.url | absolute_url }}" />
                 </span>
 
             </header>
@@ -51,4 +37,8 @@ layout: default
             {% endif %}
         </article>
     </div>
+
+    <hr />
+
+    {% include profile.html %}
 </div>

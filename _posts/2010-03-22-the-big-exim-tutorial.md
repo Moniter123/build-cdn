@@ -222,7 +222,7 @@ Now, the ACL runs at connection time so if you reject a message the sending serv
 
 There are 4 types of return values:
 
-<table>
+<table class="table">
 <tbody>
 <tr>
 <th>

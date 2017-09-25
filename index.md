@@ -3,29 +3,7 @@ layout: home
 description: Meet Janos Pasztor, a DevOps engineer with a Nack for the unusual.
 ---
 
-<div class="container-block">
-    <div class="profile">
-        <img src="{% base64 /assets/avatar-230.jpg %}" alt="" class="avatar" />
-        <div class="profile-data">
-            <h1 class="title">Janos Pasztor</h1>
-            <h2 class="subtitle">DevOps Engineer with a Nack for the Unusual</h2>
-            <div class="social">
-                <a href="https://facebook.com/{{ site.facebook_username }}" target="_blank" rel="noreferrer noopener" title="Open my Facebook page in a new window">
-                    <img src="{% base64 /assets/social-icons/facebook.svg %}" alt="Facebook" />
-                </a>
-                <a href="https://twitter.com/{{ site.twitter_username }}" target="_blank" rel="noreferrer noopener" title="Open my Twitter page in a new window">
-                    <img src="{% base64 /assets/social-icons/twitter.svg %}" alt="Twitter" />
-                </a>
-                <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noreferrer noopener" title="Open my Github page in a new window">
-                    <img src="{% base64 /assets/social-icons/github.svg %}" alt="Github" />
-                </a>
-                <a href="https://linkedin.com/in/{{ site.linkedin_username }}/" target="_blank" rel="noreferrer noopener" title="Open my Linkedin page in a new window">
-                    <img src="{% base64 /assets/social-icons/linkedin.svg %}" alt="Linkedin" />
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
+{% include profile.html %}
 
 <hr />
 
