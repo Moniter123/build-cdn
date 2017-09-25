@@ -1,0 +1,56 @@
+<div id="menu">
+    {% assign current = '' %}
+    {% if page.url == '/' %}
+        {% assign current = 'current' %}
+    {% endif %}
+    <a href="/" class="menu-item {{current}}">
+        <span class="menu-item-icon">
+            <img src="{% base64 /assets/home.svg %}" alt="" />
+        </span>
+        Home
+    </a>
+
+    {% assign current = '' %}
+    {% if page.url == '/cv' %}
+        {% assign current = 'current' %}
+    {% endif %}
+    <a href="/cv" class="menu-item {{current}}">
+        <span class="menu-item-icon">
+            <img src="{% base64 /assets/cv.svg %}" alt="" />
+        </span>
+        CV
+    </a>
+
+    {% assign current = '' %}
+    {% if page.url == '/speaking' or page.url contains '/speaking/' %}
+    {% assign current = 'current' %}
+    {% endif %}
+    <a href="/speaking" class="menu-item {{current}}">
+        <span class="menu-item-icon">
+            <img src="{% base64 /assets/speaking.svg %}" alt="" />
+        </span>
+        Speaking
+    </a>
+
+    {% assign current = '' %}
+    {% if page.url == '/blog' or page.url contains '/blog/' %}
+        {% assign current = 'current' %}
+    {% endif %}
+    <a href="/blog" class="menu-item {{current}}">
+        <span class="menu-item-icon">
+            <img src="{% base64 /assets/blog.svg %}" alt="" />
+        </span>
+        Blog
+    </a>
+
+    {% assign current = '' %}
+    {% if page.url == '/contact' %}
+        {% assign current = 'current' %}
+    {% endif %}
+    <a href="/contact" class="menu-item {{current}}">
+        <span class="menu-item-icon">
+            <img src="{% base64 /assets/contact.svg %}" alt="" />
+        </span>
+        Contact
+    </a>
+</div>

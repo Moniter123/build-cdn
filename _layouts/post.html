@@ -1,0 +1,54 @@
+---
+layout: default
+---
+
+{% assign date_format = "%b %-d, %Y" %}
+<script type="application/ld+json">
+{
+  "@context":"http://schema.org",
+  "@type":"BlogPosting",
+  "title": "{{ page.title | escape }}",
+  "datePublished": "{{ page.date | date: date_format }}",
+  "url": "{{page.url|absolute_url}}",
+  "author": {
+    "@type": "Person",
+    "name": "Janos Pasztor",
+    "url": "https://pasztor.at/"
+  }
+}
+</script>
+{% assign date_format = "%b %-d, %Y" %}
+<div class="page">
+    {% include menu.html %}
+
+    <hr/>
+
+    <div class="container-block post">
+        <article class="post" itemscope itemtype="https://schema.org/BlogPosting">
+            <header class="post-header">
+                <h1 class="post-title" itemprop="name headline">{{ page.title | escape }}</h1>
+                <span class="meta">
+                    <span class="line">
+                        by <span itemprop="author" itemscope itemtype="https://schema.org/Person"><a
+                            href="https://pasztor.at/"><span itemprop="name">Janos Pasztor</span></a></span>
+                    </span>
+                    &bullet;
+                    <span class="line">
+                        published <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: date_format }}</time>
+                    </span>
+                </span>
+
+            </header>
+
+            <div class="post-content" itemprop="articleBody">
+                {{ content }}
+            </div>
+
+            {% if page.external_link %}
+            <div class="mt mb">
+               <a href="{{page.external_link}}" class="btn learnmore" target="blank" rel="noopener noreferrer">Learn more (external site) <img src="{% base64 /assets/diagonal-arrow.svg %}" alt="" class="icon" /></a>
+            </div>
+            {% endif %}
+        </article>
+    </div>
+</div>

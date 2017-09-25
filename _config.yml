@@ -1,0 +1,33 @@
+title: Janos Pasztor
+baseurl: ""
+url: "https://pasztor.at"
+facebook_username: janoszen
+twitter_username:  janoszen
+github_username:   janoszen
+linkedin_username: janoszen
+permalink: /:categories/:title
+navigation:
+- text: Home
+  url: /
+  icon: home.svg
+- text: CV
+  url: /cv
+  icon: cv.svg
+- text: Projects
+  url: /projects
+  icon: projects.svg
+- text: Blog
+  url: /blog
+  icon: blog.svg
+- text: Contact
+  url: /contact
+  icon: contact.svg
+env: production
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+sass:
+  style: compressed
+gem:
+  - jekyll_image_encode

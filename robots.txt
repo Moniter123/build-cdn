@@ -1,0 +1,6 @@
+---
+# Default robots.txt
+---
+User-agent: *
+Allow: /
+Sitemap: {{ site.url }}/sitemap.xml
