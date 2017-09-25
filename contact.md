@@ -9,6 +9,8 @@ description: Contact Janos Pasztor
         <div class="col">
             <h1>Business requests</h1>
             <p>I conduct business under the company Opsbears e.U. For business inqueries, please head over to the <a href="https://opsbears.com/" target="_blank">Opsbears website</a>.</p>
+            <h1>Found an error?</h1>
+            <p>You can <a href="https://github.com/janoszen/pasztor.at" rel="noreferrer noopener">contribute to this website on Github</a>.</p>
         </div>
         <div class="col">
             <h1>Other matters</h1>
