@@ -4,6 +4,8 @@ title:         "Working with Certificates in Java"
 date:          2017-09-28 00:00:00
 categories:    blog
 excerpt:       Let's face it, the Java crypto API is a mess. It is extremely hard to use, and very confusing. Let's try and make sense of this sorry excuse for an API.
+fbimage:       /assets/img/working-with-certificates-in-java.jpg
+twitterimage:  /assets/img/working-with-certificates-in-java.jpg
 ---
 
 Let's face it, the Java crypto API is a mess. It is extremely hard to use, and very confusing. Let's try and make sense of this sorry excuse for an API.
@@ -237,7 +239,9 @@ Now that we have the basics dealt with, let's generate a certificate signing req
 KeyPair pair = ...;
 
 PKCS10CertificationRequestBuilder p10Builder = new JcaPKCS10CertificationRequestBuilder(
-    new X500Principal("C=US, L=Vienna, O=Your Company Inc, CN=yourdomain.com/emailAddress=your@email.com"), pair.getPublic());
+    new X500Principal("C=US, L=Vienna, O=Your Company Inc, CN=yourdomain.com/emailAddress=your@email.com"),
+    pair.getPublic()
+);
 JcaContentSignerBuilder csBuilder = new JcaContentSignerBuilder("SHA256withRSA");
 ContentSigner signer = null;
 try {
