@@ -40,5 +40,69 @@ layout: default
 
     <hr />
 
+    <div class="container-block share">
+        <h2 class="text-center">
+            Like what you read? Why not share it?
+        </h2>
+        <div class="text-center">
+            <a title="Share on Facebook"
+               target="_blank" rel="noopener noreferrer"
+               href="https://www.facebook.com/dialog/share?href={{ page.url | absolute_url | url_encode }}&amp;app_id=1916868571905927&amp;display=page&amp;redirect_uri={{ page.url | absolute_url | url_encode }}"
+               class="text-facebook">
+                <img src="{% base64 /assets/share-icons/facebook.svg %}" alt="Share on Facebook" height="36" width="36" />
+            </a>
+            <a title="Share on Messenger"
+               target="_blank" rel="noopener noreferrer"
+               href="https://www.facebook.com/dialog/send?link={{ page.url | absolute_url | url_encode }}&amp;app_id=1916868571905927&amp;redirect_uri={{ page.url | absolute_url | url_encode }}" class="text-messenger">
+                <img src="{% base64 /assets/share-icons/messenger.svg %}" alt="Share on Messenger" height="36" width="36" />
+            </a>
+            <a title="Share on Twitter"
+               target="_blank" rel="noopener noreferrer"
+               href="https://twitter.com/intent/tweet?url={{ page.url | absolute_url | url_encode }}&amp;text={{ page.title | url_encode }}&amp;via=janoszen"
+               class="text-twitter">
+                <img src="{% base64 /assets/share-icons/twitter.svg %}" alt="Share on Twitter" height="36" width="36" />
+            </a>
+            <a title="Share on Google+"
+               target="_blank" rel="noopener noreferrer"
+               href="https://plus.google.com/share?url={{ page.url | absolute_url | url_encode }}&amp;hl=en" class="text-gplus">
+                <img src="{% base64 /assets/share-icons/google-plus.svg %}" alt="Share on Google+" height="36" width="36" />
+            </a>
+            <a title="Share on Tumblr"
+               target="_blank" rel="noopener noreferrer"
+               href="https://tumblr.com/widgets/share/tool?canonicalUrl={{ page.url | absolute_url | url_encode }}" class="text-tumblr">
+                <img src="{% base64 /assets/share-icons/tumblr.svg %}" alt="Share on Tumblr" height="36" width="36" />
+            </a>
+
+            <a title="Share on Reddit"
+               target="_blank" rel="noopener noreferrer"
+               href="https://www.reddit.com/submit?url={{ page.url | absolute_url | url_encode }}&amp;title={{ page.title | url_encode }}" class="text-reddit">
+                <img src="{% base64 /assets/share-icons/reddit.svg %}" alt="Share on Reddit" height="36" width="36" />
+            </a>
+
+            <a title="Share on Linkedin"
+               target="_blank" rel="noopener noreferrer"
+               href="https://www.linkedin.com/shareArticle?mini=true&url={{ page.url | absolute_url | url_encode }}" class="text-linkedin">
+                <img src="{% base64 /assets/share-icons/linkedin.svg %}" alt="Share on Linkedin" height="36" width="36" />
+            </a>
+            <a title="Save on GetPocket"
+               target="_blank" rel="noopener noreferrer"
+               href="https://getpocket.com/edit?url={{ page.url | absolute_url | url_encode }}" class="text-getpocket">
+                <img src="{% base64 /assets/share-icons/pocket.svg %}" alt="Save on GetPocket" height="36" width="36" />
+            </a>
+            <a title="Share on VKontakte"
+               target="_blank" rel="noopener noreferrer"
+               href="http://vk.com/share.php?url={{ page.url | absolute_url | url_encode }}&amp;title={{ page.title | url_encode }}" class="text-vkontakte">
+                <img src="{% base64 /assets/share-icons/vk.svg %}" alt="Share on VKontakte" height="36" width="36" />
+            </a>
+            <a title="Share on Wordpress"
+               target="_blank" rel="noopener noreferrer"
+               href="http://wordpress.com/press-this.php?u={{ page.url | absolute_url | url_encode }}&amp;title={{ page.title | url_encode }}" class="text-wordpress">
+                <img src="{% base64 /assets/share-icons/wordpress.svg %}" alt="Share on Wordpress" height="36" width="36" />
+            </a>
+        </div>
+    </div>
+
+    <hr />
+
     <footer class="container-block text-center"> Copyright &copy; Janos Pasztor</footer>
 </div>

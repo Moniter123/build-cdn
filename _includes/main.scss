@@ -385,4 +385,15 @@ html .post table tr td {
   text-align:justify;
 }
 
+.share a, .share a:hover {
+  text-decoration:none;
+  display:inline-block;
+  margin-left:0.5em;
+  margin-right:0.5em;
+}
+
+.share h2 {
+  margin-bottom:0.75em;
+}
+
 //{% endraw %}
