@@ -10,7 +10,7 @@ There are times, when we get an application and need to find out what it does _f
 
 The basic use of strace is to run an application directly:
 
-```
+```bash
 strace ls /proc
 ```
 
@@ -31,7 +31,7 @@ open("/lib64/librt.so.1", O_RDONLY)     = 3
 
 What you will most probably interested in are the stat, open, read, write, readv, writev, recv, recvfrom, send and sendto operations. Adding a filter for those makes the strace much more useful:
 
-```
+```bash
 proxy / # strace -e trace=open,read,write,readv,writev,recv,recvfrom,send,sendto ls /proc
 open("/etc/ld.so.cache", O_RDONLY)      = 3
 open("/lib64/librt.so.1", O_RDONLY)     = 3
@@ -55,7 +55,7 @@ write(1, "13238  14496  14533  22093  2209"..., 16913238  14496  14533  22093  2
 
 As you can see, the strings are truncated to a given length, so you don’t see everything. Adding the `-s` parameter lets you specify the string truncation length:
 
-```
+```bash
 strace -s 999 ls /proc
 ```
 
@@ -65,7 +65,7 @@ There however is one **major pitfall** with directly runnin strace: SUID doesn�
 
 So what if we want to strace an already existing process? Nothing easier than that, the `-p` flag does just that:
 
-```
+```bash
 strace -p 14681
 ```
 
@@ -73,13 +73,13 @@ strace will attach the process and show you what it does. Keep in mind that prin
 
 If you need to track multiple processes (for example multiple processes of a webserver) you can just add multiple `-p` flags:
 
-```
+```bash
 strace -p 20557 -p 20558 -p 2055
 ```
 
 An other way to follow multiple processes is using the `-f` flag to follow forks. (Forks are when a process spawns an other process.)
 
-```
+```bash
 strace -f -p 20557
 ```
 
@@ -89,7 +89,7 @@ This about covers the basic usages of strace. To get more detailed information a
 
 Let’s see an example. I have created a _hello world_ application and want to trace it on my local Apache installation. First I get the process ID’s of Apache:
 
-```
+```bash
 root@janoszen-imac:~# ps aux | grep apache | grep -v grep 
 root      6883  0.0  0.2 132136  8560 ?        Ss   13:18   0:00 /usr/sbin/apache2 -k start
 www-data  6888  0.0  0.1 132616  6732 ?        S    13:18   0:00 /usr/sbin/apache2 -k start
@@ -104,14 +104,14 @@ www-data  6896  0.0  0.1 132160  5056 ?        S    13:18   0:00 /usr/sbin/apach
 
 The second columns contains the process ID’s (PID’s), which have to be used for strace. To create a list for strace you can use the following line:
 
-```
+```bash
 root@janoszen-imac:~# ps aux | grep apache | grep -v grep | awk ' { print $2 } ' | xargs -i echo -n ' -p {}'
  -p 6883 -p 6888 -p 6889 -p 6890 -p 6891 -p 6892 -p 6894 -p 6895 -p 6896
 ```
 
 Next step, run the strace and do a single request:
 
-```
+```bash
 root@janoszen-imac:~# strace -e trace=open,read,write,readv,writev,recv,recvfrom,send,sendto -s 999 -p 6883 -p 6888 -p 6889 -p 6890 -p 6891 -p 6892 -p 6894 -p 6895 -p 6896
 Process 6883 attached - interrupt to quit
 Process 6888 attached - interrupt to quit

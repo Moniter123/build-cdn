@@ -31,3 +31,6 @@ sass:
   style: compressed
 gem:
   - jekyll_image_encode
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge

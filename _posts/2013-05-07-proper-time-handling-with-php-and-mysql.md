@@ -18,7 +18,7 @@ Let’s start with the basics. (If you’re impatient, you may want to skip this
 
 So how does this big ball of wax look in the IT world? You may be familiar with the method of converting time into _UNIX timestamps_, which is the amount of seconds since the 1<sup>st</sup> of January 1970\. in the UTC timezone (formerly: GMT) because this is a positive integer, it is easy to calculate with. Let’s calculate the time for now in 3 days. (Hint: 86400 seconds = 24 hours)
 
-```php
+```php?start_inline=1
 echo(
     date(
         "Y-m-d H:i:s",
@@ -29,7 +29,7 @@ echo(
 
 Looks good, right? Well, not exactly. Let’s take the 23<sup>rd</sup> of march, 2012 14:00.
 
-```php
+```php?start_inline=1
 echo(
     date(
         "Y-m-d H:i:s",
@@ -44,7 +44,7 @@ It gets even worse if you round to full days, because then you’d end up with 4
 
 Lucky for us, PHP has a proper function: [strtotime()](http://php.net/strtotime)
 
-```php
+```php?start_inline=1
 echo(
     date(
         "Y-m-d H:i:s",
@@ -60,7 +60,7 @@ As you can see, you just got the correct result: `2012-03-26 14:00:00`
 
 This is all good and well, however the code still depends on the timezone set on the server. If you had the wrong timezone set, you’d end up with faulty calculations. Since server operators can do very little about this issue, **developers should set the correct timezone in their code** using the [date_default_timezone_set()](http://php.net/date_default_timezone_set) function. For example:
 
-```php
+```php?start_inline=1
 date_default_timezone_set("Europe/Vienna");
 ```
 
@@ -99,7 +99,7 @@ SELECT FROM_UNIXTIME(
 
 If you’re not working with timestamp manipulations but are using the [DATE_ADD()](http://dev.mysql.com/doc/refman/5.1/en/date-and-time-functions.html#function_date-add) function for example, that won’t work either:
 
-```php
+```php?start_inline=1
 SELECT DATE_ADD(
     '2012-03-23 14:00:00',
     INTERVAL 3 DAY

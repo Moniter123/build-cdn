@@ -1,6 +1,7 @@
 // {% raw %}
 
 @import "reset";
+@import "syntax";
 
 html, body{
   width:100%;
@@ -354,7 +355,7 @@ img.icon {
     margin-bottom:0.75em;
   }
 
-  p, pre, ul {
+  p, ul {
     margin-bottom:0.75em;
     font-size:1.2em;
     line-height:1.5em;
@@ -370,7 +371,13 @@ img.icon {
   }
 
   pre {
-    padding-left:1.5em;
+    margin-top:1.5em;
+    margin-bottom:1.5em;
+    padding:1.5em;
+    background:#e6f6ff;
+    border:1px solid #068cd6;
+    overflow-y: hidden;
+    overflow-x: auto;
   }
 }
 

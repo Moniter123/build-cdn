@@ -7,16 +7,11 @@ description: Read the CV of Janos Pasztor, a DevOps engineer with a nack for the
 <div class="container-block">
     <div class="alert mb">
         <h1>Notice to recruiters</h1>
-        <p class="text">
+        <div class="text">
             I know, your job is hard, so let's respect each others time: I am working as a freelancer, and I am not
             looking for a job. I am also not going to help your candidate get a job. There is no sense in trying to
             contact me about either issue, or to enter my details into your company's database for later use. I don't
-            work with recruiters off the internet. Period.
-        </p>
-        <div class="text">
-            For those of you who are having trouble understanding it: I do not consent to any data storage or contact by
-            recruiters. If you live in the EU, I will take the time to <strong>file a complaint with your country's
-            authorities about the breach of privacy regulations</strong>. You have been warned.
+            work with recruiters off the internet.
         </div>
     </div>
     <h1>Janos Pasztor</h1>

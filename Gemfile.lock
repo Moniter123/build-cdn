@@ -52,6 +52,7 @@ DEPENDENCIES
   jekyll (= 3.5.2)
   jekyll-feed (~> 0.6)
   jekyll-sitemap
+  rouge
   tzinfo-data
 
 BUNDLED WITH

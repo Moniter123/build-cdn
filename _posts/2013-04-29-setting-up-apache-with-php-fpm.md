@@ -22,13 +22,13 @@ In our examples I’m going to illustrate the process for Ubuntu Linux, the proc
 
 First of all if you haven’t already, you need to install the FPM-CGI binary for PHP:
 
-```
+```bash
 apt-get install php5-fpm
 ```
 
 You’ll have a few new files to configure. First of all you need to set up a pool for yourself. To do this take a look at /etc/php5/pool.d/www.conf. The file is full of comments so you should find your way around. The most important option is the `listen` option. This will tell your pool where to listen for connections, by default `listen = 127.0.0.1:9000`. Be sure to check this setting because your Apache will need to connect this port. For the first try I recommend leaving everything as it is and restarting the FPM by running:
 
-```
+```bash
 service php5-fpm restart
 ```
 
@@ -40,7 +40,7 @@ mod_fastcgi is the “classic” module from the makers of FastCGI. To make it w
 
 To use mod_fastcgi, you first need to install it on your server:
 
-```
+```bash
 apt-get install libapache2-mod-fastcgi
 ```
 
@@ -48,13 +48,13 @@ Once installed, you need to set up a (non-existent) URL that Apache can route th
 
 Next you need to point your server to the external server for the aforementioned URL **within your virtualhost configuration** (so within `<VirtualHost ... >`):
 
-```
+```apacheconfig
 FastCGIExternalServer /var/www/cgi-bin/php5.fcgi -host 127.0.0.1:9000
 ```
 
 As you can see, the `cgi-bin/php5.fcgi` URL is _within_ your document root. It is a virtual URL that will capture all requests to that URL and send them to the PHP-FPM. Finally you need to send all files with the .php extension to this URL **within a `<Directory ... >` directive**:
 
-```
+```apacheconfig
 AddType application/x-httpd-fastphp5 .php
 Action application/x-httpd-fastphp5 /cgi-bin/php5.fcgi
 ```
@@ -65,7 +65,7 @@ And there you go, your PHP should now work! All this fancy magic is needed so si
 
 If you need to set up multiple FPM pools, you of course need to configure every pool to it’s separate port AND adjust the Apache configuration for each virtual host separately. So a virtual host configuration for a site would look like this:
 
-```
+```apacheconfig
 <VirtualHost *:80>
 	ServerName fpmtest.localhost
 
