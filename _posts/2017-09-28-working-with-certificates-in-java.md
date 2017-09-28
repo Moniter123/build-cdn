@@ -3,10 +3,10 @@ layout:        post
 title:         "Working with Certificates in Java"
 date:          2017-09-28 00:00:00
 categories:    blog
-excerpt:       Let's face it, the Java crypto API is a mess. It is extremely hard to use, and very confusing. Let's try and make sense of this sorry excuse of an API.
+excerpt:       Let's face it, the Java crypto API is a mess. It is extremely hard to use, and very confusing. Let's try and make sense of this sorry excuse for an API.
 ---
 
-Let's face it, the Java crypto API is a mess. It is extremely hard to use, and very confusing. Let's try and make sense of this sorry excuse of an API.
+Let's face it, the Java crypto API is a mess. It is extremely hard to use, and very confusing. Let's try and make sense of this sorry excuse for an API.
 
 ## Install Bouncy Castle
 
@@ -68,7 +68,8 @@ SEQUENCE(9 elem)
     INTEGER (2046 bit) ...
 ```
 
-So the encoding is different. Both formats contain the private and public key, yet, we have to load them differently.
+If you observe closely, both have the same data, but in a different structure. Both formats contain the private and
+public key, yet, we have to load them differently.
 
 Let's take a look how this is done in Java:
 
@@ -102,7 +103,9 @@ if (privateKeyObject.getType().endsWith("RSA PRIVATE KEY")) {
     );
 } else if (privateKeyObject.getType().endsWith("PRIVATE KEY")) {
     //PKCS#8 key
-    privateKeyParameter = (RSAPrivateCrtKeyParameters) PrivateKeyFactory.createKey(privateKeyObject.getContent());
+    privateKeyParameter = (RSAPrivateCrtKeyParameters) PrivateKeyFactory.createKey(
+        privateKeyObject.getContent()
+    );
 } else {
     throw new RuntimeException("Unsupported key type: " + privateKeyObject.getType());
 }
@@ -200,7 +203,10 @@ loading code to do that:
 ```java
 PublicKey publicKey;
 try {
-    RSAPublicKeySpec publicKeySpec = new RSAPublicKeySpec(privateKeyParameter.getModulus(), privateKeyParameter.getPublicExponent());
+    RSAPublicKeySpec publicKeySpec = new RSAPublicKeySpec(
+        privateKeyParameter.getModulus(),
+        privateKeyParameter.getPublicExponent()
+    );
     KeyFactory keyFactory = KeyFactory.getInstance("RSA");
     publicKey = keyFactory.generatePublic(publicKeySpec);
 } catch (NoSuchAlgorithmException | InvalidKeySpecException e) {
