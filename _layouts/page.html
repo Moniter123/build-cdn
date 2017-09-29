@@ -2,6 +2,28 @@
 layout: default
 ---
 
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+    "@type": "ListItem",
+    "position": 1,
+    "item": {
+      "@id": "https://pasztor.at/",
+      "name": "Janos Pasztor"
+    }
+  },{
+    "@type": "ListItem",
+    "position": 2,
+    "item": {
+      "@id": "{{ page.url | absolute_url }}",
+      "name": "{{ page.title }}"
+    }
+  }]
+}
+</script>
+
 <div class="page">
   {% include menu.html %}
 
@@ -11,5 +33,10 @@ layout: default
 
   <hr />
 
-  <footer class="container-block text-center"> Copyright &copy; Janos Pasztor</footer>
+  <footer class="container-block">
+    <div class="row">
+      <div class="col"><a href="/terms">Copyright &copy; Janos Pasztor</a></div>
+      <div class="col col-right"><a href="/imprint">Imprint</a> &bull; <a href="/terms">Terms of Use</a> &bull; <a href="/privacy">Privacy Policy</a></div>
+    </div>
+  </footer>
 </div>

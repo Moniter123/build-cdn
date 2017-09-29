@@ -6,6 +6,8 @@ categories:    blog
 excerpt:       Let's face it, the Java crypto API is a mess. It is extremely hard to use, and very confusing. Let's try and make sense of this sorry excuse for an API.
 fbimage:       /assets/img/working-with-certificates-in-java.jpg
 twitterimage:  /assets/img/working-with-certificates-in-java.jpg
+googleimage:   /assets/img/working-with-certificates-in-java.jpg
+twitter_card:  summary_large_image
 ---
 
 Let's face it, the Java crypto API is a mess. It is extremely hard to use, and very confusing. Let's try and make sense of this sorry excuse for an API.

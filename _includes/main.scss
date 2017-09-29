@@ -396,4 +396,16 @@ html .post table tr td {
   margin-bottom:0.75em;
 }
 
+footer {
+  text-align:center;
+  @media screen and (min-width: 800px) {
+    .col {
+      text-align:left;
+    }
+    .col.col-right {
+      text-align: right;
+    }
+  }
+}
+
 //{% endraw %}
