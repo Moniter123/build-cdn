@@ -3,14 +3,14 @@ layout:        post
 title:         "Intercontinental Docker Swarm"
 date:          2017-10-22 00:00:00
 categories:    blog
-excerpt:       "Docker is the new hotness. Swarm is an even new even hotter thing. The question is: will it blend? Can it run spanning multiple continents?"     
+excerpt:       "Docker is the new hotness. Swarm is an even newer, even hotter thing. The question is: will it blend? Can it run spanning multiple continents?"     
 fbimage:       /assets/img/intercontinental-docker-swarm.png
 twitterimage:  /assets/img/intercontinental-docker-swarm.png
 googleimage:   /assets/img/intercontinental-docker-swarm.png
 twitter_card:  summary_large_image
 ---
 
-Docker is the new hotness. Swarm is an even new even hotter thing. The question is: will it blend? Can it
+Docker is the new hotness. Swarm is an even newer, even hotter thing. The question is: will it blend? Can it
 run spanning multiple continents?
 
 ## Preparing AWS
