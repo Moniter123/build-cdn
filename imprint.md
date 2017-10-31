@@ -1,7 +1,7 @@
 ---
 title: Imprint
 layout: page
-description: Imprint of this site
+description: Who is behind the content and hosting of pasztor.at?
 ---
 
 <div class="container-block">

@@ -1,7 +1,7 @@
 ---
 title: Contact
 layout: page
-description: Contact Janos Pasztor
+description: Contact Janos Pasztor via social media
 ---
 
 <div class="container-block">

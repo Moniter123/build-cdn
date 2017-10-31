@@ -1,7 +1,7 @@
 ---
 title: Blog
 layout: page
-description: Read the CV of Janos Pasztor, a DevOps engineer with a nack for the unusual
+description: Read the IT blog of Janos Pasztor
 ---
 <div class="container-block">
     <h1 class="text-center">Latest Blog Posts</h1>

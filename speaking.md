@@ -1,7 +1,7 @@
 ---
 title: Public speaking
 layout: page
-description: Read the CV of Janos Pasztor, a DevOps engineer with a nack for the unusual
+description: Janos Pasztors public speaking engagements
 ---
 <div class="container-block">
     <h1 class="text-center">Public Speaking Engagements</h1>

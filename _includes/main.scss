@@ -340,7 +340,7 @@ img.icon {
   font-size:1.2em;
 }
 
-.post {
+.post, .page {
   header {
     text-align:center;
     margin-bottom:1.5em;
@@ -355,7 +355,7 @@ img.icon {
     margin-bottom:0.75em;
   }
 
-  p, ul, ol {
+  p, ul, ol, table.table {
     margin-bottom:0.75em;
     font-size:1.2em;
     line-height:1.5em;
@@ -381,7 +381,7 @@ img.icon {
   }
 }
 
-html .post table tr td {
+html .post table tr td, html .page table tr td {
   text-align:justify;
 }
 
@@ -398,9 +398,13 @@ html .post table tr td {
 
 footer {
   text-align:center;
+  .col {
+    line-height: 30px;
+  }
   @media screen and (min-width: 800px) {
     .col {
       text-align:left;
+      line-height: inherit;
     }
     .col.col-right {
       text-align: right;
