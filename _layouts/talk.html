@@ -1,0 +1,196 @@
+---
+layout: default
+---
+
+{% capture category_url %}/{{ page.categories|join: '/' }}{% endcapture %}
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+    "@type": "ListItem",
+    "position": 1,
+    "item": {
+      "@id": "https://pasztor.at/",
+      "name": "Janos Pasztor"
+    }
+  },{
+    "@type": "ListItem",
+    "position": 2,
+    "item": {
+      "@id": "{{ category_url | absolute_url}}",
+      "name": "{{ page.categories | join: ', '| capitalize }}"
+    }
+  },{
+    "@type": "ListItem",
+    "position": 3,
+    "item": {
+      "@id": "{{ page.url | absolute_url }}",
+      "name": "{{ page.title }}"
+    }
+  }]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Event",
+  "name": "{{ page.title }}",
+  "startDate": "{{ page.talkStartDate }}",
+  "endDate": "{{ page.talkEndDate }}",
+  "url": "{{ page.url | absolute_url }}",
+  "inLanguage": "{{ page.inLanguage}}",
+  "superEvent": {
+    "@context": "http://schema.org",
+    "@type": "Event",
+    "name": "{{ page.eventName }}",
+    "url": "{{ page.eventUrl }}",
+    "startDate": "{{ page.eventStartDate }}",
+    "endDate": "{{ page.eventEndDate }}",
+    "location": {
+      "@type": "Place",
+      "name": "{{ page.eventLocationName }}",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "{{ page.eventStreetAddress }}",
+        "addressLocality": "{{ page.eventCity }}",
+        "postalCode": "{{ page.eventPostalCode }}",
+        "addressCountry": "{{ page.eventCountry }}"
+      }
+    }
+  },
+  "location": {
+    "@type": "Place",
+    "name": "{{ page.eventLocationName }}",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "{{ page.eventStreetAddress }}",
+      "addressLocality": "{{ page.eventCity }}",
+      "postalCode": "{{ page.eventPostalCode }}",
+      "addressCountry": "{{ page.eventCountry }}"
+    }
+  },
+  "performer": {
+    "@type": "Person",
+    "name": "Janos Pasztor",
+    "url": "https://pasztor.at/"
+  }
+}
+</script>
+
+{% assign date_format = "%b %-d, %Y" %}
+<div class="page">
+    {% include menu.html %}
+
+    <hr/>
+
+    <div class="container-block post">
+        <article class="post" >
+            <header class="post-header">
+                <h1 class="post-title">{{ page.title | escape }}{% if page.eventName %} <br /> {{ page.eventName }}{% endif %}{% if page.inLanguage and page.inLanguage != "EN" %} ({{ page.inLanguage }}){% endif %}</h1>
+                <span class="meta">
+                    <span class="line">
+                        by <span><a
+                            href="https://pasztor.at/" itemprop="url"><span itemprop="name">Janos Pasztor</span></a></span>
+                    </span>
+                    &bullet;
+                    <span class="line">
+                        published <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: date_format }}</time>
+                    </span>
+                </span>
+
+            </header>
+
+            <div class="post-content">
+                {{ content }}
+            </div>
+
+            {% if page.external_link or page.video or page.slides %}
+                <div class="mt mb">
+                    {% if page.slides %}
+                        <a href="{{page.slides}}" class="btn learnmore" target="blank" rel="noopener noreferrer" download>Download slides <img src="{% base64 /assets/download.svg %}" alt="" class="icon" /></a>
+                    {% endif %}
+                    {% if page.video %}
+                        <a href="{{page.video}}" class="btn learnmore" target="blank" rel="noopener noreferrer">Watch video (external site) <img src="{% base64 /assets/diagonal-arrow.svg %}" alt="" class="icon" /></a>
+                    {% endif %}
+                    {% if page.external_link %}
+                        <a href="{{page.external_link}}" class="btn learnmore" target="blank" rel="noopener noreferrer">Event page (external site) <img src="{% base64 /assets/diagonal-arrow.svg %}" alt="" class="icon" /></a>
+                    {% endif %}
+                </div>
+            {% endif %}
+        </article>
+    </div>
+
+    <hr />
+
+    <div class="container-block share">
+        <h2 class="text-center">
+            Like what you read? Why not share it?
+        </h2>
+        <div class="text-center">
+            <a title="Share on Facebook"
+               target="_blank" rel="noopener noreferrer"
+               href="https://www.facebook.com/dialog/share?href={{ page.url | absolute_url | url_encode }}&amp;app_id=1916868571905927&amp;display=page&amp;redirect_uri={{ page.url | absolute_url | url_encode }}"
+               class="text-facebook">
+                <img src="{% base64 /assets/share-icons/facebook.svg %}" alt="Share on Facebook" height="36" width="36" />
+            </a>
+            <a title="Share on Messenger"
+               target="_blank" rel="noopener noreferrer"
+               href="https://www.facebook.com/dialog/send?link={{ page.url | absolute_url | url_encode }}&amp;app_id=1916868571905927&amp;redirect_uri={{ page.url | absolute_url | url_encode }}" class="text-messenger">
+                <img src="{% base64 /assets/share-icons/messenger.svg %}" alt="Share on Messenger" height="36" width="36" />
+            </a>
+            <a title="Share on Twitter"
+               target="_blank" rel="noopener noreferrer"
+               href="https://twitter.com/intent/tweet?url={{ page.url | absolute_url | url_encode }}&amp;text={{ page.title | url_encode }}&amp;via=janoszen"
+               class="text-twitter">
+                <img src="{% base64 /assets/share-icons/twitter.svg %}" alt="Share on Twitter" height="36" width="36" />
+            </a>
+            <a title="Share on Google+"
+               target="_blank" rel="noopener noreferrer"
+               href="https://plus.google.com/share?url={{ page.url | absolute_url | url_encode }}&amp;hl=en" class="text-gplus">
+                <img src="{% base64 /assets/share-icons/google-plus.svg %}" alt="Share on Google+" height="36" width="36" />
+            </a>
+            <a title="Share on Tumblr"
+               target="_blank" rel="noopener noreferrer"
+               href="https://tumblr.com/widgets/share/tool?canonicalUrl={{ page.url | absolute_url | url_encode }}" class="text-tumblr">
+                <img src="{% base64 /assets/share-icons/tumblr.svg %}" alt="Share on Tumblr" height="36" width="36" />
+            </a>
+
+            <a title="Share on Reddit"
+               target="_blank" rel="noopener noreferrer"
+               href="https://www.reddit.com/submit?url={{ page.url | absolute_url | url_encode }}&amp;title={{ page.title | url_encode }}" class="text-reddit">
+                <img src="{% base64 /assets/share-icons/reddit.svg %}" alt="Share on Reddit" height="36" width="36" />
+            </a>
+
+            <a title="Share on Linkedin"
+               target="_blank" rel="noopener noreferrer"
+               href="https://www.linkedin.com/shareArticle?mini=true&url={{ page.url | absolute_url | url_encode }}" class="text-linkedin">
+                <img src="{% base64 /assets/share-icons/linkedin.svg %}" alt="Share on Linkedin" height="36" width="36" />
+            </a>
+            <a title="Save on GetPocket"
+               target="_blank" rel="noopener noreferrer"
+               href="https://getpocket.com/edit?url={{ page.url | absolute_url | url_encode }}" class="text-getpocket">
+                <img src="{% base64 /assets/share-icons/pocket.svg %}" alt="Save on GetPocket" height="36" width="36" />
+            </a>
+            <a title="Share on VKontakte"
+               target="_blank" rel="noopener noreferrer"
+               href="http://vk.com/share.php?url={{ page.url | absolute_url | url_encode }}&amp;title={{ page.title | url_encode }}" class="text-vkontakte">
+                <img src="{% base64 /assets/share-icons/vk.svg %}" alt="Share on VKontakte" height="36" width="36" />
+            </a>
+            <a title="Share on Wordpress"
+               target="_blank" rel="noopener noreferrer"
+               href="http://wordpress.com/press-this.php?u={{ page.url | absolute_url | url_encode }}&amp;title={{ page.title | url_encode }}" class="text-wordpress">
+                <img src="{% base64 /assets/share-icons/wordpress.svg %}" alt="Share on Wordpress" height="36" width="36" />
+            </a>
+        </div>
+    </div>
+
+    <hr />
+
+    <footer class="container-block">
+        <div class="row">
+            <div class="col"><a href="/terms">Copyright &copy; Janos Pasztor</a></div>
+            <div class="col col-right"><a href="/imprint">Imprint</a> &bull; <a href="/terms">Terms of Use</a> &bull; <a href="/privacy">Privacy Policy</a></div>
+        </div>
+    </footer>
+</div>
