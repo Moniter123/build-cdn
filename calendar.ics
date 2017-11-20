@@ -1,0 +1,31 @@
+---
+---
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Janos Pasztor//pasztor.at//EN
+URL:https://pasztor.at/calendar.ics
+NAME:Janos Pasztor
+X-WR-CALNAME:Janos Pasztor
+DESCRIPTION:Public speaking engagements of Janos Pasztor
+X-WR-CALDESC:Public speaking engagements of Janos Pasztor
+TIMEZONE-ID:Europe/Vienna
+X-WR-TIMEZONE:Europe/Vienna
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+{% for post in site.categories.speaking -%}
+BEGIN:VEVENT
+DTSTART;TZID={{ post.eventStartDate|date: "%Z"}}:{{ post.eventStartDate|date: "%Y%m%dT%H%M%S"}}
+DTEND;TZID={{ post.eventEndDate|date: "%Z"}}:{{ post.eventEndDate|date: "%Y%m%dT%H%M%S"}}
+DTSTAMP;TZID={{ post.date|date: "%Z"}}:{{ post.date|date: "%Y%m%dT%H%M%S"}}
+UID:{{post.id}}
+CREATED;TZID={{ post.date|date: "%Z"}}:{{ post.date|date: "%Y%m%dT%H%M%S"}}
+DESCRIPTION:{{ post.excerpt | strip_html }}
+LAST-MODIFIED;TZID={{ post.last_modified_at|date: "%Z"}}:{{ post.last_modified_at|date: "%Y%m%dT%H%M%S"}}
+LOCATION:{{ post.eventLocationName }}, {{ post.eventStreetAddress }}, {{ post.eventCity }}, {{ post.eventPostalCode }}, {{ post.eventCountry }}
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:{{post.title}}{% if post.eventName %} — {{ post.eventName }}{% endif %}{% if post.inLanguage and post.inLanguage != "EN" %} ({{ post.inLanguage }}){% endif %}
+TRANSP:TRANSPARENT
+END:VEVENT
+{% endfor -%}
+END:VCALENDAR

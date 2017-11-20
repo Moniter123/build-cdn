@@ -15,8 +15,8 @@ eventStreetAddress: Lindengasse 56
 eventCity:          Wien
 eventPostalCode:    1070
 eventCountry:       AT
-eventStartDate:     2017-11-11 
-eventEndDate:       2017-11-11
+eventStartDate:     2017-11-11T09:00:00Z
+eventEndDate:       2017-11-11T17:00:00Z
 eventUrl:           https://into.technology/
 ---
 
