@@ -119,5 +119,6 @@ However, it has some problems:
 
 1. Poor quality of public images
 2. Difficult / unstable production-level tools
+3. You still need configuration management for your host machine
 
 And no, it's not about devs can now do ops work, you still need sysadmins. Sorry.
