@@ -96,7 +96,7 @@ I chose.
 
 ## Docker & Co isn't perfect
 
-Look, I'll be the first to admin that Docker isn't perfect. Many of the open source / public images available are of
+Look, I'll be the first to admit that Docker isn't perfect. Many of the open source / public images available are of
 unbelievably poor quality, and running Docker & Co in production is still very very hard. Many would tell you that
 Kubernetes is easy to set up... well, I've talked to Google and Amazon ops engineers who would disagree. Containers
 have a long road ahead of them until they become a viable, every day tool.
@@ -112,9 +112,12 @@ Docker gives you the following:
 1. Documented infrastructure
 2. Reproducibe builds
 3. Less chance for a special snowflake server
-4. Frequent and easier updates 
+4. Frequent and easier updates
+5. Easier to test changes
 
 However, it has some problems:
 
 1. Poor quality of public images
 2. Difficult / unstable production-level tools
+
+And no, it's not about devs can now do ops work, you still need sysadmins. Sorry.
