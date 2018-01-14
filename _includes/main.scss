@@ -219,6 +219,9 @@ p, .text {
   line-height:1.5em;
   font-weight: 300;
   letter-spacing: 0.05em;
+  @media (min-width:800px) {
+    line-height:1.8em;
+  }
 }
 
 p, li {
@@ -364,6 +367,14 @@ img.icon {
     strong {
       font-weight:normal;
     }
+    @media screen and (max-width:799px) and (min-width: 375px) {
+      line-height: 1.6em;
+      margin-bottom:0.8em;
+    }
+    @media screen and (min-width:800px) {
+      line-height: 1.8em;
+      margin-bottom:0.9em;
+    }
   }
 
   p {
@@ -393,6 +404,7 @@ html .post table tr td, html .page table tr td {
 }
 
 .share h2 {
+  margin-top:0;
   margin-bottom:0.75em;
 }
 
