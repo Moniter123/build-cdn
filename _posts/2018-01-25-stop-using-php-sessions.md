@@ -4,9 +4,9 @@ title:         "Stop using PHP sessions!"
 date:          2018-01-25 00:00:00
 categories:    blog
 excerpt:       "OK, that title may be a little provocative, but PHP sessions have a fatal flaw that make them problematic with modern-day web applications."     
-fbimage:       /assets/img/stop-using-php-sessons.png
-twitterimage:  /assets/img/stop-using-php-sessons.png
-googleimage:   /assets/img/stop-using-php-sessons.png
+fbimage:       /assets/img/stop-using-php-sessions.png
+twitterimage:  /assets/img/stop-using-php-sessions.png
+googleimage:   /assets/img/stop-using-php-sessions.png
 twitter_card:  summary_large_image
 ---
 
@@ -287,6 +287,7 @@ state of the shopping cart:
 
 ```sql
 START TRANSACTION;
+
 DELETE FROM
   cart_items
 WHERE
@@ -300,14 +301,15 @@ FROM
   cart_items
 WHERE
   cart_id=?
+  
 COMMIT;
 ```
 
 See? Again, no locks needed, just make sure the user always sees the latest state and doesn't get a mismatching update.
 
-And so on, so forth. You don't *need* a session to store all your user state. Besides, dropping the session as a
-state storage also has some neat advantages, like being able to share your cart between the desktop and mobile device,
-etc.
+And so on, so forth. Yes, I'm vastly oversimplifying things, but you don't *need* a session to store all your user
+state. Besides, dropping the session as a state storage also has some neat advantages, like being able to share your
+cart between the desktop and mobile device, etc.
 
 And if you really don't want to access the database all the time, well, you can still store a lot of stuff in cookies
 and local storage. Just be sure to keep the security aspect in mind.
