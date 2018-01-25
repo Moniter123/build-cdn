@@ -57,7 +57,7 @@ Deactivate Server
 @enduml
 {% endplantuml %}</figure>
 
-Now, the cookie in this context is not a fancy christmas edibe, but a tiny piece of information stored in the browser.
+Now, the cookie in this context is not a fancy Christmas treat, but a tiny piece of information stored in the browser.
 Once set, the browser sends this tiny piece of information to the server that originally set it.
 
 As you may notice, this gives us an excellent vehicle to identify the user. Now, we don't just *trust* the data in the
@@ -235,9 +235,9 @@ The thing is, while **the file session backend locks the session, all other back
 when *two parallel requests* happen, they **can and will overwrite each others changes** to the session data.
 
 This isn't huge problem as long as you only store the current users ID in the session, but again, the session tends to
-*organically grow* to be very polite. The more changes you make to a session, the greater the risk becomes that there
-will be a race condition. And double requests **do** happen, even if you don't do AJAX. Think of double clicks on
-submit buttons, or even your non-existent `favicon.ico` request could land on your PHP script.
+*organically grow*, and that's putting it mildly. The more changes you make to a session, the greater the risk becomes
+that there will be a race condition. And double requests **do** happen, even if you don't do AJAX. Think of double
+clicks on submit buttons, or even your non-existent `favicon.ico` request could land on your PHP script.
 
 ## Hacks and workarounds
 
@@ -249,7 +249,7 @@ request in parallel just *isn't cool any more*.
 
 ## Lower the granularity of locks
 
-The largest problem with PHPs session handling is that it gives you a false sense of security. It *pretends* that locks
+The biggest problem with PHP's session handling is that it gives you a false sense of security. It *pretends* that locks
 are a part of the session as a contract in the dev environment, but they really aren't. And sessions without locks are
 just an accident waiting to happen, especially the way PHP does them where it is incredibly easy to just store any
 crap in them.
@@ -281,7 +281,7 @@ Now, what you do is you send the user the access ID in a cookie and whenever a u
 Do you need locks on this? Nope, not really, since you only create it once, then update the expiry time and finally
 delete it when needed. Totally safe.
 
-Next up, shopping card. This one is interesting, because if the user clicks around like crazy, strange things can
+Next up, shopping cart. This one is interesting, because if the user clicks around like crazy, strange things can
 happen. So to avoid confusion, you can use *transactions* for your updates, and then always send back the current
 state of the shopping cart:
 
