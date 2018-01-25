@@ -32,6 +32,7 @@ sass:
 gem:
   - jekyll_image_encode
   - jekyll-last-modified-at
+  - jekyll-plantuml
 kramdown:
   input: GFM
   syntax_highlighter: rouge

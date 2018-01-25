@@ -390,6 +390,20 @@ img.icon {
     overflow-y: hidden;
     overflow-x: auto;
   }
+
+  figure {
+    position: relative;
+    max-width:100%;
+    @media screen and (min-width:800px) {
+      img {
+        max-width:100%;
+      }
+    }
+    @media screen and (max-width:799px) {
+      overflow-x: scroll;
+    }
+    overflow-y:visible;
+  }
 }
 
 html .post table tr td, html .page table tr td {
