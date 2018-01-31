@@ -311,8 +311,12 @@ And so on, so forth. Yes, I'm vastly oversimplifying things, but you don't *need
 state. Besides, dropping the session as a state storage also has some neat advantages, like being able to share your
 cart between the desktop and mobile device, etc.
 
-And if you really don't want to access the database all the time, well, you can still store a lot of stuff in cookies
+If you really don't want to access the database all the time, well, you can still store a lot of stuff in cookies
 and local storage. Just be sure to keep the security aspect in mind.
+
+And if you *really* need locks, make them as granular as possible and make them explicit in your business logic.
+However, it is best to avoid them if possible. You can do that by organizing your data structure in a way that makes
+them unnecessary, as shown in the examples above.
 
 ## It's not just PHP
 
