@@ -1,0 +1,92 @@
+<div class="post__share">
+    <h2 class="post__cta">
+        Like what you read? Why not share it?
+    </h2>
+    <div class="post__sharelinks">
+        <a title="Share on Facebook"
+           target="_blank" rel="noopener noreferrer"
+           href="https://www.facebook.com/dialog/share?href={{ page.url | absolute_url | url_encode }}&amp;app_id=1916868571905927&amp;display=page&amp;redirect_uri={{ page.url | absolute_url | url_encode }}"
+           class="post__sharelink social__facebook">
+            <img src="{% base64 /assets/share-icons/facebook.svg %}" alt="Share on Facebook" height="36" width="36" />
+        </a>
+        <a title="Share on Messenger"
+           target="_blank" rel="noopener noreferrer"
+           href="https://www.facebook.com/dialog/send?link={{ page.url | absolute_url | url_encode }}&amp;app_id=1916868571905927&amp;redirect_uri={{ page.url | absolute_url | url_encode }}" class="post__sharelink social__messenger">
+            <img src="{% base64 /assets/share-icons/messenger.svg %}" alt="Share on Messenger" height="36" width="36" />
+        </a>
+        <a title="Share on Twitter"
+           target="_blank" rel="noopener noreferrer"
+           href="https://twitter.com/intent/tweet?url={{ page.url | absolute_url | url_encode }}&amp;text={{ page.title | url_encode }}&amp;via=janoszen"
+           class="post__sharelink social__twitter">
+            <img src="{% base64 /assets/share-icons/twitter.svg %}" alt="Share on Twitter" height="36" width="36" />
+        </a>
+        <a title="Share on Google+"
+           target="_blank" rel="noopener noreferrer"
+           href="https://plus.google.com/share?url={{ page.url | absolute_url | url_encode }}&amp;hl=en" class="post__sharelink social__gplus">
+            <img src="{% base64 /assets/share-icons/google-plus.svg %}" alt="Share on Google+" height="36" width="36" />
+        </a>
+        <a title="Share on Tumblr"
+           target="_blank" rel="noopener noreferrer"
+           href="https://tumblr.com/widgets/share/tool?canonicalUrl={{ page.url | absolute_url | url_encode }}" class="post__sharelink social__tumblr">
+            <img src="{% base64 /assets/share-icons/tumblr.svg %}" alt="Share on Tumblr" height="36" width="36" />
+        </a>
+
+        <a title="Share on Reddit"
+           target="_blank" rel="noopener noreferrer"
+           href="https://www.reddit.com/submit?url={{ page.url | absolute_url | url_encode }}&amp;title={{ page.title | url_encode }}" class="post__sharelink social__reddit">
+            <img src="{% base64 /assets/share-icons/reddit.svg %}" alt="Share on Reddit" height="36" width="36" />
+        </a>
+
+        <a title="Share on Linkedin"
+           target="_blank" rel="noopener noreferrer"
+           href="https://www.linkedin.com/shareArticle?mini=true&url={{ page.url | absolute_url | url_encode }}" class="post__sharelink social__linkedin">
+            <img src="{% base64 /assets/share-icons/linkedin.svg %}" alt="Share on Linkedin" height="36" width="36" />
+        </a>
+        <a title="Save on GetPocket"
+           target="_blank" rel="noopener noreferrer"
+           href="https://getpocket.com/edit?url={{ page.url | absolute_url | url_encode }}" class="post__sharelink social__getpocket">
+            <img src="{% base64 /assets/share-icons/pocket.svg %}" alt="Save on GetPocket" height="36" width="36" />
+        </a>
+        <a title="Share on VKontakte"
+           target="_blank" rel="noopener noreferrer"
+           href="http://vk.com/share.php?url={{ page.url | absolute_url | url_encode }}&amp;title={{ page.title | url_encode }}" class="post__sharelink social__vkontakte">
+            <img src="{% base64 /assets/share-icons/vk.svg %}" alt="Share on VKontakte" height="36" width="36" />
+        </a>
+        <a title="Share on Wordpress"
+           target="_blank" rel="noopener noreferrer"
+           href="http://wordpress.com/press-this.php?u={{ page.url | absolute_url | url_encode }}&amp;title={{ page.title | url_encode }}" class="post__sharelink social__wordpress">
+            <img src="{% base64 /assets/share-icons/wordpress.svg %}" alt="Share on Wordpress" height="36" width="36" />
+        </a>
+    </div>
+</div>
+<div class="post__bio">
+    <img src="{% base64 /assets/avatar-64.jpg %}" alt="" class="post__bioavatar" />
+    <div class="post__biodata">
+        <h2 class="post__bioname">Janos Pasztor</h2>
+        <div class="post__biotext">
+            <p>
+                I'm a DevOps engineer with a strong background in both backend development and operations, with a
+                history of hosting and delivering content.
+            </p>
+            <p>
+                When it comes to picking a solution, I often choose the less traveled road, and try to learn how
+                something works before actually putting it into production. This gives me a somewhat unique insight into
+                technologies and often lets me come up with better solutions to the problems.
+            </p>
+        </div>
+        <div class="post__biosocial">
+            <a href="https://facebook.com/janoszen" class="post__biosociallink" target="_blank" >
+                <img src="{% base64 /assets/img/facebook-round.svg %}" alt="Facebook" title="Follow me on Facebook" class="post__biosocialicon" />
+                janoszen
+            </a>
+            <a href="https://twitter.com/janoszen" class="post__biosociallink" target="_blank" >
+                <img src="{% base64 /assets/img/twitter-round.svg %}" alt="Twitter" title="Follow me on Twitter" class="post__biosocialicon" />
+                janoszen
+            </a>
+            <a href="https://github.com/janoszen" class="post__biosociallink" target="_blank" >
+                <img src="{% base64 /assets/img/github-round.svg %}" alt="GitHub" title="Visit me on GitHub" class="post__biosocialicon" />
+                janoszen
+            </a>
+        </div>
+    </div>
+</div>

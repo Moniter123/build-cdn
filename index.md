@@ -3,14 +3,6 @@ layout: home
 description: Meet Janos Pasztor, a DevOps engineer with a Nack for the unusual.
 ---
 
-{% include profile.html %}
-
-<hr />
-
-{% include menu.html %}
-
-<hr />
-
 <div class="container-block">
     <div class="row">
         <div class="col">

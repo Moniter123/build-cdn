@@ -1,0 +1,84 @@
+.post {
+  position:relative;
+  padding-left:20px;
+  padding-right:20px;
+  max-width:700px;
+  margin-left:auto;
+  margin-right:auto;
+
+  &__meta {
+    font-family: Roboto, "Open Sans", Arial, Helvetica, "sans-serif";
+    color:$mutedcolor;
+  }
+
+  &__share {
+    border-top: 1px solid rgba(0,0,0,.05);
+    border-bottom: 1px solid rgba(0,0,0,.05);
+    margin-top:30px;
+    padding-top:20px;
+    padding-bottom:20px;
+    margin-bottom:10px;
+  }
+  &__sharelinks {
+    margin-top:30px;
+    text-align:center;
+  }
+  &__sharelink {
+    text-decoration:none;
+    margin-left:10px;
+    margin-right:10px;
+  }
+
+  &__bio {
+    padding:20px;
+    p {
+      margin-top:20px;
+    }
+  }
+
+  &__bioavatar {
+    border-radius: 50%;
+    height:64px;
+    width:64px;
+    margin-right:10px;
+    float:left;
+  }
+
+  &__biodata {
+    margin-left:74px;
+  }
+
+  &__bioname {
+    font-size: 21px;
+    line-height: 24px;
+  }
+
+  &__biosocial {
+    margin-top:20px;
+  }
+
+  &__biosociallink {
+    display:block;
+    color: $mutedcolor;
+    text-decoration: none;
+    line-height:32px;
+    margin-top:10px;
+    margin-bottom:10px;
+  }
+
+  &__biosocialicon {
+    margin-right:10px;
+    display:inline-block;
+    vertical-align: top;
+    height:32px;
+    width:32px;
+  }
+}
+
+h2.post__cta {
+    text-align:center;
+    margin:0;
+    padding:0;
+    font-size:21px;
+    line-height: 30px;
+}

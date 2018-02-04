@@ -1,0 +1,27 @@
+.topmenu {
+  padding-left: 10px;
+  padding-right: 10px;
+  line-height:48px;
+  font-size: 16px;
+  max-width: 960px;
+  margin: 10px auto 20px;
+
+  &__item {
+    height:48px;
+    line-height: 48px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color:$mutedcolor;
+    padding-left:10px;
+    padding-right:10px;
+    display:inline-block;
+    width:40%;
+    @media screen and (min-width: $sm) {
+      width:auto;
+    }
+    &--current {
+      font-weight: 500;
+      text-decoration: underline;
+    }
+  }
+}

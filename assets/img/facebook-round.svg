@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="64"
+   height="64"
+   viewBox="0 0 64 64"
+   id="svg4221"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="facebook-round.svg">
+  <defs
+     id="defs4223" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="5.6"
+     inkscape:cx="137.30548"
+     inkscape:cy="94.158564"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="3840"
+     inkscape:window-height="2047"
+     inkscape:window-x="0"
+     inkscape:window-y="36"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata4226">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-988.36216)">
+    <path
+       style="opacity:1;fill:#3b5998;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="M 32 0 A 32 31.999973 0 0 0 0 32 A 32 31.999973 0 0 0 27.080078 63.580078 L 27.080078 40.330078 L 19.115234 40.330078 L 19.115234 31.105469 L 27.080078 31.105469 L 27.080078 24.302734 C 27.080078 16.407334 31.90187 12.107422 38.945312 12.107422 C 42.318965 12.107422 45.219321 12.358403 46.064453 12.470703 L 46.064453 20.722656 L 41.179688 20.722656 C 37.349345 20.722656 36.607422 22.541991 36.607422 25.212891 L 36.607422 31.103516 L 45.742188 31.103516 L 44.552734 40.328125 L 36.607422 40.328125 L 36.607422 63.636719 A 32 31.999973 0 0 0 64 32 A 32 31.999973 0 0 0 32 0 z "
+       transform="translate(0,988.36216)"
+       id="path4777" />
+  </g>
+</svg>

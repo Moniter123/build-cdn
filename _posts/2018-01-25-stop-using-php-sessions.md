@@ -39,10 +39,10 @@ Server -> Database: Store new session asdfasdf
 Activate Database
 Server <-- Database
 Deactivate Database
-Server --> Browser: OK, here you go, next time you come please send me the cookie PHPSESSID=asdfasdf
+Server --> Browser: OK, here you go, next time you come\n please send me the cookie PHPSESSID=asdfasdf
 Deactivate Server
 ...
-Browser -> Server: Give me this protected resource, PHPSESSID=asdfasdf
+Browser -> Server: Give me this protected resource,\n PHPSESSID=asdfasdf
 Activate Server
 Server -> Database: Retrieve session asdfasdf
 Activate Database
@@ -124,22 +124,22 @@ skinparam ParticipantPadding 20
 actor Browser
 control PHP1
 database Filesystem
-Browser -> PHP1: Hey, give me that resource please! PHPSESSID=asdfasdf
+Browser -> PHP1: Hey, give me\nthat resource please!\nPHPSESSID=asdfasdf
 Activate PHP1
 PHP1 -> Filesystem: Lock session file 'asdfasdf'
 Activate Filesystem
 PHP1 <-- Filesystem: Here you go
 Deactivate Filesystem
-PHP1 -> Filesystem: Load contents of session file 'asdfasdf'
+PHP1 -> Filesystem: Load contents of\nsession file 'asdfasdf'
 Activate Filesystem
 PHP1 <-- Filesystem: Here you go
 Deactivate Filesystem
-... PHP1 does other things to generate response, and when it's finished: ...
-PHP1 -> Filesystem: Store contents of session file 'asdfasdf'
+... PHP1 does other things\nto generate response,\nand when it's finished: ...
+PHP1 -> Filesystem: Store contents of\nsession file 'asdfasdf'
 Activate Filesystem
 PHP1 <-- Filesystem: OK, done
 Deactivate Filesystem
-PHP1 -> Filesystem: Release lock on session file 'asdfasdf'
+PHP1 -> Filesystem: Release lock on\nsession file 'asdfasdf'
 Activate Filesystem
 PHP1 <-- Filesystem: OK, done
 Deactivate Filesystem
@@ -156,31 +156,31 @@ actor Browser
 control PHP1
 control PHP2
 database Filesystem
-Browser -> PHP1: Hey, give me that resource please! PHPSESSID=asdfasdf
+Browser -> PHP1: Hey, give me that\nresource please!\nPHPSESSID=asdfasdf
 Activate PHP1
 PHP1 -> Filesystem: Lock session file 'asdfasdf'
 Activate Filesystem
 PHP1 <-- Filesystem: Here you go
 Deactivate Filesystem
-Browser -> PHP2: Hey, give me that other resource please! PHPSESSID=asdfasdf
+Browser -> PHP2: Hey, give me that\nother resource please!\nPHPSESSID=asdfasdf
 Activate PHP2
 PHP2 -> Filesystem: Lock session file asdfasdf
-note right: PHP2 now has to wait for the lock
+note right: PHP2 now has to\nwait for the lock
 Activate Filesystem
 Deactivate PHP2
-... PHP1 does other things to generate response, and when it's finished: ...
-PHP1 -> Filesystem: Release lock on session file 'asdfasdf'
+... PHP1 does other things\nto generate response,\nand when it's finished: ...
+PHP1 -> Filesystem: Release lock\non session file 'asdfasdf'
 Activate Filesystem
 PHP1 <-- Filesystem: OK, done
 Deactivate Filesystem
 Browser <-- PHP1: Here's your content.
 Deactivate PHP1
 PHP2 <-- Filesystem: Here you go
-note right: PHP2 is now free to continue
+note right: PHP2 is now\nfree to continue
 Deactivate Filesystem
 Activate PHP2
-... PHP2 does other things to generate response, and when it's finished: ...
-PHP2 -> Filesystem: Release lock on session file 'asdfasdf'
+... PHP2 does other things to\ngenerate response,\nand when it's finished: ...
+PHP2 -> Filesystem: Release lock\non session file 'asdfasdf'
 Activate Filesystem
 PHP2 <-- Filesystem: OK, done
 Deactivate Filesystem
@@ -201,29 +201,29 @@ actor Browser
 control PHP1
 control PHP2
 database MongoDB
-Browser -> PHP1: Hey, give me that resource please! PHPSESSID=asdfasdf
+Browser -> PHP1: Hey, give me\nthat resource please!\nPHPSESSID=asdfasdf
 Activate PHP1
-PHP1 -> MongoDB: Give me the data for sesson 'asdfasdf'
+PHP1 -> MongoDB: Give me the data\nfor sesson 'asdfasdf'
 Activate MongoDB
 PHP1 <-- MongoDB: Here you go
 Deactivate MongoDB
-Browser -> PHP2: Hey, give me that other resource please! PHPSESSID=asdfasdf
+Browser -> PHP2: Hey, give me\nthat other resource please!\nPHPSESSID=asdfasdf
 Activate PHP2
-PHP2 -> MongoDB: Give me the data for session 'asdfasdf'
+PHP2 -> MongoDB: Give me the data\nfor session 'asdfasdf'
 Activate MongoDB
 PHP2 <-- MongoDB: Here you go
 Deactivate MongoDB
-... Both PHP 1 and PHP 2 do their thing ...
-PHP1 -> MongoDB: Write session data for 'asdfasdf'
+... Both PHP 1 and PHP 2\ndo their thing ...
+PHP1 -> MongoDB: Write session data\nfor 'asdfasdf'
 Activate MongoDB
 PHP1 <-- MongoDB: OK, done
 Deactivate MongoDB
 Browser <-- PHP1: Here's your content.
 Deactivate PHP1
-PHP2 -> MongoDB: Write session data for 'asdfasdf'
+PHP2 -> MongoDB: Write session data\nfor 'asdfasdf'
 Activate MongoDB
 PHP2 <-- MongoDB: Here you go
-note right: PHP2 is now overwriting any changes PHP1 may have made.
+note right: PHP2 is now overwriting\nany changes PHP1\nmay have made.
 Deactivate MongoDB
 Browser <-- PHP2: Here's your content.
 Deactivate PHP2

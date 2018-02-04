@@ -1,0 +1,75 @@
+.header {
+  margin-top:10px;
+  padding-left:10px;
+  padding-right:10px;
+  margin-left:auto;
+  margin-right:auto;
+  max-width:960px;
+  @media screen and (min-width: $sm) {
+    display:flex;
+  }
+
+  &__sitename {
+    text-decoration: none;
+    color: $textcolor;
+    display: block;
+    text-align:center;
+    @media screen and (min-width: $sm) {
+      text-align: left;
+      flex:1;
+    }
+  }
+
+  &__avatar {
+    height:48px;
+    width:48px;
+    border-radius: 50%;
+    margin-right:10px;
+    @media screen and (min-width: $sm) {
+      height:64px;
+      width:64px;
+    }
+  }
+
+  &__name {
+    line-height:48px;
+    height:48px;
+    font-size: 24px;
+    display: inline-block;
+    vertical-align: top;
+    @media screen and (min-width: $sm) {
+      line-height: 64px;
+      height:64px;
+    }
+  }
+
+  &__subscribe {
+    text-align:center;
+    @media screen and (min-width: $sm) {
+      text-align: right;
+      flex:1;
+    }
+  }
+
+  &__sociallink {
+    text-decoration: none;
+    height:48px;
+    display: inline-block;
+    line-height: 48px;
+    margin-left:10px;
+    margin-right:10px;
+    @media screen and (min-width: $sm) {
+      height:64px;
+      line-height: 64px;
+      margin-left:5px;
+      margin-right:5px;
+    }
+  }
+
+  &__socialicon {
+    height:32px;
+    width:32px;
+    vertical-align: middle;
+    text-decoration: none;
+  }
+}
