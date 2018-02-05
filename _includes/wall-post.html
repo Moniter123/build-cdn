@@ -6,7 +6,7 @@
     {% endif %}
     <h2 class="wall__title" itemprop="name headline"><a href="{{post.url}}" itemprop="mainEntityOfPage">{{ post.title | escape }}</a></h2>
     <div class="wall__excerpt">
-        <a href="{{post.url}}">{{post.excerpt}}</a>
+        <a href="{{post.url}}">{{post.excerpt | truncate:180}}</a>
     </div>
     {% assign date_format = "%b %-d, %Y" %}
     <script type="application/ld+json">
