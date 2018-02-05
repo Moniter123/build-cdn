@@ -1,7 +1,7 @@
 <article class="wall__post wall__post--noimage">
     <div class="wall__categories--noimage">
         {% for category in post.categories %}
-            <a href="/{{category}}" class="wall__category--noimage">{{ category | replace:"blog","Blog" | replace:"speaking","Public Speaking" }}</a>
+            <a href="/{{category}}" class="wall__category--noimage">{{ category | replace:"blog","Blog" | replace:"speaking","Talk" | replace:"workshops","Workshop" }}</a>
         {% endfor %}
     </div>
     {% include wall-post-content.html %}

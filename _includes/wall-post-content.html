@@ -1,3 +1,4 @@
+{% assign date_format = "%b %-d, %Y" %}
 <h2 class="wall__title" itemprop="name headline"><a href="{{post.url}}" itemprop="mainEntityOfPage">{{ post.title | escape }}</a></h2>
 {% if post.eventStartDate %}
 <div class="wall__eventdata">
@@ -13,8 +14,53 @@
 <div class="wall__excerpt">
     <a href="{{post.url}}">{{post.excerpt | truncate:180}}</a>
 </div>
-{% assign date_format = "%b %-d, %Y" %}
 <script type="application/ld+json">
+{% if post.eventStartDate %}
+{
+  "@context": "http://schema.org",
+  "@type": "Event",
+  "name": "{{ page.title }}",
+  "startDate": "{{ page.talkStartDate }}",
+  "endDate": "{{ page.talkEndDate }}",
+  "url": "{{ page.url | absolute_url }}",
+  "inLanguage": "{{ page.inLanguage}}",
+  "superEvent": {
+    "@context": "http://schema.org",
+    "@type": "Event",
+    "name": "{{ page.eventName }}",
+    "url": "{{ page.eventUrl }}",
+    "startDate": "{{ page.eventStartDate }}",
+    "endDate": "{{ page.eventEndDate }}",
+    "location": {
+      "@type": "Place",
+      "name": "{{ page.eventLocationName }}",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "{{ page.eventStreetAddress }}",
+        "addressLocality": "{{ page.eventCity }}",
+        "postalCode": "{{ page.eventPostalCode }}",
+        "addressCountry": "{{ page.eventCountryCode }}"
+      }
+    }
+  },
+  "location": {
+    "@type": "Place",
+    "name": "{{ page.eventLocationName }}",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "{{ page.eventStreetAddress }}",
+      "addressLocality": "{{ page.eventCity }}",
+      "postalCode": "{{ page.eventPostalCode }}",
+      "addressCountry": "{{ page.eventCountryCode }}"
+    }
+  },
+  "performer": {
+    "@type": "Person",
+    "name": "Janos Pasztor",
+    "url": "https://pasztor.at/"
+  }
+}
+{% else %}
 {
   "@context":"http://schema.org",
   "@type":"BlogPosting",
@@ -27,4 +73,5 @@
     "url": "https://pasztor.at/"
   }
 }
+{% endif %}
 </script>

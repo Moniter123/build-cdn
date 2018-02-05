@@ -136,6 +136,14 @@
       </a>
 
       {% assign current = '' %}
+      {% if page.url == '/workshops' or page.url contains '/workshops/' %}
+      {% assign current = 'topmenu__item--current' %}
+      {% endif %}
+      <a href="/workshops" class="topmenu__item {{current}}">
+        Workshops
+      </a>
+
+      {% assign current = '' %}
       {% if page.url == '/blog' or page.url contains '/blog/' %}
       {% assign current = 'topmenu__item--current' %}
       {% endif %}

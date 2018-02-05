@@ -1,7 +1,7 @@
 <article class="{% if post.preview %}wall__post{%else%}wall__post wall__post--noimage{%endif%}">
     <div class="{% if post.preview %}wall__categories{%else%}wall__categories--noimage{%endif%}">
         {% for category in post.categories %}
-            <a href="/{{category}}" class="{% if post.preview %}wall__category{%else%}wall__category--nomimage{%endif%}">{{ category | replace:"blog","Blog" | replace:"speaking","Public Speaking" }}</a>
+            <a href="/{{category}}" class="{% if post.preview %}wall__category{%else%}wall__category--noimage{%endif%}">{{ category | replace:"blog","Blog" | replace:"speaking","Talk" | replace:"workshops","Workshop" }}</a>
         {% endfor %}
     </div>
     {% if post.preview %}
