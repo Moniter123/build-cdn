@@ -3,7 +3,7 @@ layout:        talk
 title:         "Getting Help in the Tech Community"
 date:          2017-11-13 00:00:00
 categories:    speaking
-excerpt:       Getting help in the IT or tech community as a beginner can be tricky. Lots of unwritten rules and expectations, dangerous waters to navigate. I spoke on this topic at the IntoTech Conference 2017, the slides are available below. 
+excerpt:       Getting help in the IT or tech community as a beginner can be tricky. Lots of unwritten rules and expectations, dangerous waters to navigate. 
 external_link: https://into.technology/
 slides:        /assets/slides/Getting%20help%20in%20the%20IT%20community.pdf
 inLanguage:    EN
@@ -21,4 +21,4 @@ eventEndDate:       2017-11-11T17:00:00Z
 eventUrl:           https://into.technology/
 ---
 
-Getting help in the IT or tech community as a beginner can be tricky. Lots of unwritten rules and expectations, dangerous waters to navigate. I spoke on this topic at the IntoTech Conference 2017, the slides are available below.
+I spoke on this topic at the IntoTech Conference 2017, the slides are available below.

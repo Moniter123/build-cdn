@@ -12,8 +12,8 @@ googleimage:   /assets/img/functional-object-oriented-programming.png
 twitter_card:  summary_large_image
 ---
 
-Does the title strike you as strange? Do you think functional and object oriented programming are two fundamentally
-contradicting paradigms? I think not so much. I want to marry the good parts from both and create a paradigm that brings
+Here's the thing: I think functional programming is a good thing, but is lacking a few things that I found to be very
+good tools. So, I want to marry the good parts from both and create a paradigm that brings
 along the best of both worlds. Join me on a trip through paradigm-land!
 
 Before we start into the general idea, let's take a look at the good and the bad from both worlds. Let's take a closer

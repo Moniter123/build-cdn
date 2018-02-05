@@ -7,8 +7,6 @@ excerpt:       "Defense against spam has always been a hassle. Statistical filte
 ---
 
 {% raw %}
-Defense against spam has always been a hassle. Statistical filters only get you so far and they consume a LOT of resources. For exactly that reason I like to employ basic checking policies before accepting e-mail at all. These policies have gotten me pretty far and my false positive rate is pretty low.  
-
 ## Reverse DNS checks
 
 The most basic checks almost everybody employs are the reverse DNS checks. While “normal” DNS (A, AAAA, etc) records tell you the IP address for a domain name (among others), reverse DNS entries (PTR records) tell you what the primary domain name for an IP address is.

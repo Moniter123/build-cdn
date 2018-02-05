@@ -7,8 +7,6 @@ excerpt:       SpamAssassin is a frequently used companion for Exim. However, mo
 ---
 
 {% raw %}
-SpamAssassin is a frequently used companion for Exim. However, most people set it up in a synchronous manner – spam is checked directly when the SMTP session is opened. While this is certainly a valid technique, it has it’s drawbacks. It leaves the server vulnerable to DOS attacks because the spam filtering is a big resource hog. Having SpamAssassin headers in the mail from the remote servers is also an issue, because the `$h_X-Spam-*` variables will start misbehaving suddenly.
-
 For the purpose of this article I am going to assume you are fairly familiar with writing your own Exim configuration and you are also able to set up your SpamAssassin configuration. If you lack either of these abilities, please read up on both topics first.  
 
 ## Setting up SpamAssassin

@@ -11,9 +11,6 @@ googleimage:   /assets/img/why-docker-matters-and-why-you-should-care.png
 twitter_card:  summary_large_image
 ---
 
-Have you ever wondered what all the fuss is about with this Docker thing? Are you having a hard time convincing your
-colleagues to take it seriously? Well then, read on, I'm going to lay it all out for you.
-
 ## The Good Old Days
 
 Let's go back in time, oh, ten-fifteen years. You see a sysadmin (the webmaster had died by then) installing a server by

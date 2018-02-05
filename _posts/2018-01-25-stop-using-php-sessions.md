@@ -3,16 +3,13 @@ layout:        post
 title:         "Stop using PHP sessions!"
 date:          2018-01-25 00:00:00
 categories:    blog
-excerpt:       "Sessions in PHP are fraught with problems and few developers know it."     
+excerpt:       "OK, that title may be a little provocative, but PHP sessions have a fatal flaw that make them problematic with modern-day web applications. Let's take a look."     
 preview:       /assets/img/stop-using-php-sessions.png
 fbimage:       /assets/img/stop-using-php-sessions.png
 twitterimage:  /assets/img/stop-using-php-sessions.png
 googleimage:   /assets/img/stop-using-php-sessions.png
 twitter_card:  summary_large_image
 ---
-
-OK, that title may be a little provocative, but PHP sessions have a fatal flaw that make them problematic with
-modern-day web applications. Let's take a look.
 
 ## How do PHP sessions work?
 

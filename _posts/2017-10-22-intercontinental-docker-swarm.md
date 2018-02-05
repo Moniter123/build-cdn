@@ -11,9 +11,6 @@ googleimage:   /assets/img/intercontinental-docker-swarm.png
 twitter_card:  summary_large_image
 ---
 
-Docker is the new hotness. Swarm is an even newer, even hotter thing. The question is: will it blend? Can it
-run spanning multiple continents?
-
 ## Preparing AWS
 
 To prepare AWS for this task, we will add 3 EC2 instances in different regions and set up the security groups so that

@@ -3,7 +3,7 @@ layout:        talk
 title:         "How I built my own CDN for less than 100$ a month"
 date:          2017-09-25 00:00:00
 categories:    speaking
-excerpt:       In my quest for the fastest website on the whole internet, I ventured into the unknown and started building my own CDN. I spoke live on the 7<sup>th</sup> of November on the Hungarian Virtualization Day. The slides are available below.
+excerpt:       In my quest for the fastest website on the whole internet, I ventured into the unknown and started building my own CDN.
 external_link: https://vday.hu/2017/
 slides:        /assets/slides/CDN.pdf
 inLanguage:    EN
@@ -21,4 +21,4 @@ eventEndDate:       2017-11-07T15:00:00Z
 eventUrl:           https://vday.hu/2017/
 ---
 
-In my quest for the fastest website on the whole internet, I ventured into the unknown and started building my own CDN. I spoke live on the 7<sup>th</sup> of November on the Hungarian Virtualization Day. The slides are available below.
+I spoke live on the 7<sup>th</sup> of November on the Hungarian Virtualization Day. The slides are available below.

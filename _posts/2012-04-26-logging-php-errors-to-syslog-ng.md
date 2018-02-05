@@ -6,8 +6,6 @@ categories:    blog
 excerpt:       Ever so often I get to set up hosts for running PHP. When running a load balanced solution, you have more hosts and reading logs gets complicated, development gets tedious. So what helps, is a central logging server. This is pretty easy to set up with syslog-ng, however PHP has a annoying habit of logging everything with the NOTICE error level.
 ---
 
-Ever so often I get to set up hosts for running PHP. When running a load balanced solution, you have more hosts and reading logs gets complicated, development gets tedious. So what helps, is a _central logging server._ This is pretty easy to set up with syslog-ng, however PHP has a annoying habit of logging everything with the _NOTICE_ error level.
-
 What we need to do is change the error level. Unfortunately the syslog-ng OSE documentation states:
 
 > The following macros in syslog-ng OSE are hard macros and cannot be modified: BSDTAG, CONTEXT_ID, DATE, DAY, FACILITY_NUM, FACILITY, FULLDATE, HOUR, ISODATE, LEVEL_NUM, **LEVEL**, MIN, MONTH_ABBREV, MONTH_NAME, MONTH, MONTH_WEEK, , PRIORITY, PRI, SDATA, SEC, SEQNUM, SOURCEIP, STAMP, TAG, TAGS, TZOFFSET, TZ, UNIXTIME, WEEK_DAY_ABBREV, WEEK_DAY_NAME, WEEK_DAY, WEEK, YEAR_DAY, YEAR.

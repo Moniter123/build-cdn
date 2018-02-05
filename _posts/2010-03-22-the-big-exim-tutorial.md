@@ -7,8 +7,6 @@ excerpt:       In September 2009 I created the big Exim tutorial consisting of 5
 ---
 
 {% raw %}
-In September 2009 I created the big Exim tutorial consisting of 5 parts on the [Hungarian Unix Portal](http://hup.hu/){:target="_blank"}{:rel="noopener noreferrer"}. In January 2010, I transfered it to my Hungarian site. Now I’m translating it to English. If you find any mistakes, please feel free to [contact me](/contact).
-
 ## The exim.conf structure
 
 ### Exim basics

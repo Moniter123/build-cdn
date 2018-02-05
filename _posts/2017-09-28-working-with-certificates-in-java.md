@@ -11,8 +11,6 @@ googleimage:   /assets/img/working-with-certificates-in-java.jpg
 twitter_card:  summary_large_image
 ---
 
-Let's face it, the Java crypto API is a mess. It is extremely hard to use, and very confusing. Let's try and make sense of this sorry excuse for an API.
-
 ## Install Bouncy Castle
 
 Before we continue, you really really (really) want to install [Bouncy Castle](https://www.bouncycastle.org/){:target="_blank"}{:rel="noopener noreferrer"}. It provides many much needed implementations and this tutorial will assume you are using it.

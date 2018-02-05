@@ -6,8 +6,6 @@ categories:    blog
 excerpt:       FTP has been around since the early days of the internet. Even though it’s old and cranky a lot of sysadmins, especially those just getting into managing a server, still don’t know anything else. FTP is outdated, has a lot of problems and sometimes it can be outright dangerous, however it’s wide spread acceptance as an easy way for transferring files makes it hard to switch to alternative protocols. If you have a choice, don’t use it. I’ll show you why.
 ---
 
-FTP has been around since the early days of the internet. Even though it’s old and cranky a lot of sysadmins, especially those just getting into managing a server, still don’t know anything else.
-
 FTP is outdated, has a lot of problems and sometimes it can be outright dangerous, however it’s wide spread acceptance as an easy way for transferring files makes it hard to switch to alternative protocols. If you have a choice, don’t use it. I’ll show you why.  
 
 ### Background
