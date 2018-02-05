@@ -4,6 +4,7 @@ title:         "Dear business owner, your JavaScript is killing your site perfor
 date:          2018-01-31 00:00:00
 categories:    blog
 excerpt:       "Google Tag Manager is probably the worst tool that happened to the web in the last 10 years. Yes, you read me right. Your shiny marketing tools are murdering your conversions."     
+preview:       /assets/img/heres-why-your-site-is-slow.png
 fbimage:       /assets/img/heres-why-your-site-is-slow.png
 twitterimage:  /assets/img/heres-why-your-site-is-slow.png
 googleimage:   /assets/img/heres-why-your-site-is-slow.png

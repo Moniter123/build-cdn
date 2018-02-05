@@ -5,6 +5,7 @@ date:          2017-10-19 00:00:00
 categories:    blog
 excerpt:       Does the title strike you as strange? Do you think functional and object oriented programming are two
                fundamentally contradicting paradigms? I don't think so.     
+preview:       /assets/img/functional-object-oriented-programming.png
 fbimage:       /assets/img/functional-object-oriented-programming.png
 twitterimage:  /assets/img/functional-object-oriented-programming.png
 googleimage:   /assets/img/functional-object-oriented-programming.png

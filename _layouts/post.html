@@ -57,6 +57,12 @@ layout: default
             </span>
         </header>
 
+        {% if page.preview %}
+            <div class="post__preview">
+                <img src="{{ page.preview }}" alt="" />
+            </div>
+        {% endif %}
+
         <div class="post__content" itemprop="articleBody">
             {{ content }}
         </div>

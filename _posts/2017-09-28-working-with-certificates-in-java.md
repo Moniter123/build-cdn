@@ -4,6 +4,7 @@ title:         "Working with Certificates in Java"
 date:          2017-09-28 00:00:00
 categories:    blog
 excerpt:       Let's face it, the Java crypto API is a mess. It is extremely hard to use, and very confusing. Let's try and make sense of this sorry excuse for an API.
+preview:       /assets/img/working-with-certificates-in-java.jpg
 fbimage:       /assets/img/working-with-certificates-in-java.jpg
 twitterimage:  /assets/img/working-with-certificates-in-java.jpg
 googleimage:   /assets/img/working-with-certificates-in-java.jpg

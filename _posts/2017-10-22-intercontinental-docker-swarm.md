@@ -4,6 +4,7 @@ title:         "Intercontinental Docker Swarm"
 date:          2017-10-22 00:00:00
 categories:    blog
 excerpt:       "Docker is the new hotness. Swarm is an even newer, even hotter thing. The question is: will it blend? Can it run spanning multiple continents?"     
+preview:       /assets/img/intercontinental-docker-swarm.png
 fbimage:       /assets/img/intercontinental-docker-swarm.png
 twitterimage:  /assets/img/intercontinental-docker-swarm.png
 googleimage:   /assets/img/intercontinental-docker-swarm.png
