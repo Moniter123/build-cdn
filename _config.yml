@@ -85,7 +85,7 @@ responsive_image:
 
   # [Optional, Default: true]
   # Whether or not to save the generated assets into the source folder.
-  save_to_source: false
+  save_to_source: true
 
   # [Optional, Default: false]
   # Cache the result of {% responsive_image %} and {% responsive_image_block %}
