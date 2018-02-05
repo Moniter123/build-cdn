@@ -107,10 +107,10 @@ Developer Tools. Find out what's keeping the browser from finishing the load and
 ## Resist the Urge
 
 Google Tag Manager is probably the worst thing that happened to the web in the last 10 years. It makes it incredibly 
-easy to include some third party script as a quick fix or to scratch an itch. It's main appeal is that you don't need
+easy to include some third party script as a quick fix or to scratch an itch. Its main appeal is that you don't need
 a developer to do it.
 
-However, you are also missing our on the feedback a developer might give you on the script you are about to include.
+However, you are also missing out on the feedback a developer might give you on the script you are about to include.
 Maybe it's shit, maybe not. Maybe it works nicely with your existing scripts, maybe it doesn't. Slowly, over time,
 things can creep in and your page can get slower and slower, leaving you wondering how you ended up here.
 
