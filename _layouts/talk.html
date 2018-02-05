@@ -55,7 +55,7 @@ layout: default
         "streetAddress": "{{ page.eventStreetAddress }}",
         "addressLocality": "{{ page.eventCity }}",
         "postalCode": "{{ page.eventPostalCode }}",
-        "addressCountry": "{{ page.eventCountry }}"
+        "addressCountry": "{{ page.eventCountryCode }}"
       }
     }
   },
@@ -67,7 +67,7 @@ layout: default
       "streetAddress": "{{ page.eventStreetAddress }}",
       "addressLocality": "{{ page.eventCity }}",
       "postalCode": "{{ page.eventPostalCode }}",
-      "addressCountry": "{{ page.eventCountry }}"
+      "addressCountry": "{{ page.eventCountryCode }}"
     }
   },
   "performer": {
@@ -82,22 +82,24 @@ layout: default
 <div class="post">
 
     <article class="content" >
-        <header class="post-header">
-            <h1 class="post-title">{{ page.title | escape }}{% if page.eventName %} <br /> {{ page.eventName }}{% endif %}{% if page.inLanguage and page.inLanguage != "EN" %} ({{ page.inLanguage }}){% endif %}</h1>
-            <span class="meta">
-                <span class="line">
-                    by <span><a
-                        href="https://pasztor.at/" itemprop="url"><span itemprop="name">Janos Pasztor</span></a></span>
+        <header class="post__header">
+            <h1 class="post__title">{{ page.title | escape }}</h1>
+            <span class="post__meta">
+                <span class="post__line">
+                    {% if page.eventName %}{{ page.eventName }}{% endif %}{% if page.inLanguage and page.inLanguage != "EN" %} ({{ page.inLanguage }}){% endif %}
                 </span>
                 &bullet;
-                <span class="line">
-                    published <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: date_format }}</time>
+                <span class="post__line">
+                    <time datetime="{{ page.eventStartDate | date_to_xmlschema }}">{{ page.eventStartDate | date: date_format }}</time>
+                </span>
+                &bullet;
+                <span class="post__line">
+                    {{ page.eventCity }}, {{ page.eventCountry }}
                 </span>
             </span>
-
         </header>
 
-        <div class="post-content">
+        <div class="post__content">
             {{ content }}
         </div>
 
@@ -115,68 +117,6 @@ layout: default
             </div>
         {% endif %}
     </article>
-
-    <div class="post__share">
-        <h2 class="post__cta">
-            Like what you read? Why not share it?
-        </h2>
-        <div class="post__sharelinks">
-            <a title="Share on Facebook"
-               target="_blank" rel="noopener noreferrer"
-               href="https://www.facebook.com/dialog/share?href={{ page.url | absolute_url | url_encode }}&amp;app_id=1916868571905927&amp;display=page&amp;redirect_uri={{ page.url | absolute_url | url_encode }}"
-               class="post__sharelink social__facebook">
-                <img src="{% base64 /assets/share-icons/facebook.svg %}" alt="Share on Facebook" height="36" width="36" />
-            </a>
-            <a title="Share on Messenger"
-               target="_blank" rel="noopener noreferrer"
-               href="https://www.facebook.com/dialog/send?link={{ page.url | absolute_url | url_encode }}&amp;app_id=1916868571905927&amp;redirect_uri={{ page.url | absolute_url | url_encode }}" class="post__sharelink social__messenger">
-                <img src="{% base64 /assets/share-icons/messenger.svg %}" alt="Share on Messenger" height="36" width="36" />
-            </a>
-            <a title="Share on Twitter"
-               target="_blank" rel="noopener noreferrer"
-               href="https://twitter.com/intent/tweet?url={{ page.url | absolute_url | url_encode }}&amp;text={{ page.title | url_encode }}&amp;via=janoszen"
-               class="post__sharelink social__twitter">
-                <img src="{% base64 /assets/share-icons/twitter.svg %}" alt="Share on Twitter" height="36" width="36" />
-            </a>
-            <a title="Share on Google+"
-               target="_blank" rel="noopener noreferrer"
-               href="https://plus.google.com/share?url={{ page.url | absolute_url | url_encode }}&amp;hl=en" class="post__sharelink social__gplus">
-                <img src="{% base64 /assets/share-icons/google-plus.svg %}" alt="Share on Google+" height="36" width="36" />
-            </a>
-            <a title="Share on Tumblr"
-               target="_blank" rel="noopener noreferrer"
-               href="https://tumblr.com/widgets/share/tool?canonicalUrl={{ page.url | absolute_url | url_encode }}" class="post__sharelink social__tumblr">
-                <img src="{% base64 /assets/share-icons/tumblr.svg %}" alt="Share on Tumblr" height="36" width="36" />
-            </a>
-
-            <a title="Share on Reddit"
-               target="_blank" rel="noopener noreferrer"
-               href="https://www.reddit.com/submit?url={{ page.url | absolute_url | url_encode }}&amp;title={{ page.title | url_encode }}" class="post__sharelink social__reddit">
-                <img src="{% base64 /assets/share-icons/reddit.svg %}" alt="Share on Reddit" height="36" width="36" />
-            </a>
-
-            <a title="Share on Linkedin"
-               target="_blank" rel="noopener noreferrer"
-               href="https://www.linkedin.com/shareArticle?mini=true&url={{ page.url | absolute_url | url_encode }}" class="post__sharelink social__linkedin">
-                <img src="{% base64 /assets/share-icons/linkedin.svg %}" alt="Share on Linkedin" height="36" width="36" />
-            </a>
-            <a title="Save on GetPocket"
-               target="_blank" rel="noopener noreferrer"
-               href="https://getpocket.com/edit?url={{ page.url | absolute_url | url_encode }}" class="post__sharelink social__getpocket">
-                <img src="{% base64 /assets/share-icons/pocket.svg %}" alt="Save on GetPocket" height="36" width="36" />
-            </a>
-            <a title="Share on VKontakte"
-               target="_blank" rel="noopener noreferrer"
-               href="http://vk.com/share.php?url={{ page.url | absolute_url | url_encode }}&amp;title={{ page.title | url_encode }}" class="post__sharelink social__vkontakte">
-                <img src="{% base64 /assets/share-icons/vk.svg %}" alt="Share on VKontakte" height="36" width="36" />
-            </a>
-            <a title="Share on Wordpress"
-               target="_blank" rel="noopener noreferrer"
-               href="http://wordpress.com/press-this.php?u={{ page.url | absolute_url | url_encode }}&amp;title={{ page.title | url_encode }}" class="post__sharelink social__wordpress">
-                <img src="{% base64 /assets/share-icons/wordpress.svg %}" alt="Share on Wordpress" height="36" width="36" />
-            </a>
-        </div>
-    </div>
 
     {% include share.html %}
 </div>

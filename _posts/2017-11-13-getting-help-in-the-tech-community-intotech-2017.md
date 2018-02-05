@@ -14,7 +14,8 @@ eventLocationName:  Impact Hub Vienna
 eventStreetAddress: Lindengasse 56
 eventCity:          Wien
 eventPostalCode:    1070
-eventCountry:       AT
+eventCountry:       Austria
+eventCountryCode:   AT
 eventStartDate:     2017-11-11T09:00:00Z
 eventEndDate:       2017-11-11T17:00:00Z
 eventUrl:           https://into.technology/

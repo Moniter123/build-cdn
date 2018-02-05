@@ -8,14 +8,14 @@ description: Who is behind the content and hosting of pasztor.at?
 
 ## Content
 
-**Janos Pasztor**
-Graf-Starhemberg-Gasse 47/6
-1040 Wien
+**Janos Pasztor**<br />
+Graf-Starhemberg-Gasse 47/6<br />
+1040 Wien<br />
 Austria
 
 ## Hosting
 
-**Opsbears e.U.**
-Graf-Starhemberg-Gasse 47/6
-1040 Wien
+**Opsbears e.U.**<br />
+Graf-Starhemberg-Gasse 47/6<br />
+1040 Wien<br />
 Austria

@@ -14,7 +14,8 @@ eventLocationName:  Magyar Telekom, Tölösi Konferencia Központ
 eventStreetAddress: Krisztina körút 55.
 eventCity:          Budapest
 eventPostalCode:    1013
-eventCountry:       HU
+eventCountry:       Hungary
+eventCountryCode:   HU
 eventStartDate:     2017-11-07T08:30:00Z
 eventEndDate:       2017-11-07T15:00:00Z
 eventUrl:           https://vday.hu/2017/

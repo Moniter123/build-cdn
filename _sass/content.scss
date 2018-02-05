@@ -12,7 +12,7 @@
     line-height:20px;
   }
 
-  pre, p, h2, h3, h4, h5, h6, table, figure {
+  pre, p, h2, h3, h4, h5, h6, table, figure, ul, ol {
     margin-top:30px;
   }
 
@@ -37,6 +37,9 @@
   }
   table {
     border-collapse: collapse;
+  }
+  tbody th {
+    text-align:left;
   }
   th,td {
     padding:10px;

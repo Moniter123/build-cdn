@@ -13,7 +13,8 @@ eventLocationName:  OZAS shopping and entertainment center
 eventStreetAddress: Ozo str. 18
 eventCity:          Vilnius
 eventPostalCode:    08243
-eventCountry:       LT
+eventCountry:       Lithuania
+eventCountryCode:   LT
 eventStartDate:     2018-03-14T09:00:00Z
 eventEndDate:       2018-03-15T16:00:00Z
 eventUrl:           http://devopspro.lt/

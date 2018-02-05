@@ -73,6 +73,21 @@
     height:32px;
     width:32px;
   }
+
+  &__links {
+    margin-top:30px;
+  }
+
+  &__link {
+    border:1px solid #03a87c;
+    color:#03a87c;
+    border-radius:3px;
+    text-decoration: none;
+    margin-right:10px;
+    font-size:15px;
+    padding: 5px 14px;
+    font-family: Roboto, "Open Sans", Arial, Helvetica, "sans-serif";
+  }
 }
 
 h2.post__cta {
@@ -81,4 +96,9 @@ h2.post__cta {
     padding:0;
     font-size:21px;
     line-height: 30px;
+}
+
+a.post__link {
+  text-decoration: none;
+  color:#03a87c;
 }

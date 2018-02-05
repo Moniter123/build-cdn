@@ -13,7 +13,8 @@ eventLocationName:  EPAM HQ
 eventStreetAddress: Futó utca 47-53
 eventCity:          Budapest
 eventPostalCode:    1082
-eventCountry:       HU
+eventCountry:       Hungary
+eventCountryCode:   HU
 eventStartDate:     2017-11-24T18:00:00Z
 eventEndDate:       2017-11-24T21:00:00Z
 eventUrl:           https://www.meetup.com/Letscode-hu-meetup/
