@@ -6,7 +6,13 @@
     </div>
     {% if post.preview %}
         <a href="{{post.url}}" class="wall__image">
-            <img src="{{ post.preview }}" alt="" />
+            <picture>
+                <source media="(max-width: 465px)" srcset="{{ post.preview | replace:'/assets/img', '/assets/resized/465' }}" />
+                <source media="(min-width: 466px) and (max-width:768px)" srcset="{{ post.preview | replace:'/assets/img', '/assets/resized/768' }}" />
+                <source media="(min-width: 769px) and (max-width:959px)" srcset="{{ post.preview | replace:'/assets/img', '/assets/resized/960' }}" />
+                <source media="(min-width: 960px)" srcset="{{ post.preview | replace:'/assets/img', '/assets/resized/465' }}" />
+                <img src="{{ post.preview | replace:'/assets/img', '/assets/resized/960' }}" alt="" />
+            </picture>
         </a>
     {% endif %}
     {% include wall-post-content.html %}

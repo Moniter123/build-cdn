@@ -1,0 +1,7 @@
+<picture>
+    http://localhost:4000/assets/resized/960/heres-why-your-site-is-slow.png
+    {% for i in resized %}
+    <source media="(min-width: {{ i.width }}px)" srcset="/{{ i.path }}">
+    {% endfor %}
+    <img src="/{{ path }}">
+</picture>

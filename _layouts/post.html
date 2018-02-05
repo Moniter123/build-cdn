@@ -62,7 +62,12 @@ layout: default
 
         {% if page.preview %}
             <div class="post__preview">
-                <img src="{{ page.preview }}" alt="" />
+                <picture>
+                    <source media="(max-width: 465px)" srcset="{{ page.preview | replace:'/assets/img', '/assets/resized/465' }}" />
+                    <source media="(min-width: 466px) and (max-width:768px)" srcset="{{ page.preview | replace:'/assets/img', '/assets/resized/768' }}" />
+                    <source media="(min-width: 769px)" srcset="{{ page.preview | replace:'/assets/img', '/assets/resized/960' }}" />
+                    <img src="{{ page.preview | replace:'/assets/img', '/assets/resized/960' }}" alt="" />
+                </picture>
             </div>
         {% endif %}
 
