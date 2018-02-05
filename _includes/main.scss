@@ -9,6 +9,9 @@ $bgshaded: rgba(0,0,0,.05);
 $sm:768px;
 $md:960px;
 
+$font-serif: Georgia,Cambria,"Times New Roman",Times,serif;
+$font-sans-serif: Roboto, "Open Sans", "Lucida Grande","Lucida Sans Unicode","Lucida Sans", Helvetica, Arial, "sans-serif";
+
 @import "reset";
 @import "syntax";
 @import "header";
@@ -21,7 +24,7 @@ $md:960px;
 
 
 body {
-  font-family: Roboto, "Open Sans", Arial, Helvetica, "sans-serif";
+  font-family: $font-sans-serif;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

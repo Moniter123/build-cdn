@@ -16,25 +16,25 @@
     <meta property="og:title" content="{{page.title}}"/>
     <meta property="fb:admins" content="janoszen" />
     <meta property="fb:app_id" content="1916868571905927" />
-    <meta property="og:image" content="{{ page.fbimage | default: "/assets/avatar.jpg" | absolute_url }}" />
+    <meta property="og:image" content="{{ page.fbimage | default: "/assets/img/social-share-default.png" | absolute_url }}" />
     <meta property="og:url" content="{{ page.url | replace:'/index.html','' | absolute_url }}" />
     <meta property="og:description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}" />
     {% if page.categories %}
       <meta property="og:type" content="article" />
       <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}"/>
       <meta property="article:author" content="https://facebook.com/janoszen"/>
-      <meta property="article:publisher" content="https://facebook.com/janoszen"/>
+      <meta property="article:publisher" content="https://facebook.com/opsbears"/>
       <meta property="article:tag" content="{{ page.categories | sort | join: ', ' }}"/>
     {% else %}
       <meta property="og:type" content="website" />
     {% endif %}
     <link rel="apple-touch-icon-precomposed" href="{{ "/assets/avatar.jpg" | absolute_url }}" />
     <link rel="icon" href="{% base64 /assets/avatar-32.png %}" />
-    <meta name="twitter:card" content="{{ page.twitter_card | default: "summary" }}" />
+    <meta name="twitter:card" content="{{ page.twitter_card | default: "summary_large_image" }}" />
     <meta name="twitter:description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}" />
     <meta name="twitter:site" content="@janoszen" />
     <meta name="twitter:title" content="{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}" />
-    <meta name="twitter:image" content="{{ page.twitterimage | default: "/assets/avatar.jpg" | absolute_url }}" />
+    <meta name="twitter:image" content="{{ page.twitterimage | default: "/assets/img/social-share-default.png" | absolute_url }}" />
 
     <meta name="skype_toolbar" content="skype_toolbar_parser_compatible" />
     <meta name="msapplication-tap-highlight" content="no" />

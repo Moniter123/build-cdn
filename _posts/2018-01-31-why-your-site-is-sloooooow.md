@@ -1,19 +1,15 @@
 ---
 layout:        post
-title:         "Dear business owner, your JavaScript is killing your site performance"
+title:         "Your marketing tools are killing your site performance"
 date:          2018-01-31 00:00:00
 categories:    blog
-excerpt:       "Google Tag Manager is probably the worst tool that happened to the web in the last 10 years. Yes, you read me right. Your shiny marketing tools are murdering your conversions."     
+excerpt:       "Google Tag Manager is probably the worst thing that happened to the web in the last 10 years. Yes, you read me right. Your shiny marketing tools are murdering your conversions. Wonder why? Read on."     
 preview:       /assets/img/heres-why-your-site-is-slow.png
 fbimage:       /assets/img/heres-why-your-site-is-slow.png
 twitterimage:  /assets/img/heres-why-your-site-is-slow.png
 googleimage:   /assets/img/heres-why-your-site-is-slow.png
 twitter_card:  summary_large_image
 ---
-
-Google Tag Manager is probably the worst tool that happened to the web in the last 10 years because it allows adding
-third party JavaScript to a site without much consideration for site performance. Yes, you read me right. **Your shiny
-marketing tools are murdering your conversions.** Wonder why? Read on.
 
 ## It's not your Wordpress
 

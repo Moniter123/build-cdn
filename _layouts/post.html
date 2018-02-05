@@ -37,7 +37,7 @@ layout: default
     <article class="content" itemscope itemtype="https://schema.org/BlogPosting">
         <header class="post__header">
             <h1 class="post__title" itemprop="name headline">{{ page.title | escape }}</h1>
-            <span class="post__meta">
+            <div class="post__meta">
                 <span class="post__line">
                     by <span class="post__author" itemprop="author" itemscope itemtype="https://schema.org/Person"><a
                         href="https://pasztor.at/cv" itemprop="url"><span itemprop="name">Janos Pasztor</span></a></span>
@@ -54,7 +54,10 @@ layout: default
                 <meta itemprop="image" content="{{ page.googleimage | default: "/assets/avatar.jpg" | absolute_url}}" />
                 <meta itemprop="dateModified" content="{{page.last_modified_at|date_to_xmlschema}}" />
                 <meta itemprop="mainEntityOfPage" content="{{ page.url | absolute_url }}" />
-            </span>
+                <p>
+                    {{page.excerpt}}
+                </p>
+            </div>
         </header>
 
         {% if page.preview %}

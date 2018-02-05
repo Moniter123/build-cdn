@@ -11,7 +11,7 @@ description: Latest posts by Janos Pasztor
 </div>
 <div class="wall__postlist">
     {% for post in site.posts offset:2 limit:8 %}
-        {% include wall-post.html %}
+        {% include wall-post-noimage.html %}
     {% endfor %}
 </div>
 </div>

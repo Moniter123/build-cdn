@@ -3,7 +3,7 @@ layout:        post
 title:         "Stop using PHP sessions!"
 date:          2018-01-25 00:00:00
 categories:    blog
-excerpt:       "OK, that title may be a little provocative, but PHP sessions have a fatal flaw that make them problematic with modern-day web applications."     
+excerpt:       "Sessions in PHP are fraught with problems and few developers know it."     
 preview:       /assets/img/stop-using-php-sessions.png
 fbimage:       /assets/img/stop-using-php-sessions.png
 twitterimage:  /assets/img/stop-using-php-sessions.png

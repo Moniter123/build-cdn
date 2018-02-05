@@ -1,0 +1,30 @@
+<h2 class="wall__title" itemprop="name headline"><a href="{{post.url}}" itemprop="mainEntityOfPage">{{ post.title | escape }}</a></h2>
+{% if post.eventStartDate %}
+<div class="wall__eventdata">
+    <span class="wall_date">
+        <time datetime="{{ post.eventStartDate | date_to_xmlschema }}">{{ post.eventStartDate | date: date_format }}</time>
+    </span>
+    &bullet;
+    <span class="post__line">
+        {{ post.eventCity }}, {{ post.eventCountryCode }}
+    </span>
+</div>
+{%endif%}
+<div class="wall__excerpt">
+    <a href="{{post.url}}">{{post.excerpt | truncate:180}}</a>
+</div>
+{% assign date_format = "%b %-d, %Y" %}
+<script type="application/ld+json">
+{
+  "@context":"http://schema.org",
+  "@type":"BlogPosting",
+  "title": "{{ post.title | escape }}",
+  "datePublished": "{{ post.date | date: date_format }}",
+  "url": "{{post.url|absolute_url}}",
+  "author": {
+    "@type": "Person",
+    "name": "Janos Pasztor",
+    "url": "https://pasztor.at/"
+  }
+}
+</script>
