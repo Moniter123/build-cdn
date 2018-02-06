@@ -178,16 +178,22 @@
     </footer>
 
     <script async type="application/javascript">
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+      if (navigator.doNotTrack !== '1') {
+          window.dataLayer = window.dataLayer || [];
 
-        gtag('config', 'UA-108462692-1');
+          function gtag() {
+              dataLayer.push(arguments);
+          }
 
-        var scriptElement = document.createElement("script");
-        scriptElement.setAttribute("async", "async");
-        scriptElement.src = "https://www.googletagmanager.com/gtag/js?id=UA-108462692-1";
-        document.body.appendChild(scriptElement);
+          gtag('js', new Date());
+
+          gtag('config', 'UA-108462692-1', {'anonymize_ip': true});
+
+          var scriptElement = document.createElement("script");
+          scriptElement.setAttribute("async", "async");
+          scriptElement.src = "https://www.googletagmanager.com/gtag/js?id=UA-108462692-1";
+          document.body.appendChild(scriptElement);
+      }
     </script>
   </body>
 </html>
