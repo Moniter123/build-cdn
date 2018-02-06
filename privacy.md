@@ -81,7 +81,16 @@ Austria
 <p>Or electronically to: &#106;&#097;&#110;&#111;&#115;&#064;&#112;&#097;&#115;&#122;&#116;&#111;&#114;&#046;&#097;&#116;</p>
 {%endraw%}
 
-Please allow for 14 days of processing time, and additional physical mailing time depending on your location.q
+Please allow for 14 days of processing time, and additional physical mailing time depending on your location.
+
+## Regulatory authority
+
+The regulatory authority for this site is the [Österreichische Datenschutzbehörde](https://www.data-protection-authority.gv.at/).
+
+**Österreichische Datenschutzbehörde**<br />
+Wickenburggasse 8<br />
+1080 Vienna<br />
+Austria
 
 ## Changes and updates to this policy
 
