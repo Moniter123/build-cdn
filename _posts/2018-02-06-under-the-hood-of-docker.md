@@ -1,10 +1,10 @@
 ---
 layout:        post
 title:         "Under the hood of Docker"
-date:          2018-01-31 00:00:00
+date:          2018-02-06 00:00:00
 categories:    blog
-excerpt:       "runc and rkt are container runtimes that power Docker. But what powers the container runtimes? Read on for a deeper look into containerization technology."     
-preview:       /assets/img/under-the-hood-of-docker.png
+excerpt:       "The runc and rkt container runtimes power Docker & co. But what powers the container runtimes? Read on for a deeper look into containerization technology."     
+preview:       /assets/img/under-the-hood-of-docker.jpg
 fbimage:       /assets/img/under-the-hood-of-docker.png
 twitterimage:  /assets/img/under-the-hood-of-docker.png
 googleimage:   /assets/img/under-the-hood-of-docker.png
@@ -13,6 +13,10 @@ twitter_card:  summary_large_image
 
 It may come as a surprise to you, but containers are not a technology. They don't exist. They are actually a result
 of many different technologies built into the Linux kernel. Which ones you ask? Let's take a trip down memory lane...
+
+> **Note:** This article glosses over some historical and technological details in favor of easier understanding.
+> It is not meant as a guide to implementing a container runtime, as that would take MUCH more information than
+> a simple blog post.
 
 ## Traditional Linux resource limits
 
@@ -86,6 +90,9 @@ If you run this program on a completely empty directory, you will see that the d
 it is important to note that the chroot syscall is only available to the user `root` and it is also not designed
 to protect from a root user inside a chroot jail. It is therefore important that any program using the `chroot` system
 call also switches to a non-root user after doing so.
+
+> **Note:** Current container technology rarely uses chroot as their method of restricting filesystem access, but opt
+> to use things like OverlayFS, or the Linux Device Mapper directly, in conjunction with mount namespaces (see below).
 
 ## capabilities: making non-root users a little bit of root
 
@@ -208,3 +215,132 @@ root        14  0.0  0.2  18440  1196 pts/0    R+   09:20   0:00  \_ ps auwfx
 ```
 
 If you inspect the namespaces above, we *almost* have all makings of the container system today.
+
+## seccomp: protecting system calls
+
+You may have noticed that so far we haven't protected one thing: which process is allowed to make which system call.
+Some system calls, of course, are limited to root, but a process running as root inside a "container" is still root, so
+it can still reboot the machine. Setting the fact aside that you really really (really) shouldn't run stuff as root,
+even in containers, this can still be a problem.
+
+Seccomp solves just that problem: it allows you to deny a process a list of system calls, which is a very useful tool if
+you want to prevent a "containerized" process of doing something it is not supposed to.
+
+Let's look at an example. If you like pain, you can use the `prctl()` directly, but for everyone else I would
+suggest using the `seccomp.h` include in C. Applying a seccomp profile starts with the `seccomp_init` call, which takes
+a parameter that specifies the operation mode:
+
+- `SCMP_ACT_KILL`: if a process violates the seccomp rules, it is killed immediately.
+- `SCMP_ACT_TRAP`: if a process violates the seccomp rules, it is sent a `SIGSYS` signal, and may then handle the situation gracefully.
+- `SCMP_ACT_ERRNO`: if a process violates the seccomp rules, it is sent the specified error number (useful for simulating normal behavior).
+- `SCMP_ACT_TRACE`: if a process violates the seccomp rules and is being traced, the tracing process will be notified.
+- `SCMP_ACT_LOG`: if a process violates the seccomp rules, the syscall will be logged. This is useful for debugging a seccomp profile.
+- `SCMP_ACT_ALLOW`: allow everything.
+
+Following the `seccomp_init`, we can now call a series of `seccomp_rule_add` calls to specify which syscalls are
+allowed. Notice that you have to explicitly specify the calls allowed, so missing a syscall will result in the
+application crashing in the worst case scenario, not a security breach. Once all rules are added, the `seccomp_load`
+command can be used to apply the seccomp profile. The process is now jailed in terms of syscalls.
+
+Taking a look at a full example, the following code can be compiled using `gcc test.c -lseccomp` and will result in a
+`SIGSYS` when it reaches the `printf` line:
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <seccomp.h>
+#include <fcntl.h>
+#include <errno.h>
+
+int main()
+{
+    int ret;
+    scmp_filter_ctx ctx;
+
+    ctx = seccomp_init(SCMP_ACT_KILL);
+    if (ctx == NULL) {
+        printf("Failed initializing seccomp\n");
+        exit(1);
+    }
+    ret = seccomp_rule_add(ctx, SCMP_ACT_ALLOW, SCMP_SYS(exit_group), 0);
+    if (ret < 0) {
+        printf("Failed allowing exit_group via seccomp\n");
+        exit(1);
+    }
+    ret = seccomp_rule_add(ctx, SCMP_ACT_ALLOW, SCMP_SYS(mprotect), 0);
+    if (ret < 0) {
+        printf("Failed allowing mprotect via seccomp\n");
+        exit(1);
+    }
+    ret = seccomp_rule_add(ctx, SCMP_ACT_ALLOW, SCMP_SYS(munmap), 0);
+    if (ret < 0) {
+        printf("Failed allowing munmap via seccomp\n");
+        exit(1);
+    }
+    ret = seccomp_rule_add(ctx, SCMP_ACT_ALLOW, SCMP_SYS(brk), 0);
+    if (ret < 0) {
+        printf("Failed allowing brk via seccomp\n");
+        exit(1);
+    }
+    ret = seccomp_load(ctx);
+    if (ret < 0) {
+        printf("Failed loading seccomp\n");
+        exit(1);
+    }
+
+    printf("Hello world!\n");
+    return 0;
+}
+```
+
+## AppArmor and SELinux: Mandatory Access Control Systems
+
+Mandatory Access Control systems are different than the ones discussed before: they won't work on a process level, but
+rather on a system level, and they prevent a certain *binary* from doing things it shouldn't. For example, you could
+set the program `/bin/ping` to be allowed to use the `NET_RAW` capability, regardless of which process started it. This
+could be achieved in an AppArmor profile that looks like this:
+
+```
+/bin/ping {
+    ...
+    capability net_raw,
+    ...
+}
+```
+
+A detailed discussion of AppArmor or SELinux would take an article of their own, but suffice it to say, these are very
+powerful tools to further restrict programs in what they are capable of doing.
+
+## Putting it all together
+
+Docker and other containerization technologies utilize what's called a *container runtime*. These runtimes are the
+platform-dependent parts of the containerization technology as opposed to the platform independent parts that deal with
+handling the images, etc.
+
+The two main runtimes used today are `runc` by Docker and `rkt` by the CoreOS folks. These utilities take a root
+filesystem image and a configuration for all of the above features (and a bit more) and run a container with it.
+
+If we take a look at the runc configuration JSON file, we see things like this:
+
+```json
+...
+"capabilities": [
+        "CAP_AUDIT_WRITE",
+        "CAP_KILL",
+        "CAP_NET_BIND_SERVICE"
+],
+...
+```
+
+Again, we could go into much more detail in how runc or rkt work, but you get the picture: the container runtime is a
+tool that deals with all of the above restrictions, whereas Docker and the other container engines are responsible for
+*creating* this file and the associated root filesystem image in the first place. Luckily, the 
+[Open Container Initiative](https://www.opencontainers.org/) is working hard to ensure interoperability between the
+container technologies and runtimes, so a fracture ecosystem, it seems, has been narrowly avoided.
+
+I hope it is clear that nobody should attempt to build their own container runtime, or implement the above restrictions
+into their application without some serious research into the topic. It took Docker years to get to its current state,
+so implementing anything like this in a commercial project is a futile attempt. Nevertheless, when confronted with
+advanced configuration of LXC, Docker or other container technologies, it is good to know what's behind the curtain, so
+I hope you enjoyed this little peek into what Docker does under the hood.
+  

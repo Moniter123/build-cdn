@@ -4,7 +4,7 @@ title:         "Why Docker matters and why you should care"
 date:          2018-01-13 00:00:00
 categories:    blog
 excerpt:       "Have you ever wondered what all the fuss is about with this Docker thing? Are you having a hard time convincing your colleagues to take it seriously? Well then, read on, I'm going to lay it all out for you."     
-preview:       /assets/img/why-docker-matters-and-why-you-should-care.png
+preview:       /assets/img/why-docker-matters-and-why-you-should-care.jpg
 fbimage:       /assets/img/why-docker-matters-and-why-you-should-care.png
 twitterimage:  /assets/img/why-docker-matters-and-why-you-should-care.png
 googleimage:   /assets/img/why-docker-matters-and-why-you-should-care.png

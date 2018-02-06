@@ -4,7 +4,7 @@ title:         "Your marketing tools are killing your site performance"
 date:          2018-01-31 00:00:00
 categories:    blog
 excerpt:       "Google Tag Manager is probably the worst thing that happened to the web in the last 10 years. Yes, you read me right. Your shiny marketing tools are murdering your conversions. Wonder why? Read on."     
-preview:       /assets/img/heres-why-your-site-is-slow.png
+preview:       /assets/img/heres-why-your-site-is-slow.jpg
 fbimage:       /assets/img/heres-why-your-site-is-slow.png
 twitterimage:  /assets/img/heres-why-your-site-is-slow.png
 googleimage:   /assets/img/heres-why-your-site-is-slow.png
