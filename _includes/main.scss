@@ -6,6 +6,8 @@ $mutedcolor: rgba(0, 0, 0, 0.54);
 $colorshaded: rgba(0,0,0,.84);
 $bgshaded: rgba(0,0,0,.05);
 
+$activecolor: #03a87c;
+
 $sm:768px;
 $md:960px;
 
@@ -21,7 +23,7 @@ $font-sans-serif: Roboto, "Open Sans", "Lucida Grande","Lucida Sans Unicode","Lu
 @import "page";
 @import "wall";
 @import "footer";
-
+@import "cookieconsent";
 
 body {
   font-family: $font-sans-serif;
@@ -30,7 +32,5 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -moz-font-feature-settings: "liga" on;
 }
-
-
 
 //{% endraw %}

@@ -12,8 +12,10 @@ I conduct business under the company Opsbears e.U. For business inqueries, pleas
 
 ## Speaking engagements
 
-If you are organizing a converence, workshop event something alike, I'm always up for a new speaking or teaching
-opportunity. Please contact me at &#106;&#097;&#110;&#111;&#115;&#064;&#112;&#097;&#115;&#122;&#116;&#111;&#114;&#046;&#097;&#116; for more information.
+{%raw%}
+<p>If you are organizing a converence, workshop event something alike, I'm always up for a new speaking or teaching
+opportunity. Please contact me at &#106;&#097;&#110;&#111;&#115;&#064;&#112;&#097;&#115;&#122;&#116;&#111;&#114;&#046;&#097;&#116; for more information.</p>
+{%endraw%}
 
 ## Job offers
 
