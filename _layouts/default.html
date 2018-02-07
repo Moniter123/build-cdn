@@ -195,20 +195,22 @@
         function getCookie(cookieName) {
             var value = "; " + document.cookie;
             var parts = value.split("; " + cookieName + "=");
-            if (parts.length > 1) return parts.pop().split(";").shift();
+            if (parts.length > 1) return decodeURIComponent(parts.pop().split(";").shift());
         }
 
         function setCookie(cookieName, cookieValue, expiry) {
             var now = new Date();
             now.setTime(now.getTime() + expiry);
             var expires = "expires="+ now.toUTCString();
-            document.cookie = cookieName + "=" + cookieValue + ";" + expires + ";path=/; domain=." + document.location.hostname;
-            document.cookie = cookieName + "=" + cookieValue + ";" + expires + ";path=/; domain=" + document.location.hostname;
+            document.cookie = cookieName + "=" + encodeURIComponent(cookieValue) + ";" + expires + ";path=/;domain=." + document.location.hostname;
+            document.cookie = cookieName + "=" + encodeURIComponent(cookieValue) + ";" + expires + ";path=/;domain=" + document.location.hostname;
+            document.cookie = cookieName + "=" + encodeURIComponent(cookieValue) + ";" + expires + ";path=/";
         }
 
         function deleteCookie(cookieName) {
-            document.cookie = cookieName + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=' + document.location.hostname;
-            document.cookie = cookieName + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.' + document.location.hostname;
+            document.cookie = cookieName + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;path=/;domain=' + document.location.hostname;
+            document.cookie = cookieName + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;path=/;domain=.' + document.location.hostname;
+            document.cookie = cookieName + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;path=/';
         }
 
         var cookieConsentShown = getCookie("cookieconsent-shown") || false;
