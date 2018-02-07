@@ -183,13 +183,15 @@
           &times;
         </a>
         <div class="cookieconsent__notificationcontent">
-          This site is using cookies for web analytics and is collecting server logs which contain your IP address. For details and privacy settings please visit <a href="/privacy">the privacy page</a>.
+          This site is using cookies for web analytics and is collecting server logs which contain your IP address. For details and privacy settings please visit <a href="/privacy">the privacy policy</a> (last changed February 7, 2018).
         </div>
       </div>
     </aside>
 
     <!--suppress JSReferencingMutableVariableFromClosure -->
     <script async type="application/javascript">
+        var privacyPolicyVersion="February 7, 2018";
+
         function getCookie(cookieName) {
             var value = "; " + document.cookie;
             var parts = value.split("; " + cookieName + "=");
@@ -225,7 +227,7 @@
                 } else {
                     classList.add("cookieconsent--notblocked");
                 }
-                if (cookieConsentShown) {
+                if (cookieConsentShown === privacyPolicyVersion) {
                     classList.add("cookieconsent--shown");
                 } else{
                     classList.add("cookieconsent--notshown");
@@ -281,7 +283,7 @@
             }
         }
 
-        setCookie("cookieconsent-shown", 1, 365*24*3600);
+        setCookie("cookieconsent-shown", privacyPolicyVersion, 365*24*3600);
 
         if (navigator.doNotTrack !== '1' && !blockAnalytics) {
               window.dataLayer = window.dataLayer || [];

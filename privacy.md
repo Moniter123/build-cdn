@@ -98,6 +98,8 @@ Austria
 
 ## Changes and updates to this policy
 
-The author of this website reserves the right to change this policy at any time, without prior notice.
+The author of this website reserves the right to change this policy at any time, without prior notice. If JavaScript
+is enabled in your browser, and you have not installed extensions that block cookie notices, you may receive a 
+notification about the updated privacy policy when you next visit this site.
 
 This document has last been updated: February 7, 2018
