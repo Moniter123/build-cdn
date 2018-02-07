@@ -195,7 +195,7 @@
         function getCookie(cookieName) {
             var value = "; " + document.cookie;
             var parts = value.split("; " + cookieName + "=");
-            if (parts.length === 2) return parts.pop().split(";").shift();
+            if (parts.length > 1) return parts.pop().split(";").shift();
         }
 
         function setCookie(cookieName, cookieValue, expiry) {
