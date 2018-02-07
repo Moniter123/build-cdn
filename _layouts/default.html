@@ -200,11 +200,13 @@
             var now = new Date();
             now.setTime(now.getTime() + expiry);
             var expires = "expires="+ now.toUTCString();
-            document.cookie = cookieName + "=" + cookieValue + ";" + expires + ";path=/";
+            document.cookie = cookieName + "=" + cookieValue + ";" + expires + ";path=/; domain=." + document.location.hostname;
+            document.cookie = cookieName + "=" + cookieValue + ";" + expires + ";path=/; domain=" + document.location.hostname;
         }
 
         function deleteCookie(cookieName) {
-            document.cookie = cookieName + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+            document.cookie = cookieName + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=' + document.location.hostname;
+            document.cookie = cookieName + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.' + document.location.hostname;
         }
 
         var cookieConsentShown = getCookie("cookieconsent-shown") || false;
@@ -270,13 +272,16 @@
                         var classList = cookieConsentContainers.item(k).classList;
                         classList.add("cookieconsent--blocked");
                         classList.remove("cookieconsent--notblocked");
-                        setCookie("analytics-block", 1);
+                        setCookie("analytics-block", 1, 365*24*3600);
+                        deleteCookie("_ga");
+                        deleteCookie("_gid");
+                        deleteCookie("_gat_gtag_UA_108462692_1");
                     }
                 });
             }
         }
 
-        setCookie("cookieconsent-shown", 1);
+        setCookie("cookieconsent-shown", 1, 365*24*3600);
 
         if (navigator.doNotTrack !== '1' && !blockAnalytics) {
               window.dataLayer = window.dataLayer || [];
@@ -293,6 +298,10 @@
               scriptElement.setAttribute("async", "async");
               scriptElement.src = "https://www.googletagmanager.com/gtag/js?id=UA-108462692-1";
               document.body.appendChild(scriptElement);
+        }
+
+        if (blockAnalytics) {
+            setCookie("analytics-block", 1, 365*24*3600);
         }
     </script>
   </body>
