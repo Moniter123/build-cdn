@@ -1,0 +1,11 @@
+.cta {
+  max-width:$md;
+  position:relative;
+  margin-left:auto;
+  margin-right:auto;
+  margin-bottom:30px;
+  font-style: italic;
+  a {
+    color:$activecolor;
+  }
+}

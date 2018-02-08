@@ -1,0 +1,35 @@
+.readmore {
+  max-width:$md;
+  border-top: 1px solid rgba(0,0,0,0.05);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 10px;
+  position:relative;
+  &__cta {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    font-size: 21px;
+    line-height: 30px;
+  }
+
+  &__buttons {
+    margin-top: 30px;
+    text-align: center;
+    position:relative;
+  }
+
+  &__button {
+    display:inline-block;
+    border: 1px solid $activecolor;
+    color: $activecolor;
+    border-radius: 3px;
+    text-decoration: none;
+    margin-right: 10px;
+    font-size: 15px;
+    padding: 5px 14px;
+    font-family: $font-sans-serif;
+  }
+}

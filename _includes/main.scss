@@ -24,6 +24,8 @@ $font-sans-serif: Roboto, "Open Sans", "Lucida Grande","Lucida Sans Unicode","Lu
 @import "wall";
 @import "footer";
 @import "cookieconsent";
+@import "cta";
+@import "readmore";
 
 body {
   font-family: $font-sans-serif;
