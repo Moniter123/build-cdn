@@ -4,10 +4,10 @@ title:         "Docker 101: Linux Anatomy"
 date:          2018-02-08 00:00:00
 categories:    blog
 excerpt:       "Docker is (mostly) used to run Linux, but in order to successfully create a Docker image, we must first understand how Linux works."     
-preview:       /assets/img/docker-101-linux-anatomy.jpg
-fbimage:       /assets/img/docker-101-linux-anatomy.png
-twitterimage:  /assets/img/docker-101-linux-anatomy.png
-googleimage:   /assets/img/docker-101-linux-anatomy.png
+preview:       /assets/img/docker-101-anatomy.jpg
+fbimage:       /assets/img/docker-101-anatomy.png
+twitterimage:  /assets/img/docker-101-anatomy.png
+googleimage:   /assets/img/docker-101-anatomy.png
 twitter_card:  summary_large_image
 ---
 
@@ -24,7 +24,8 @@ packed-up Linux with an additional config file in JSON format.
 
 > **Note**: this article glosses over some of the intricacies of how a CPU and the kernel work for easier understanding.
 > If you wish to learn more about operating systems, I recommend the book
-> [Operating Systems by Andrew S. Tanenbaum]() (sponsored link) for further study.
+> [Modern Operating Systems by Andrew S. Tanenbaum](/recommendations.php?book=andrew-tanenbaum-operating-systems)
+> (sponsored link) for further study.
 
 ## The CPU
 
@@ -73,7 +74,7 @@ has its origins in how the BIOS worked.
 
 On BIOS systems the boot loader was a very primitive program written into the so-called Master Boot Record of the 
 drive. This consisted of a few magic bytes (telling the BIOS that there is a valid boot loader installed) and then 512
-bytes (FIXME) of executable code. Since the MBR was only so large, the whole kernel could not fit in there and that's 
+bytes of executable code. Since the MBR was only so large, the whole kernel could not fit in there and that's 
 one of the reasons why the boot loader had to be separated out.
 
 It is also worth mentioning that the BIOS had no concept of filesystems. It could really only read and execute
