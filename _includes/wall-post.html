@@ -6,13 +6,22 @@
     </div>
     {% if post.preview %}
         <a href="{{post.url}}" class="wall__image">
-            <picture>
-                <source media="(max-width: 465px)" srcset="{{ post.preview | replace:'/assets/img', '/assets/resized/465' }}" />
-                <source media="(min-width: 466px) and (max-width:768px)" srcset="{{ post.preview | replace:'/assets/img', '/assets/resized/768' }}" />
-                <source media="(min-width: 769px) and (max-width:959px)" srcset="{{ post.preview | replace:'/assets/img', '/assets/resized/960' }}" />
-                <source media="(min-width: 960px)" srcset="{{ post.preview | replace:'/assets/img', '/assets/resized/465' }}" />
-                <img src="{{ post.preview | replace:'/assets/img', '/assets/resized/960' }}" alt="" />
-            </picture>
+            {% capture defaultImageSize %}{{ post.preview | replace:'/assets/img', '/assets/resized/217' }}{% endcapture %}
+            <img
+                data-srcset="
+                    {{ post.preview | replace:'/assets/img', '/assets/resized/465' }} 465w,
+                    {{ post.preview | replace:'/assets/img', '/assets/resized/768' }} 768w,
+                    {{ post.preview | replace:'/assets/img', '/assets/resized/960' }} 960w
+                "
+                data-sizes="
+                    (min-width:466) 768px,
+                    (min-width:769) 960px,
+                    (min-width:961px) 465px,
+                    465px
+                "
+                src="{% base64 defaultImageSize %}"
+                alt=""
+            />
         </a>
     {% endif %}
     {% include wall-post-content.html %}
