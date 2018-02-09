@@ -62,12 +62,22 @@ layout: default
 
         {% if page.preview %}
             <div class="post__preview">
-                <picture>
-                    <source media="(max-width: 465px)" srcset="{{ page.preview | replace:'/assets/img', '/assets/resized/465' }}" />
-                    <source media="(min-width: 466px) and (max-width:768px)" srcset="{{ page.preview | replace:'/assets/img', '/assets/resized/768' }}" />
-                    <source media="(min-width: 769px)" srcset="{{ page.preview | replace:'/assets/img', '/assets/resized/960' }}" />
-                    <img src="{{ page.preview | replace:'/assets/img', '/assets/resized/960' }}" alt="" />
-                </picture>
+                {% capture defaultImageSize %}{{ page.preview | replace:'/assets/img', '/assets/resized/217' }}{% endcapture %}
+                <img
+                        data-srcset="
+                    {{ page.preview | replace:'/assets/img', '/assets/resized/465' }} 465w,
+                    {{ page.preview | replace:'/assets/img', '/assets/resized/768' }} 768w,
+                    {{ page.preview | replace:'/assets/img', '/assets/resized/960' }} 960w
+                "
+                        data-sizes="
+                    (min-width:466) 768px,
+                    (min-width:769) 960px,
+                    (min-width:961px) 465px,
+                    465px
+                "
+                        src="{% base64 defaultImageSize %}"
+                        alt=""
+                />
             </div>
         {% endif %}
 
