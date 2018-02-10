@@ -16,7 +16,10 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="facebook-share-image.svg">
+   sodipodi:docname="facebook-share-image.svg"
+   inkscape:export-filename="/home/janoszen/opsbears/pasztor.at/assets/img/social-share-default.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
   <defs
      id="defs4">
     <mask
@@ -85,7 +88,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -94,6 +97,13 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(0,-422.36214)">
+    <rect
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect4153"
+       width="1200"
+       height="630"
+       x="0"
+       y="422.36212" />
     <image
        y="540.36212"
        x="0"

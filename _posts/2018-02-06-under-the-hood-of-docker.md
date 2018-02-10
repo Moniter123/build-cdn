@@ -18,6 +18,8 @@ of many different technologies built into the Linux kernel. Which ones you ask? 
 > It is not meant as a guide to implementing a container runtime, as that would take MUCH more information than
 > a simple blog post.
 
+> **Tip:** You can find working C code demos for the content below on [my GitHub](https://github.com/janoszen/demo-container-runtime/tree/master/demo).
+
 ## Traditional Linux resource limits
 
 When I started out working on Linux, the only way to really limit how much resources could consume was `ulimit`, a
@@ -228,7 +230,7 @@ you want to prevent a "containerized" process of doing something it is not suppo
 
 Let's look at an example. If you like pain, you can use the `prctl()` directly, but for everyone else I would
 suggest using the `seccomp.h` include in C. Applying a seccomp profile starts with the `seccomp_init` call, which takes
-a parameter that specifies the operation mode:
+a parameter that specifies the default operation mode:
 
 - `SCMP_ACT_KILL`: if a process violates the seccomp rules, it is killed immediately.
 - `SCMP_ACT_TRAP`: if a process violates the seccomp rules, it is sent a `SIGSYS` signal, and may then handle the situation gracefully.
@@ -237,10 +239,9 @@ a parameter that specifies the operation mode:
 - `SCMP_ACT_LOG`: if a process violates the seccomp rules, the syscall will be logged. This is useful for debugging a seccomp profile.
 - `SCMP_ACT_ALLOW`: allow everything.
 
-Following the `seccomp_init`, we can now call a series of `seccomp_rule_add` calls to specify which syscalls are
-allowed. Notice that you have to explicitly specify the calls allowed, so missing a syscall will result in the
-application crashing in the worst case scenario, not a security breach. Once all rules are added, the `seccomp_load`
-command can be used to apply the seccomp profile. The process is now jailed in terms of syscalls.
+Following the `seccomp_init`, we can now call a series of `seccomp_rule_add` calls to specify overrides to the default.
+Once all rules are added, the `seccomp_load` command can be used to apply the seccomp profile. The process is now jailed
+in terms of syscalls.
 
 Taking a look at a full example, the following code can be compiled using `gcc test.c -lseccomp` and will result in a
 `SIGSYS` when it reaches the `printf` line:
