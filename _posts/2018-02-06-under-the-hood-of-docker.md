@@ -232,12 +232,12 @@ Let's look at an example. If you like pain, you can use the `prctl()` directly, 
 suggest using the `seccomp.h` include in C. Applying a seccomp profile starts with the `seccomp_init` call, which takes
 a parameter that specifies the default operation mode:
 
-- `SCMP_ACT_KILL`: if a process violates the seccomp rules, it is killed immediately.
-- `SCMP_ACT_TRAP`: if a process violates the seccomp rules, it is sent a `SIGSYS` signal, and may then handle the situation gracefully.
-- `SCMP_ACT_ERRNO`: if a process violates the seccomp rules, it is sent the specified error number (useful for simulating normal behavior).
-- `SCMP_ACT_TRACE`: if a process violates the seccomp rules and is being traced, the tracing process will be notified.
-- `SCMP_ACT_LOG`: if a process violates the seccomp rules, the syscall will be logged. This is useful for debugging a seccomp profile.
-- `SCMP_ACT_ALLOW`: allow everything.
+- `SCMP_ACT_KILL`: if a process violates the seccomp rule, it is killed immediately.
+- `SCMP_ACT_TRAP`: if a process violates the seccomp rule, it is sent a `SIGSYS` signal, and may then handle the situation gracefully.
+- `SCMP_ACT_ERRNO`: if a process violates the seccomp rule, it is sent the specified error number (useful for simulating normal behavior).
+- `SCMP_ACT_TRACE`: if a process violates the seccomp rule and is being traced, the tracing process will be notified.
+- `SCMP_ACT_LOG`: if a process violates the seccomp rule, the syscall will be logged. This is useful for debugging a seccomp profile.
+- `SCMP_ACT_ALLOW`: allows a specific system call (or all if used in `seccomp_init`)
 
 Following the `seccomp_init`, we can now call a series of `seccomp_rule_add` calls to specify overrides to the default.
 Once all rules are added, the `seccomp_load` command can be used to apply the seccomp profile. The process is now jailed
