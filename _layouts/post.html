@@ -64,19 +64,24 @@ layout: default
             <div class="post__preview">
                 {% capture defaultImageSize %}{{ page.preview | replace:'/assets/img', '/assets/resized/217' }}{% endcapture %}
                 <img
-                        data-srcset="
-                    {{ page.preview | replace:'/assets/img', '/assets/resized/465' }} 465w,
-                    {{ page.preview | replace:'/assets/img', '/assets/resized/768' }} 768w,
-                    {{ page.preview | replace:'/assets/img', '/assets/resized/960' }} 960w
-                "
-                        data-sizes="
-                    (min-width:466) 768px,
-                    (min-width:769) 960px,
-                    (min-width:961px) 465px,
-                    465px
-                "
-                        src="{% base64 defaultImageSize %}"
-                        alt=""
+                    src="{% base64 defaultImageSize %}"
+                    class="post__imagelowres"
+                />
+                <img
+                    class="post__imagehighres"
+                    srcset="
+                        {{ page.preview | replace:'/assets/img', '/assets/resized/465' }} 465w,
+                        {{ page.preview | replace:'/assets/img', '/assets/resized/768' }} 768w,
+                        {{ page.preview | replace:'/assets/img', '/assets/resized/960' }} 960w
+                    "
+                    sizes="
+                        (min-width:466) 768px,
+                        (min-width:769) 960px,
+                        (min-width:961px) 465px,
+                        465px
+                    "
+                    src="{{ page.preview | replace:'/assets/img', '/assets/resized/960' }}"
+                    alt=""
                 />
             </div>
         {% endif %}

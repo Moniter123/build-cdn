@@ -100,6 +100,22 @@
     color:$mutedcolor;
     margin-bottom:8px;
   }
+
+  &__image {
+    position:relative;
+    display:block;
+  }
+
+  &__imagelowres {
+    z-index:1;
+  }
+  &__imagehighres {
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    z-index:2;
+  }
 }
 
 a.wall__category {

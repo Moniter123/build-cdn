@@ -202,17 +202,6 @@ Feel free to learn from then and build your own!
 
     <!--suppress JSReferencingMutableVariableFromClosure -->
     <script async type="application/javascript">
-        var images = document.getElementsByTagName("img");
-        for (var i = 0; i < images.length; i++) {
-            if (images.hasOwnProperty(i)) {
-                var image = images[i];
-                if (typeof image.dataset !== "undefined" && typeof image.dataset.srcset !== "undefined" && typeof image.dataset.sizes !== "undefined") {
-                    image.setAttribute("srcset", image.dataset.srcset);
-                    image.setAttribute("sizes", image.dataset.sizes);
-                }
-            }
-        }
-
         var privacyPolicyVersion="February 7, 2018";
 
         function getCookie(cookieName) {

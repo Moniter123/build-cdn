@@ -8,18 +8,24 @@
         <a href="{{post.url}}" class="wall__image">
             {% capture defaultImageSize %}{{ post.preview | replace:'/assets/img', '/assets/resized/217' }}{% endcapture %}
             <img
-                data-srcset="
+                class="wall__imagelowres"
+                src="{% base64 defaultImageSize %}"
+                alt=""
+            />
+            <img
+                class="wall__imagehighres"
+                srcset="
                     {{ post.preview | replace:'/assets/img', '/assets/resized/465' }} 465w,
                     {{ post.preview | replace:'/assets/img', '/assets/resized/768' }} 768w,
                     {{ post.preview | replace:'/assets/img', '/assets/resized/960' }} 960w
                 "
-                data-sizes="
+                sizes="
                     (min-width:466) 768px,
                     (min-width:769) 960px,
                     (min-width:961px) 465px,
                     465px
                 "
-                src="{% base64 defaultImageSize %}"
+                src="{{ post.preview | replace:'/assets/img', '/assets/resized/960' }}"
                 alt=""
             />
         </a>

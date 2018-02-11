@@ -100,6 +100,17 @@
     padding: 5px 14px;
     font-family: Roboto, "Open Sans", Arial, Helvetica, "sans-serif";
   }
+
+  &__imagelowres {
+    z-index:1;
+  }
+  &__imagehighres {
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    z-index:2;
+  }
 }
 
 h2.post__cta {
