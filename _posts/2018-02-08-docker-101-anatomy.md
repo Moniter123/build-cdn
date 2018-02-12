@@ -149,7 +149,8 @@ However, if you want to run more than one program inside a container, you need t
 then needs to fulfill the obligations outlined above.
 
 > **Danger:** shell scripts are tricky to get right as init programs. Instead, you should use something like 
-> supervisord if you need to run multiple applications in your container.
+> supervisord if you need to run multiple applications in your container. The rkt container runtime has a workaround
+> for this, but it's not without its drawbacks.
 
 In all cases, your program must handle signals correctly. (So it must stop if it receives a `SIGTERM`, for example.)
 
