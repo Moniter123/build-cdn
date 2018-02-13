@@ -9,6 +9,7 @@ group :jekyll_plugins do
     gem 'jekyll-last-modified-at'
     gem 'jekyll-plantuml'
     gem 'jekyll-responsive-image'
+    gem 'jekyll-tidy'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

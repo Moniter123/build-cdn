@@ -1,5 +1,5 @@
 {% assign date_format = "%b %-d, %Y" %}
-<h2 class="wall__title" itemprop="name headline"><a href="{{post.url}}" itemprop="mainEntityOfPage">{{ post.title | escape }}</a></h2>
+<h2 class="wall__title"><a href="{{post.url}}">{{ post.title | escape }}</a></h2>
 {% if post.eventStartDate %}
 <div class="wall__eventdata">
     <span class="wall_date">

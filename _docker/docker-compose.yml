@@ -1,0 +1,55 @@
+version: '3.2'
+services:
+  traefik:
+    image: traefik
+    command: --web --web.address=:8686 --docker --docker.domain=int.pasztor.at --docker.watch --logLevel=DEBUG \
+             --entryPoints='Name:http Address::80' --defaultEntryPoints='http'
+    labels:
+      traefik.backend: "docker"
+      traefik.acme.email: "janos@pasztor.at"
+      traefik.acme.dnsChallenge.provider: "route53"
+      traefik.acme.storage: "/etc/traefik/acme/acme.json"
+    ports:
+      - "80:80"
+      - "443:443"
+      - "8686:8686"
+    volumes:
+      - /srv/acme:/etc/traefik/acme
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - web
+    restart: unless-stopped
+  nginx:
+    container_name: nginx
+    build:
+      context: ./images/nginx
+    labels:
+      traefik.backend: "pasztor.at"
+      traefik.frontend.rule: "Host:pasztor.at"
+      traefik.port: "80"
+#      traefik.frontend.redirect.regex: "^(http://www.pasztor.at/|https://www.pasztor.at/|http://pasztor.at/)(.*)"
+#      traefik.frontend.redirect.replacement: "https://pasztor.at/$$3"
+    networks:
+      - web
+    volumes:
+      - type: bind
+        source: /srv/www
+        target: /var/www
+      - type: bind
+        source: /srv/ssl
+        target: /etc/nginx/ssl
+    restart: unless-stopped
+  php:
+    container_name: php
+    image: opsbears/php-fpm:7.2
+    networks:
+      - web
+    volumes:
+      - type: bind
+        source: /srv/www
+        target: /var/www
+    restart: unless-stopped
+networks:
+  web:
+    driver: bridge
+    attachable: true
