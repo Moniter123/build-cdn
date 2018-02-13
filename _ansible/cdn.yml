@@ -1,0 +1,156 @@
+---
+- hosts: all
+  tasks:
+  - name: Docker PPA
+    become: true
+    apt_repository:
+      repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable
+      state: present
+  - name: Add Docker PPA Key
+    become: true
+    apt_key:
+      url: https://download.docker.com/linux/ubuntu/gpg
+      state: present
+  - name: Update APT
+    become: true
+    apt:
+      update_cache: true
+  - name: Upgrade everything
+    become: true
+    apt:
+      upgrade: full
+  - name: Dist upgrade
+    become: true
+    apt:
+      upgrade: dist
+  - name: Install Docker CE
+    become: true
+    apt:
+      name: docker-ce
+  - name: Add janoszen user
+    become: true
+    user:
+      name: janoszen
+      comment: "Janos Pasztor"
+      groups:
+        - adm
+        - sudo
+        - docker
+        - dialout
+        - cdrom
+        - floppy
+        - audio
+        - dip
+        - video
+        - plugdev
+        - lxd
+      shell: /bin/bash
+  - name: Set janoszen authorized key
+    become: true
+    authorized_key:
+      user: janoszen
+      state: present
+      key: "{{ lookup('file', '/home/janoszen/.ssh/id_rsa.pub') }}"
+  - name: Passwordless sudo
+    become: true
+    lineinfile:
+      dest: /etc/sudoers
+      state: present
+      regexp: '^%sudo'
+      line: '%sudo ALL=(ALL) NOPASSWD: ALL'
+      validate: 'visudo -cf %s'
+  - name: Remove ubuntu user
+    become: true
+    user:
+      name: ubuntu
+      state: absent
+  - name: Remove "ubuntu" sudoers permission
+    become: true
+    file:
+      path: /etc/sudoers.d/90-cloud-init-users
+      state: absent
+  - name: Set hostname
+    become: true
+    hostname:
+      name: "{{ hostname }}"
+  - name: "Build hosts file"
+    become: true
+    lineinfile:
+      dest: /etc/hosts
+      regexp: '127\.0\.0\.1.*'
+      line: "127.0.0.1 localhost {{ hostname }}"
+      state: present
+    when: hostname is defined
+  - name: "Install docker-compose"
+    become: true
+    copy:
+      src: docker-compose
+      dest: /usr/local/bin/docker-compose
+      owner: root
+      group: root
+      mode: 0755
+  - name: WWW directory
+    become: true
+    file:
+      path: /srv/www
+      state: directory
+      owner: root
+      group: root
+      mode: 0755
+  - name: ACME directory
+    become: true
+    file:
+      path: /srv/acme
+      state: directory
+      owner: root
+      group: root
+      mode: 0755
+  - name: SSL directory
+    become: true
+    file:
+      path: /srv/ssl
+      state: directory
+      owner: root
+      group: root
+      mode: 0755
+  - name: Docker directory
+    become: true
+    file:
+      path: /srv/docker
+      state: directory
+      owner: root
+      group: root
+      mode: 0755
+  - name: Copy Docker configuration
+    become: true
+    copy:
+      src: ../_docker/
+      dest: /srv/docker/
+      owner: root
+      group: root
+  - name: Docker compose build
+    become: true
+    command: /usr/local/bin/docker-compose build
+    args:
+        chdir: /srv/docker
+  - name: Docker compose up
+    become: true
+    shell: AWS_ACCESS_KEY_ID="{{ lookup('ini', 'AWS_ACCESS_KEY_ID section=aws file=aws.ini') }}" AWS_SECRET_ACCESS_KEY="{{ lookup('ini', 'AWS_SECRET_ACCESS_KEY section=aws file=aws.ini') }}" AWS_HOSTED_ZONE_ID="{{ lookup('ini', 'AWS_HOSTED_ZONE_ID section=aws file=aws.ini') }}" /usr/local/bin/docker-compose up -d
+    args:
+        chdir: /srv/docker
+  - name: vhost directory
+    become: true
+    file:
+      path: /srv/www/pasztor.at
+      state: directory
+      owner: root
+      group: root
+      mode: 0755
+  - name: htdocs directory
+    become: true
+    file:
+      path: /srv/www/pasztor.at/htdocs
+      state: directory
+      owner: root
+      group: root
+      mode: 0755

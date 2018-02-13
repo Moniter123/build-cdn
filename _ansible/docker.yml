@@ -1,0 +1,28 @@
+---
+- hosts: all
+  tasks:
+  - name: Docker directory
+    become: true
+    file:
+      path: /srv/docker
+      state: directory
+      owner: root
+      group: root
+      mode: 0755
+  - name: Copy Docker configuration
+    become: true
+    copy:
+      src: ../_docker/
+      dest: /srv/docker/
+      owner: root
+      group: root
+  - name: Docker compose build
+    become: true
+    command: /usr/local/bin/docker-compose build
+    args:
+        chdir: /srv/docker
+  - name: Docker compose up
+    become: true
+    shell: AWS_ACCESS_KEY_ID="{{ lookup('ini', 'AWS_ACCESS_KEY_ID section=aws file=aws.ini') }}" AWS_SECRET_ACCESS_KEY="{{ lookup('ini', 'AWS_SECRET_ACCESS_KEY section=aws file=aws.ini') }}" AWS_HOSTED_ZONE_ID="{{ lookup('ini', 'AWS_HOSTED_ZONE_ID section=aws file=aws.ini') }}" /usr/local/bin/docker-compose up -d
+    args:
+        chdir: /srv/docker

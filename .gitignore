@@ -4,3 +4,5 @@ _site
 node_modules
 .idea
 uml/*
+_ansible/*.retry
+_ansible/aws.ini

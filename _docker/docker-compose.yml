@@ -1,18 +1,16 @@
-version: '3.2'
+version: '3.4'
 services:
   traefik:
-    image: traefik
-    command: --web --web.address=:8686 --docker --docker.domain=int.pasztor.at --docker.watch --logLevel=DEBUG \
-             --entryPoints='Name:http Address::80' --defaultEntryPoints='http'
-    labels:
-      traefik.backend: "docker"
-      traefik.acme.email: "janos@pasztor.at"
-      traefik.acme.dnsChallenge.provider: "route53"
-      traefik.acme.storage: "/etc/traefik/acme/acme.json"
+    build: ./images/traefik/
+    environment:
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - AWS_REGION=us-east-1
+      - AWS_HOSTED_ZONE_ID=${AWS_HOSTED_ZONE_ID}
     ports:
       - "80:80"
       - "443:443"
-      - "8686:8686"
+      - "8080:8080"
     volumes:
       - /srv/acme:/etc/traefik/acme
       - /var/run/docker.sock:/var/run/docker.sock
@@ -24,11 +22,17 @@ services:
     build:
       context: ./images/nginx
     labels:
-      traefik.backend: "pasztor.at"
-      traefik.frontend.rule: "Host:pasztor.at"
+      traefik.enable: "true"
+      traefik.backend: "nginx"
+      traefik.frontend.rule: "Host:pasztor.at,www.pasztor.at"
       traefik.port: "80"
-#      traefik.frontend.redirect.regex: "^(http://www.pasztor.at/|https://www.pasztor.at/|http://pasztor.at/)(.*)"
-#      traefik.frontend.redirect.replacement: "https://pasztor.at/$$3"
+      traefik.protocol: "http"
+      traefik.frontend.headers.SSLTemporaryRedirect: "false"
+      traefik.frontend.headers.SSLRedirect: "true"
+      traefik.frontend.headers.STSSeconds: "315360000"
+      traefik.frontend.headers.STSIncludeSubdomains: "true"
+      traefik.frontend.headers.STSPreload: "true"
+      traefik.frontend.headers.forceSTSHeader: "false"
     networks:
       - web
     volumes:
