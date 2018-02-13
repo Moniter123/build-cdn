@@ -14,18 +14,18 @@
             />
             <img
                 class="wall__imagehighres"
-                srcset="
+                data-srcset="
                     {{ post.preview | replace:'/assets/img', '/assets/resized/465' }} 465w,
                     {{ post.preview | replace:'/assets/img', '/assets/resized/768' }} 768w,
                     {{ post.preview | replace:'/assets/img', '/assets/resized/960' }} 960w
                 "
-                sizes="
+                data-sizes="
                     (min-width:466px) 768px,
                     (min-width:769px) 960px,
                     (min-width:961px) 465px,
                     465px
                 "
-                src="{{ post.preview | replace:'/assets/img', '/assets/resized/960' }}"
+                data-src="{{ post.preview | replace:'/assets/img', '/assets/resized/960' }}"
                 alt=""
             />
         </a>

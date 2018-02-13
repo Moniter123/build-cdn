@@ -202,123 +202,141 @@ Feel free to learn from then and build your own!
 
     <!--suppress JSReferencingMutableVariableFromClosure -->
     <script>
-        var privacyPolicyVersion="February 7, 2018";
-
-        function getCookie(cookieName) {
-            var value = "; " + document.cookie;
-            var parts = value.split("; " + cookieName + "=");
-            if (parts.length > 1) return decodeURIComponent(parts.pop().split(";").shift());
-        }
-
-        function setCookie(cookieName, cookieValue, expiry) {
-            var now = new Date();
-            now.setTime(now.getTime() + expiry);
-            var expires = "expires="+ now.toUTCString();
-            document.cookie = cookieName + "=" + encodeURIComponent(cookieValue) + ";" + expires + ";path=/;domain=." + document.location.hostname;
-            document.cookie = cookieName + "=" + encodeURIComponent(cookieValue) + ";" + expires + ";path=/;domain=" + document.location.hostname;
-            document.cookie = cookieName + "=" + encodeURIComponent(cookieValue) + ";" + expires + ";path=/";
-        }
-
-        function deleteCookie(cookieName) {
-            document.cookie = cookieName + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;path=/;domain=' + document.location.hostname;
-            document.cookie = cookieName + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;path=/;domain=.' + document.location.hostname;
-            document.cookie = cookieName + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;path=/';
-        }
-
-        var cookieConsentShown = getCookie("cookieconsent-shown") || false;
-        var blockAnalytics = getCookie("analytics-block") || false;
-
-        var cookieConsentContainers = document.getElementsByClassName("cookieconsent");
-        for (var i = 0; i < cookieConsentContainers.length; i++) {
-            if (cookieConsentContainers.hasOwnProperty(i)) {
-                var classList = cookieConsentContainers.item(i).classList;
-                classList.add("cookieconsent--js");
-                if (navigator.doNotTrack === '1') {
-                    classList.add("cookieconsent--dnt");
-                }
-                if (blockAnalytics) {
-                    classList.add("cookieconsent--blocked");
-                } else {
-                    classList.add("cookieconsent--notblocked");
-                }
-                if (cookieConsentShown === privacyPolicyVersion) {
-                    classList.add("cookieconsent--shown");
-                } else{
-                    classList.add("cookieconsent--notshown");
-                }
-            }
-        }
-
-        var closeElements = document.getElementsByClassName("cookieconsent__close");
-        for (var j = 0; j < closeElements.length; j++) {
-            if (closeElements.hasOwnProperty(j)) {
-                closeElements.item(j).addEventListener("click", function(e) {
-                    e.preventDefault();
-                    for (var k = 0; k < cookieConsentContainers.length; k++) {
-                        var classList = cookieConsentContainers.item(k).classList;
-                        classList.remove("cookieconsent--notshown");
-                        classList.add("cookieconsent--shown");
+        window.addEventListener('load', function () {
+            var images = document.getElementsByTagName("img");
+            for (var i = 0; i < images.length; i++) {
+                if (images.hasOwnProperty(i)) {
+                    var image = images[i];
+                    if (typeof image.dataset !== "undefined" && typeof image.dataset.srcset !== "undefined" && typeof image.dataset.sizes !== "undefined" && typeof image.dataset.src !== "undefined") {
+                        image.setAttribute("srcset", image.dataset.srcset);
+                        image.setAttribute("sizes", image.dataset.sizes);
+                        image.setAttribute("src", image.dataset.src);
                     }
-                });
+                }
             }
-        }
 
+            var privacyPolicyVersion = "February 7, 2018";
 
-        var enableElements = document.getElementsByClassName("cookieconsent__enable");
-        for (var j = 0; j < enableElements.length; j++) {
-            if (enableElements.hasOwnProperty(j)) {
-                enableElements.item(j).addEventListener("click", function(e) {
-                    e.preventDefault();
-                    for (var k = 0; k < cookieConsentContainers.length; k++) {
-                        var classList = cookieConsentContainers.item(k).classList;
-                        classList.remove("cookieconsent--blocked");
-                        classList.add("cookieconsent--notblocked");
-                        deleteCookie("analytics-block");
+            function getCookie(cookieName) {
+                var value = "; " + document.cookie;
+                var parts = value.split("; " + cookieName + "=");
+                if (parts.length > 1) return decodeURIComponent(parts.pop().split(";").shift());
+            }
+
+            function setCookie(cookieName, cookieValue, expiry) {
+                var now = new Date();
+                now.setTime(now.getTime() + expiry);
+                var expires = "expires=" + now.toUTCString();
+                document.cookie = cookieName + "=" + encodeURIComponent(cookieValue) + ";" + expires + ";path=/;domain=." + document.location.hostname;
+                document.cookie = cookieName + "=" + encodeURIComponent(cookieValue) + ";" + expires + ";path=/;domain=" + document.location.hostname;
+                document.cookie = cookieName + "=" + encodeURIComponent(cookieValue) + ";" + expires + ";path=/";
+            }
+
+            function deleteCookie(cookieName) {
+                document.cookie = cookieName + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;path=/;domain=' + document.location.hostname;
+                document.cookie = cookieName + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;path=/;domain=.' + document.location.hostname;
+                document.cookie = cookieName + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;path=/';
+            }
+
+            var cookieConsentShown = getCookie("cookieconsent-shown") || false;
+            var blockAnalytics = getCookie("analytics-block") || false;
+
+            var cookieConsentContainers = document.getElementsByClassName("cookieconsent");
+            for (var i = 0; i < cookieConsentContainers.length; i++) {
+                if (cookieConsentContainers.hasOwnProperty(i)) {
+                    var classList = cookieConsentContainers.item(i).classList;
+                    classList.add("cookieconsent--js");
+                    if (navigator.doNotTrack === '1') {
+                        classList.add("cookieconsent--dnt");
                     }
-                });
-            }
-        }
-
-        var disableElements = document.getElementsByClassName("cookieconsent__disable");
-        for (var j = 0; j < disableElements.length; j++) {
-            if (disableElements.hasOwnProperty(j)) {
-                disableElements.item(j).addEventListener("click", function(e) {
-                    e.preventDefault();
-                    for (var k = 0; k < cookieConsentContainers.length; k++) {
-                        var classList = cookieConsentContainers.item(k).classList;
+                    if (blockAnalytics) {
                         classList.add("cookieconsent--blocked");
-                        classList.remove("cookieconsent--notblocked");
-                        setCookie("analytics-block", 1, 365*24*3600);
-                        deleteCookie("_ga");
-                        deleteCookie("_gid");
-                        deleteCookie("_gat_gtag_UA_108462692_1");
+                    } else {
+                        classList.add("cookieconsent--notblocked");
                     }
-                });
+                    if (cookieConsentShown === privacyPolicyVersion) {
+                        classList.add("cookieconsent--shown");
+                    } else {
+                        classList.add("cookieconsent--notshown");
+                    }
+                }
             }
-        }
 
-        setCookie("cookieconsent-shown", privacyPolicyVersion, 365*24*3600);
+            var closeElements = document.getElementsByClassName("cookieconsent__close");
+            for (var j = 0; j < closeElements.length; j++) {
+                if (closeElements.hasOwnProperty(j)) {
+                    closeElements.item(j).addEventListener("click", function (e) {
+                        e.preventDefault();
+                        for (var k = 0; k < cookieConsentContainers.length; k++) {
+                            var classList = cookieConsentContainers.item(k).classList;
+                            classList.remove("cookieconsent--notshown");
+                            classList.add("cookieconsent--shown");
+                        }
+                    });
+                }
+            }
 
-        if (navigator.doNotTrack !== '1' && !blockAnalytics) {
-              window.dataLayer = window.dataLayer || [];
 
-              function gtag() {
-                  dataLayer.push(arguments);
-              }
+            var enableElements = document.getElementsByClassName("cookieconsent__enable");
+            for (var j = 0; j < enableElements.length; j++) {
+                if (enableElements.hasOwnProperty(j)) {
+                    enableElements.item(j).addEventListener("click", function (e) {
+                        e.preventDefault();
+                        for (var k = 0; k < cookieConsentContainers.length; k++) {
+                            var classList = cookieConsentContainers.item(k).classList;
+                            classList.remove("cookieconsent--blocked");
+                            classList.add("cookieconsent--notblocked");
+                            deleteCookie("analytics-block");
+                        }
+                    });
+                }
+            }
 
-              gtag('js', new Date());
+            var disableElements = document.getElementsByClassName("cookieconsent__disable");
+            for (var j = 0; j < disableElements.length; j++) {
+                if (disableElements.hasOwnProperty(j)) {
+                    disableElements.item(j).addEventListener("click", function (e) {
+                        e.preventDefault();
+                        for (var k = 0; k < cookieConsentContainers.length; k++) {
+                            var classList = cookieConsentContainers.item(k).classList;
+                            classList.add("cookieconsent--blocked");
+                            classList.remove("cookieconsent--notblocked");
+                            setCookie("analytics-block", 1, 365 * 24 * 3600);
+                            deleteCookie("_ga");
+                            deleteCookie("_gid");
+                            deleteCookie("_gat_gtag_UA_108462692_1");
+                        }
+                    });
+                }
+            }
 
-              gtag('config', 'UA-108462692-1', {'anonymize_ip': true});
+            setCookie("cookieconsent-shown", privacyPolicyVersion, 365 * 24 * 3600);
 
-              var scriptElement = document.createElement("script");
-              scriptElement.setAttribute("async", "async");
-              scriptElement.src = "https://www.googletagmanager.com/gtag/js?id=UA-108462692-1";
-              document.body.appendChild(scriptElement);
-        }
+            if (navigator.doNotTrack !== '1' && !blockAnalytics) {
+                window.dataLayer = window.dataLayer || [];
 
-        if (blockAnalytics) {
-            setCookie("analytics-block", 1, 365*24*3600);
-        }
+                function gtag() {
+                    dataLayer.push(arguments);
+                }
+
+                gtag('js', new Date());
+
+                gtag('config', 'UA-108462692-1', {'anonymize_ip': true});
+
+                var scriptElement = document.createElement("script");
+                scriptElement.setAttribute("async", "async");
+                scriptElement.src = "https://www.googletagmanager.com/gtag/js?id=UA-108462692-1";
+                document.body.appendChild(scriptElement);
+            }
+
+            if (blockAnalytics) {
+                setCookie("analytics-block", 1, 365 * 24 * 3600);
+            }
+
+            if (typeof console !== "undefined" && typeof console.log !== "undefined") {
+                console.log("Hey there! Looks like you are interested in the source code. The full source can be found at https://github.com/janoszen/pasztor.at")
+            }
+        });
     </script>
   </body>
 </html>
