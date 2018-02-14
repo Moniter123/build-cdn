@@ -69,6 +69,21 @@
     margin-top:20px;
   }
 
+  @media screen and (min-width: $xs) {
+    &__biosocial {
+      display:flex;
+    }
+    &__biosocialcol {
+      flex:1;
+      width:50%;
+    }
+  }
+
+  &__biosubscribe {
+    font-size:21px;
+    margin-top:30px;
+  }
+
   &__biosociallink {
     display:block;
     color: $mutedcolor;
