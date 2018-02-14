@@ -6,6 +6,7 @@ twitter_username:  janoszen
 github_username:   janoszen
 linkedin_username: janoszen
 permalink: /:categories/:title
+exclude: [README.md, CONTRIBUTING.md]
 navigation:
 - text: Home
   url: /
