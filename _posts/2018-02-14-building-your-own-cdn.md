@@ -18,7 +18,7 @@ everything you could, it's time to look at content delivery.
 
 My main problem was that even though you could get the inital website load with a single HTTP request, my server being
 hosted in Frankfurt, the folks from Australia still had to wait up to 2-3 seconds to get it. Round trip times of over
-300 ms and a lot of providers inbetween made the page load just like any other Wordpress page.
+300 ms and a lot of providers inbetween made the page load just like any other Wordpress site.
 
 So what can we do about it? One solution, of course, would be the use of a traditional CDN. However, most commercial
 CDNs pull the data from your server on request and then cache it for a while.
@@ -41,9 +41,9 @@ end
 @enduml
 {% endplantuml %}</figure>
 
-However, the initial page load is slower with a CDN than without it, since the CDN is a slight detour for the content.
-This is not a problem if you have a high traffic site since the content stays in the cache all the time. If, on the
-other hand, you are running a small blog like I do, the content drops out of the cache pretty much all the time. So,
+Using a traditional CDN the initial page load is slower than without it, since the CDN is a slight detour for the
+content. This is not a problem if you have a high traffic site since the content stays in the cache all the time. If, on
+the other hand, you are running a small blog like I do the content drops out of the cache pretty much all the time. So,
 in effect, **a traditional pull-CDN would make this site slower**. I could, of course, use a push-CDN where I can upload
 the content directly, but those seem to be quite pricey in comparison to what I'm about to build.
 
@@ -73,7 +73,7 @@ end
 @enduml
 {% endplantuml %}</figure>
 
-If we think about it as simple as this, the solution is quite simple: we need a smart DNS server that does a GeoIP
+If we think about it on a high level, the solution is quite simple: we need a smart DNS server that does a GeoIP
 lookup on the requesting IP address and returns the IP address closest to it. And indeed, that's (almost) how commercial
 CDNs do it. There is a bit more engineering involved, like measuring latencies, but this is basically how it's done. 
 
@@ -97,8 +97,8 @@ First of all, doing BGP Anycast requires control over the network hardware and a
 which is way over our budget.
 
 Second, BGP routes are not *that* stable. While DNS requests only require a single packet to be sent in both directions,
-HTTP (web) requests require establishing a connection to download the content. If the route changes, the HTTP connection
-is broken.
+HTTP (web) requests require establishing a connection to download the content. If the route changes or the connection is
+unstable, the HTTP connection could broken. That adds a lot of complexity for a project of this scale.
 
 And finally, the lowest count of hops, which is the basis of BGP route calculations, does not guarantee the lowest round
 trip time. A hop across the ocean may be just one hop, but it's a damn long one.
@@ -111,7 +111,8 @@ trip time. A hop across the ocean may be just one hop, but it's a damn long one.
 Since we have established that we can't run our own BGP Anycast, this means we can also not run our own DNS servers. So
 let's go shopping! ... OK, as it turns out, DNS providers that offer BGP Anycast servers and latency-based routing
 are a little hard to come by. During my search I found only two, the rather pricey [Dyn](https://dyn.com/) and the
-dirt-cheap [Amazon Route53](https://aws.amazon.com/route53/).
+dirt-cheap [Amazon Route53](https://aws.amazon.com/route53/). (Update: as it turns out, [DNS Made Easy](https://dnsmadeeasy.com/)
+also does latency-based routing.)
 
 Since we are cheap, Route53 it is. We add our domain and then start setting up the IPs for our machines. We need as many
 DNS records as we have servers around the globe (edge locations), and each record should look like this:
@@ -153,6 +154,13 @@ let's see some global stats:
 As you can see, the results are pretty decent. I might need two more nodes, one in Asia and one in South America to get
 better load times there.
 
+**Update:** After I've made it to the [Hacker News](https://news.ycombinator.com/news) front page (wow!), I had a chance
+to collect a bit of real usage data using Google Analytics:
+
+<figure><img src="/assets/img/real-world-cdn-usage.png" alt="" /></figure>
+
+Bottom like: I really need that Singapore node. The load times in India are above the desired 1 second.
+
 ## Frequently asked questions
 
 When I do projects like this, people usually ask me: *"Why do you do this? You must like pain."* Yes, to some extent I
@@ -178,7 +186,7 @@ a certain time, the container running it is shut down and needs up to a second t
 
 ### Why don't you use Google AMP?
 
-Google AMP only brings benefits when people visit your site from the Google search engine. My most of my traffic does
+Google AMP only brings benefits when people visit your site from the Google search engine. Most of my traffic does
 not come from Google so that won't solve the problem. So it really only benefits Google, nobody else. Oh, and I'm
 perfectly capable of building a fast website without the dumbed down HTML they offer.
 
