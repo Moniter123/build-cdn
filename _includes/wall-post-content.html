@@ -19,39 +19,39 @@
 {
   "@context": "http://schema.org",
   "@type": "Event",
-  "name": "{{ page.title }}",
-  "startDate": "{{ page.talkStartDate }}",
-  "endDate": "{{ page.talkEndDate }}",
-  "url": "{{ page.url | absolute_url }}",
-  "inLanguage": "{{ page.inLanguage}}",
+  "name": "{{ post.title }}",
+  "startDate": "{{ post.talkStartDate }}",
+  "endDate": "{{ post.talkEndDate }}",
+  "url": "{{ post.url | absolute_url }}",
+  "inLanguage": "{{ post.inLanguage}}",
   "superEvent": {
     "@context": "http://schema.org",
     "@type": "Event",
-    "name": "{{ page.eventName }}",
-    "url": "{{ page.eventUrl }}",
-    "startDate": "{{ page.eventStartDate }}",
-    "endDate": "{{ page.eventEndDate }}",
+    "name": "{{ post.eventName }}",
+    "url": "{{ post.eventUrl }}",
+    "startDate": "{{ post.eventStartDate }}",
+    "endDate": "{{ post.eventEndDate }}",
     "location": {
       "@type": "Place",
-      "name": "{{ page.eventLocationName }}",
+      "name": "{{ post.eventLocationName }}",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "{{ page.eventStreetAddress }}",
-        "addressLocality": "{{ page.eventCity }}",
-        "postalCode": "{{ page.eventPostalCode }}",
-        "addressCountry": "{{ page.eventCountryCode }}"
+        "streetAddress": "{{ post.eventStreetAddress }}",
+        "addressLocality": "{{ post.eventCity }}",
+        "postalCode": "{{ post.eventPostalCode }}",
+        "addressCountry": "{{ post.eventCountryCode }}"
       }
     }
   },
   "location": {
     "@type": "Place",
-    "name": "{{ page.eventLocationName }}",
+    "name": "{{ post.eventLocationName }}",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "{{ page.eventStreetAddress }}",
-      "addressLocality": "{{ page.eventCity }}",
-      "postalCode": "{{ page.eventPostalCode }}",
-      "addressCountry": "{{ page.eventCountryCode }}"
+      "streetAddress": "{{ post.eventStreetAddress }}",
+      "addressLocality": "{{ post.eventCity }}",
+      "postalCode": "{{ post.eventPostalCode }}",
+      "addressCountry": "{{ post.eventCountryCode }}"
     }
   },
   "performer": {
