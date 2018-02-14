@@ -143,6 +143,16 @@ However, I am using [Traefik](https://traefik.io/) as my proxy of choice, which 
 store or even [Apache Zookeeper](https://zookeeper.apache.org/) as the backend for synchronization. While this requires
 a bit more engineering, it is probably a lot more stable in the long run.
 
+## The results
+
+Time for the truth, how does my CDN perform? Using [this tool](https://latency.apex.sh/?url=https%3A%2F%2Fpasztor.at&compare),
+let's see some global stats:
+
+<figure><img src="/assets/img/latency.png" alt="Oregon: 246ms, California: 298ms, Ohio: 227ms, Virginia: 108ms, Ireland: 217ms, Frankfurt: 44ms, London: 110ms, Mumbai: 870ms, Singapore: 517ms, Seoul: 253ms, Tokyo: 150ms, Sidney: 358ms, Sao Paulo: 911ms" /></figure>
+
+As you can see, the results are pretty decent. I might need two more nodes, one in Asia and one in South America to get
+better load times there.
+
 ## Frequently asked questions
 
 When I do projects like this, people usually ask me: *"Why do you do this? You must like pain."* Yes, to some extent I
