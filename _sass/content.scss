@@ -62,11 +62,39 @@
       margin-top: 0;
       text-align:center;
     }
-    img {
+    img, svg {
       @media screen and (max-width: 700px) {
         min-width: 500px;
       }
       max-width:100%;
+    }
+    svg {
+      height:auto;
+    }
+    &.graphviz {
+      font-family: $font-sans-serif;
+      font-size: 12px;
+      .node {
+        polygon {
+          fill: #fff;
+          stroke: #ccc;
+        }
+        text {
+          fill:#333;
+        }
+      }
+      .edge {
+        path {
+          stroke: #aaa;
+        }
+        polygon {
+          fill: #fff;
+          stroke: #aaa;
+        }
+        text {
+          transform: translate(5px);
+        }
+      }
     }
   }
 

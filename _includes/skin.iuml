@@ -1,0 +1,36 @@
+skinparam backgroundColor transparent
+skinparam shadowing false
+skinparam arrowColor gray
+skinparam defaultFontName Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace
+
+skinparam class {
+    arrowColor #03a87c
+    borderColor #aaaaaa
+    backgroundColor transparent
+}
+
+skinparam activity {
+    arrowColor #03a87c
+    borderColor #aaaaaa
+    backgroundColor transparent
+}
+
+skinparam sequence {
+    actorBorderColor #000000
+    actorBackgroundColor transparent
+    participantBorderColor #aaaaaa
+    participantBackgroundColor transparent
+    groupBorderThickness 1
+    arrowColor #03a87c
+    borderColor #aaaaaa
+    backgroundColor transparent
+    boxBorderColor #aaaaaa
+    boxBackgroundColor transparent
+    boxFontColor #000000
+    lifeLineBorderColor #aaaaaa
+}
+
+skinparam note {
+    borderColor #03a87c
+    backgroundColor transparent
+}

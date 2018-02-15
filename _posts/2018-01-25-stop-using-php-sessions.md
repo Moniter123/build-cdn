@@ -27,7 +27,7 @@ needs to have *state* that is associated with you, the user.
 That's what **sessions** are for. Let's take a look how these work:
 
 <figure>{% plantuml %}
-@startuml
+{% include skin.iuml %}
 actor Browser
 control Server
 database Database
@@ -52,7 +52,6 @@ Server <-- Database
 Deactivate Database
 Browser <-- Server: Here you go
 Deactivate Server
-@enduml
 {% endplantuml %}</figure>
 
 Now, the cookie in this context is not a fancy Christmas treat, but a tiny piece of information stored in the browser.
@@ -117,7 +116,7 @@ error on your dev machine, you can't. On the production system it clearly breaks
 Let's roll back to your dev machine. Here's what happens for a single request:
 
 <figure>{% plantuml %}
-@startuml
+{% include skin.iuml %}
 skinparam ParticipantPadding 20
 actor Browser
 control PHP1
@@ -142,14 +141,13 @@ Activate Filesystem
 PHP1 <-- Filesystem: OK, done
 Deactivate Filesystem
 Browser <-- PHP1: Here's your content.
-@enduml
 {% endplantuml %}</figure>
 
 That's all good, but what happens when your frontend developer fires two requests in quick succession? Let's take a
 look:
 
 <figure>{% plantuml %}
-@startuml
+{% include skin.iuml %}
 actor Browser
 control PHP1
 control PHP2
@@ -184,7 +182,6 @@ PHP2 <-- Filesystem: OK, done
 Deactivate Filesystem
 Browser <-- PHP2: Here's your content.
 Deactivate PHP2
-@enduml
 {% endplantuml %}</figure>
 
 OK, this might have been a bit long, but the point is that PHP 1 locks the session file so the second process (PHP 2)
@@ -194,7 +191,7 @@ Now here's the interesting part, let's look at what happens in a cluster with a 
 
 <figure>
 {% plantuml %}
-@startuml
+{% include skin.iuml %}
 actor Browser
 control PHP1
 control PHP2
@@ -225,7 +222,6 @@ note right: PHP2 is now overwriting\nany changes PHP1\nmay have made.
 Deactivate MongoDB
 Browser <-- PHP2: Here's your content.
 Deactivate PHP2
-@enduml
 {% endplantuml %}
 </figure>
 

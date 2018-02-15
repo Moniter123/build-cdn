@@ -24,7 +24,7 @@ So what can we do about it? One solution, of course, would be the use of a tradi
 CDNs pull the data from your server on request and then cache it for a while.
 
 <figure>{% plantuml %}
-@startuml
+{% include skin.iuml %}
 hide footbox
 actor User
 group With CDN
@@ -38,7 +38,6 @@ group Without CDN
    User -> Origin: 300ms
    User <-- Origin
 end
-@enduml
 {% endplantuml %}</figure>
 
 Using a traditional CDN the initial page load is slower than without it, since the CDN is a slight detour for the
@@ -58,7 +57,7 @@ getting a site. First, the users browser uses the Domain Name System (DNS) to lo
 Once it has the IP address, it can connect the website and download the requested page.
 
 <figure>{% plantuml %}
-@startuml
+{% include skin.iuml %}
 hide footbox
 actor User
 group Lookup IP
@@ -70,7 +69,6 @@ group Get website
   User -> 18.196.197.7: Gimme the website
   User <-- 18.196.197.7
 end
-@enduml
 {% endplantuml %}</figure>
 
 If we think about it on a high level, the solution is quite simple: we need a smart DNS server that does a GeoIP
