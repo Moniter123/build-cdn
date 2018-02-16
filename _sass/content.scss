@@ -76,11 +76,14 @@
       font-size: 12px;
       .node {
         polygon {
-          fill: #fff;
+          fill: $bgshaded;
           stroke: #ccc;
         }
         text {
           fill:#333;
+        }
+        polyline {
+          stroke: #ccc;
         }
       }
       .edge {
@@ -88,13 +91,19 @@
           stroke: #aaa;
         }
         polygon {
-          fill: #fff;
+          fill: $bgshaded;
           stroke: #aaa;
         }
-        text {
-          transform: translate(5px);
-        }
       }
+    }
+    table {
+      background-color:$bgshaded;
+      border-collapse: collapse;
+      margin-left:auto;
+      margin-right:auto;
+    }
+    table, th, td {
+      border: 1px solid $mutedcolor;
     }
   }
 

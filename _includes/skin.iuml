@@ -6,13 +6,14 @@ skinparam defaultFontName Menlo,Monaco,Consolas,"Liberation Mono","Courier New",
 skinparam class {
     arrowColor #03a87c
     borderColor #aaaaaa
-    backgroundColor transparent
+    backgroundColor #fafafa
 }
 
 skinparam activity {
     arrowColor #03a87c
     borderColor #aaaaaa
     backgroundColor transparent
+    fontSize 12
 }
 
 skinparam sequence {

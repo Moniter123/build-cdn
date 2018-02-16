@@ -4,10 +4,6 @@ title:         "Clean Code: Dependencies"
 date:          "2016-12-15 00:00:00"
 categories:    blog
 excerpt:       Managing dependencies is hard, especially if we are using third party libraries and projects. Let's talk about splitting our code into layers!
-preview:       /assets/img/clean-code-dependencies.jpg
-fbimage:       /assets/img/clean-code-dependencies.png
-twitterimage:  /assets/img/clean-code-dependencies.png
-googleimage:   /assets/img/clean-code-dependencies.png
 twitter_card:  summary_large_image
 ---
 

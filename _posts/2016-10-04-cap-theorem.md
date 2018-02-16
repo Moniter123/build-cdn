@@ -4,11 +4,6 @@ title:         What is the CAP theorem?
 date:          "2016-10-04 00:00:00"
 categories:    blog
 excerpt:       The CAP theorem is one of the most fundamental principles of distributed system design. Yet, it is often misunderstood or outright disregarded.
-preview:       /assets/img/cap-theorem.jpg
-fbimage:       /assets/img/cap-theorem.png
-twitterimage:  /assets/img/cap-theorem.png
-googleimage:   /assets/img/cap-theorem.png
-twitter_card:  summary_large_image
 ---
 
 When building larger computer systems, the database soon becomes a bottleneck. Scaling out to more than one machine 

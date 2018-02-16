@@ -4,11 +4,6 @@ title:         "Clean Code: Responsibilities"
 date:          "2016-11-14 00:00:00"
 categories:    blog
 excerpt:       I heard you want to be a better coder. You want to use reusable pieces, and you want to have an easier time maintaining older code. You may also want to work better in a team and ensure there are less bugs.
-preview:       /assets/img/clean-code-responsibilities.jpg
-fbimage:       /assets/img/clean-code-responsibilities.png
-twitterimage:  /assets/img/clean-code-responsibilities.png
-googleimage:   /assets/img/clean-code-responsibilities.png
-twitter_card:  summary_large_image
 ---
 
 The desire for better code usually leads people to discover the term “clean code”. It was most probably coined by 
