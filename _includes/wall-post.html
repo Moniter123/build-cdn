@@ -2,7 +2,7 @@
     {% if include.categorylabel %}
         <div class="{% if post.preview %}wall__categories{%else%}wall__categories--noimage{%endif%}">
             {% for category in post.categories %}
-                <a href="/{{category}}" class="{% if post.preview %}wall__category{%else%}wall__category--noimage{%endif%}">{{ category | replace:"blog","Blog" | replace:"speaking","Talk" | replace:"workshops","Workshop" }}</a>
+                <a href="/{{category}}" class="{% if post.preview %}wall__category{%else%}wall__category--noimage{%endif%}">{{ category | replace:"blog","Blog" | replace:"videos","Video" | replace:"speaking","Talk" | replace:"workshops","Workshop" }}</a>
             {% endfor %}
         </div>
     {% endif %}

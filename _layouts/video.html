@@ -1,0 +1,86 @@
+---
+layout: default
+---
+
+{% capture category_url %}/{{ page.categories|join: '/' }}{% endcapture %}
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+    "@type": "ListItem",
+    "position": 1,
+    "item": {
+      "@id": "https://pasztor.at/",
+      "name": "Janos Pasztor"
+    }
+  },{
+    "@type": "ListItem",
+    "position": 2,
+    "item": {
+      "@id": "{{ category_url | absolute_url}}",
+      "name": "{{ page.categories | join: ', '| capitalize }}"
+    }
+  },{
+    "@type": "ListItem",
+    "position": 3,
+    "item": {
+      "@id": "{{ page.url | absolute_url }}",
+      "name": "{{ page.title }}"
+    }
+  }]
+}
+</script>
+
+{% assign date_format = "%b %-d, %Y" %}
+<div class="post">
+    <article class="content" itemscope itemtype="https://schema.org/VideoObject">
+        <header class="post__header">
+            <h1 class="post__title" itemprop="name headline">{{ page.title | escape }}</h1>
+            <div class="post__meta">
+                <span class="post__line">
+                    by <span class="post__author" itemprop="author" itemscope itemtype="https://schema.org/Person"><a
+                        href="https://pasztor.at/cv" itemprop="url"><span itemprop="name">Janos Pasztor</span></a></span>
+                </span>
+                &bullet;
+                <span class="post__line">
+                    published <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="uploadDate">{{ page.date | date: date_format }}</time>
+                </span>
+                <span itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+                    <meta itemprop="name" content="Opsbears" />
+                    <meta itemprop="url" content="https://opsbears.com/" />
+                    <meta itemprop="logo" content="{{ "/assets/img/opsbears-logo.svg" | absolute_url }}" />
+                </span>
+                <meta itemprop="height" content="1920" />
+                <meta itemprop="width" content="1080" />
+                <meta itemprop="thumbnailUrl" content="{{ page.googleimage | default: "/assets/avatar.jpg" | absolute_url}}" />
+                <meta itemprop="dateModified" content="{{page.last_modified_at|date_to_xmlschema}}" />
+                <meta itemprop="mainEntityOfPage" content="{{ page.url | absolute_url }}" />
+                <meta itemprop="embedURL" content="{{ page.embed }}" />
+                <p>
+                    {{page.excerpt}}
+                </p>
+            </div>
+        </header>
+
+        {% if page.embed %}
+            <div class="post__preview">
+                <figure class="content__video">
+                    <iframe width="560" height="315" src="{{ page.embed }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </figure>
+            </div>
+        {% endif %}
+
+        <div class="post__content">
+            {{ content }}
+        </div>
+
+        {% if page.external_link %}
+        <div class="post__links">
+           <a href="{{page.external_link}}" class="post__link post__externallink" target="blank" rel="noopener noreferrer">Learn more (external site) <img src="{% base64 /assets/diagonal-arrow.svg %}" alt="" class="icon" /></a>
+        </div>
+        {% endif %}
+    </article>
+
+    {% include share.html %}
+</div>

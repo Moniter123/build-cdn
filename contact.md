@@ -15,7 +15,7 @@ opportunity. Please contact me at &#106;&#097;&#110;&#111;&#115;&#064;&#112;&#09
 
 ## Community chat
 
-By far the most effective way of getting my attention is by [joining the community chat on Discord](https://discord.gg/sEWQcpe).
+By far the most effective way of getting my attention is by [joining the community chat on Discord](/discord).
 
 ## Found an error?
 

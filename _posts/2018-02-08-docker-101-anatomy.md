@@ -24,7 +24,7 @@ packed-up Linux with an additional config file in JSON format.
 
 > **Note**: this article glosses over some of the intricacies of how a CPU and the kernel work for easier understanding.
 > If you wish to learn more about operating systems, I recommend the book
-> [Modern Operating Systems by Andrew S. Tanenbaum](/recommendations.php?book=andrew-tanenbaum-operating-systems)
+> [Modern Operating Systems by Andrew S. Tanenbaum](/recommendations?book=andrew-tanenbaum-operating-systems)
 > (sponsored link) for further study.
 
 ## The CPU
