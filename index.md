@@ -21,6 +21,7 @@ description: Latest posts by Janos Pasztor
     <div class="readmore__buttons">
         <a href="/speaking" class="readmore__button">Talks</a>
         <a href="/workshops" class="readmore__button">Workshops</a>
+        <a href="/videos" class="readmore__button">Videos</a>
         <a href="/blog" class="readmore__button">Blog</a>
     </div>
 </div>
