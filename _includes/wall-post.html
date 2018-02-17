@@ -1,9 +1,11 @@
 <article class="{% if post.preview %}wall__post{%else%}wall__post wall__post--noimage{%endif%}">
-    <div class="{% if post.preview %}wall__categories{%else%}wall__categories--noimage{%endif%}">
-        {% for category in post.categories %}
-            <a href="/{{category}}" class="{% if post.preview %}wall__category{%else%}wall__category--noimage{%endif%}">{{ category | replace:"blog","Blog" | replace:"speaking","Talk" | replace:"workshops","Workshop" }}</a>
-        {% endfor %}
-    </div>
+    {% if include.categorylabel %}
+        <div class="{% if post.preview %}wall__categories{%else%}wall__categories--noimage{%endif%}">
+            {% for category in post.categories %}
+                <a href="/{{category}}" class="{% if post.preview %}wall__category{%else%}wall__category--noimage{%endif%}">{{ category | replace:"blog","Blog" | replace:"speaking","Talk" | replace:"workshops","Workshop" }}</a>
+            {% endfor %}
+        </div>
+    {% endif %}
     {% if post.preview %}
         <a href="{{post.url}}" class="wall__image">
             {% capture defaultImageSize %}{{ post.preview | replace:'/assets/img', '/assets/resized/217' }}{% endcapture %}

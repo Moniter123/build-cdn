@@ -167,6 +167,14 @@ Feel free to learn from then and build your own!
       </a>
 
       {% assign current = '' %}
+      {% if page.url == '/videos' or page.url contains '/videos/' %}
+      {% assign current = 'topmenu__item--current' %}
+      {% endif %}
+      <a href="/videos" class="topmenu__item {{current}}">
+        Videos
+      </a>
+
+      {% assign current = '' %}
       {% if page.url == '/blog' or page.url contains '/blog/' %}
       {% assign current = 'topmenu__item--current' %}
       {% endif %}
