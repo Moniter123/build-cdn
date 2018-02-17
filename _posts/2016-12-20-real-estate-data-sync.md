@@ -10,5 +10,5 @@ twitterimage:  /assets/img/real-estate-data-sync.png
 googleimage:   /assets/img/real-estate-data-sync.png
 twitter_card:  summary_large_image
 video:         https://youtu.be/taIZSmIDu7E
-embed:         https://www.youtube-nocookie.com/embed/taIZSmIDu7E?rel=0&autoplay=1
+embed:         https://www.youtube-nocookie.com/embed/taIZSmIDu7E?rel=0
 ---

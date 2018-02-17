@@ -10,5 +10,5 @@ twitterimage:  /assets/img/developing-with-docker.png
 googleimage:   /assets/img/developing-with-docker.png
 twitter_card:  summary_large_image
 video:         https://youtu.be/73iAeXkJfSc
-embed:         https://www.youtube-nocookie.com/embed/73iAeXkJfSc?rel=0&autoplay=1
+embed:         https://www.youtube-nocookie.com/embed/73iAeXkJfSc?rel=0
 ---

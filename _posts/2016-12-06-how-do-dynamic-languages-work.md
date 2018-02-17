@@ -10,5 +10,5 @@ twitterimage:  /assets/img/how-do-dynamic-languages-work.png
 googleimage:   /assets/img/how-do-dynamic-languages-work.png
 twitter_card:  summary_large_image
 video:         https://www.youtube.com/v/-BbDVUuuPmk
-embed:         https://www.youtube-nocookie.com/embed/-BbDVUuuPmk?rel=0&autoplay=1
+embed:         https://www.youtube-nocookie.com/embed/-BbDVUuuPmk?rel=0
 ---
