@@ -5,6 +5,7 @@ date:          "2016-12-15 00:00:00"
 categories:    blog
 excerpt:       Managing dependencies is hard, especially if we are using third party libraries and projects. Let's talk about splitting our code into layers!
 twitter_card:  summary_large_image
+tags:          development, clean code, theory
 ---
 
 Awesome! So [after the last article](/blog/clean-code-responsibilities), we have our responsibilities neatly split up, every 

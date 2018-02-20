@@ -4,6 +4,7 @@ title:         Filtering spam with Exim only
 date:          2013-01-07 00:00:00
 categories:    blog
 excerpt:       "Defense against spam has always been a hassle. Statistical filters only get you so far and they consume a LOT of resources. For exactly that reason I like to employ basic checking policies before accepting e-mail at all. These policies have gotten me pretty far and my false positive rate is pretty low."
+tags:          devops, email
 ---
 
 {% raw %}

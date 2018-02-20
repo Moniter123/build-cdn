@@ -9,6 +9,7 @@ fbimage:       /assets/img/under-the-hood-of-docker.png
 twitterimage:  /assets/img/under-the-hood-of-docker.png
 googleimage:   /assets/img/under-the-hood-of-docker.png
 twitter_card:  summary_large_image
+tags:          docker, devops, theory
 ---
 
 It may come as a surprise to you, but containers are not a technology. They don't exist. They are actually a result
@@ -187,7 +188,7 @@ A few notable examples of limits that can be set include:
 ## Namespaces
 
 This is where it begins to be really interesting. Namespaces have been around, but haven't really been useful until
-until recently. But what are they?
+recently. But what are they?
 
 Let's take an example. Normally, the Linux kernel would launch one network stack for one machine, so every process
 has access to the same IP addresses, etc. However, using namespaces, it is able to launch a different network stack

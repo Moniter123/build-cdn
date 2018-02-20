@@ -4,6 +4,7 @@ title:         Interplanetary Filesystem
 date:          "2017-01-11 00:00:00"
 categories:    blog
 excerpt:       Quite by accident, I've stumbled upon a rather interesting technology called IPFS. It promises to replace HTTP as a transport protocol for websites and scale to interplanetary levels. Even though the claims sound just tiny bit far fetched, the technology behind it got me quite excited.
+tags:          devops
 ---
 
 Looking at [one of the talks by Juan Benet](https://www.youtube.com/watch?v=HUVmypx9HGI), the principal author of IPFS,

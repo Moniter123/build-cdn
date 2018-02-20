@@ -18,6 +18,7 @@ eventCountryCode:   LT
 eventStartDate:     2018-03-14T09:00:00Z
 eventEndDate:       2018-03-15T16:00:00Z
 eventUrl:           http://devopspro.lt/
+tags:               docker, theory, devops
 ---
 
 Have you ever wondered how Docker does what it does? How can you run “cheap” virtual machines without the added overhead of running a true virtualization? Have you ever wondered what all this talk about cgroups, namespaces, and what not is?

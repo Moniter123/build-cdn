@@ -10,6 +10,7 @@ fbimage:       /assets/img/functional-object-oriented-programming.png
 twitterimage:  /assets/img/functional-object-oriented-programming.png
 googleimage:   /assets/img/functional-object-oriented-programming.png
 twitter_card:  summary_large_image
+tags:          functional programming, oop, development
 ---
 
 Here's the thing: I think functional programming is a good thing, but is lacking a few things that I found to be very
@@ -200,6 +201,9 @@ I'm not one of those functional nutjobs that think that functional is the only t
 blasphemy. State is a necessary evil in programming and we have to live with it. But it doesn't mean that we should put
 *all* our code full of state. Instead, we should try and minimize state to the places that truly need it, such as
 caching and storage implementations, or wrapper classes for external libraries.
+
+> **Follow-up article:** If you wish to learn more about this topic, I recommend reading my follow up article
+> “[One controller, one action](/blog/one-controller-one-action)”.
 
 I have been using it for a while like this and I felt no adverse effects. What do you think? Would you code like this?
 [Let me know!](/contact)

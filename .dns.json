@@ -99,6 +99,39 @@
     {
       "Action": "UPSERT",
       "ResourceRecordSet": {
+        "Name": "pasztor.at.",
+        "Type": "A",
+        "SetIdentifier": "latency-ap-southeast-1",
+        "Region": "ap-southeast-1",
+        "TTL": 60,
+        "ResourceRecords": [
+          {
+            "Value": "13.229.195.120"
+          }
+        ],
+        "HealthCheckId": "8b13767c-d627-4380-b7dc-da5805ed0162"
+      }
+    },
+
+    {
+      "Action": "UPSERT",
+      "ResourceRecordSet": {
+        "Name": "pasztor.at.",
+        "Type": "A",
+        "SetIdentifier": "latency-ap-south-1",
+        "Region": "ap-south-1",
+        "TTL": 60,
+        "ResourceRecords": [
+          {
+            "Value": "13.127.43.237"
+          }
+        ],
+        "HealthCheckId": "cc49e60e-bfc5-4a11-9635-9b412d97484a"
+      }
+    },
+    {
+      "Action": "UPSERT",
+      "ResourceRecordSet": {
         "Name": "www.pasztor.at.",
         "Type": "A",
         "SetIdentifier": "latency-eu-central-1",
@@ -190,6 +223,39 @@
           }
         ],
         "HealthCheckId": "1c493fc5-b7a9-4096-88c1-a25c8cbf0bdd"
+      }
+    },
+    {
+      "Action": "UPSERT",
+      "ResourceRecordSet": {
+        "Name": "www.pasztor.at.",
+        "Type": "A",
+        "SetIdentifier": "latency-ap-southeast-1",
+        "Region": "ap-southeast-1",
+        "TTL": 60,
+        "ResourceRecords": [
+          {
+            "Value": "13.229.195.120"
+          }
+        ],
+        "HealthCheckId": "8b13767c-d627-4380-b7dc-da5805ed0162"
+      }
+    },
+
+    {
+      "Action": "UPSERT",
+      "ResourceRecordSet": {
+        "Name": "www.pasztor.at.",
+        "Type": "A",
+        "SetIdentifier": "latency-ap-south-1",
+        "Region": "ap-south-1",
+        "TTL": 60,
+        "ResourceRecords": [
+          {
+            "Value": "13.127.43.237"
+          }
+        ],
+        "HealthCheckId": "cc49e60e-bfc5-4a11-9635-9b412d97484a"
       }
     }
   ]

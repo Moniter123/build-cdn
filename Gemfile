@@ -10,7 +10,10 @@ group :jekyll_plugins do
     gem 'jekyll-plantuml'
     gem 'jekyll-responsive-image'
     gem 'jekyll-tidy'
+    gem 'classifier-reborn'
+    gem 'jekyll-tagging-related_posts'
 end
 
+gem 'gsl'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 

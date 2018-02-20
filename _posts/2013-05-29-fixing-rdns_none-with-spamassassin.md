@@ -4,6 +4,7 @@ title:         Fixing RDNS_NONE with Spamassassin
 date:          2013-05-29 00:00:00
 categories:    blog
 excerpt:       "When dealing with SpamAssassin and Exim, one may often encounter a mysterious RDNS_NONE"
+tags:          devops, email
 ---
 
 After [filtering spam with Exim](/blog/filtering-spam-with-exim-only/), I wanted to add [Spamassassin](http://spamassassin.apache.org/){:target="_blank"}{:rel="noopener noreferrer"} to do content based filtering. While testing the spam filtering, I ran into a bit of an issue: I encountered a spam score factor in every single e-mail: `RDNS_NONE` with the score of 1.3.

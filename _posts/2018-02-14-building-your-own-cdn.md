@@ -9,6 +9,7 @@ fbimage:       /assets/img/building-your-own-cdn.png
 twitterimage:  /assets/img/building-your-own-cdn.png
 googleimage:   /assets/img/building-your-own-cdn.png
 twitter_card:  summary_large_image
+tags:          docker, devops, cdn
 ---
 
 As you can (hopefully) see from this site, I like my pages *fast*. Very, very fast. Now, before we jump into this, let
@@ -157,7 +158,7 @@ to collect a bit of real usage data using Google Analytics:
 
 <figure><img src="/assets/img/real-world-cdn-usage.png" alt="" /></figure>
 
-Bottom like: I really need that Singapore node. The load times in India are above the desired 1 second.
+Bottom line: I really need that Singapore node. The load times in India are above the desired 1 second.
 
 ## Frequently asked questions
 

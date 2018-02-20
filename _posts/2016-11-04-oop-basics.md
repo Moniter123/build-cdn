@@ -4,6 +4,7 @@ title:         Getting started in Object-Oriented Programming
 date:          "2016-11-04 00:00:00"
 categories:    blog
 excerpt:       So you've been programming for a while, and you are still stumped with what object-oriented programming actually is? Then this may be the guide for you. We'll take a departure from traditional explanations and look at a new way of explaining OOP.
+tags:          development, oop
 ---
 
 So you've been programming for a while, and you are still stumped with what object-oriented programming actually is? 

@@ -4,6 +4,7 @@ title:         The loose, the strict and the static typing
 date:          "2017-01-03 00:00:00"
 categories:    blog
 excerpt:       There seems to be a great deal of confusion in the programming world what loose, weak, strict, static and duck typing actually mean. Let's go through it and clear a few things up!
+tags:          theory
 ---
 
 If you're reading this, you have probably written a few programs yourself, maybe in languages in loosely typed 

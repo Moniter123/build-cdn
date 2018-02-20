@@ -10,7 +10,7 @@ description: Latest posts by Janos Pasztor
     {% endfor %}
 </div>
 <div class="wall__postlist">
-    {% for post in site.posts offset:2 limit:8 %}
+    {% for post in site.posts offset:2 limit:12 %}
         {% include wall-post-noimage.html categorylabel=true %}
     {% endfor %}
 </div>

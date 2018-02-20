@@ -9,6 +9,7 @@ fbimage:       /assets/img/working-with-certificates-in-java.jpg
 twitterimage:  /assets/img/working-with-certificates-in-java.jpg
 googleimage:   /assets/img/working-with-certificates-in-java.jpg
 twitter_card:  summary_large_image
+tags:          java, development
 ---
 
 ## Install Bouncy Castle

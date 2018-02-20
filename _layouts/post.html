@@ -54,6 +54,7 @@ layout: default
                 <meta itemprop="image" content="{{ page.googleimage | default: "/assets/avatar.jpg" | absolute_url}}" />
                 <meta itemprop="dateModified" content="{{page.last_modified_at|date_to_xmlschema}}" />
                 <meta itemprop="mainEntityOfPage" content="{{ page.url | absolute_url }}" />
+                <meta itemprop="keywords" content="{{ page.tags | join: '' }}" />
                 <p>
                     {{page.excerpt}}
                 </p>
@@ -98,4 +99,16 @@ layout: default
     </article>
 
     {% include share.html %}
+
+    <div class="post__recommended">
+        <div class="readmore">
+            <div class="readmore__cta">Do you want more? Click the buttons below!</div>
+            <div class="readmore__buttons">
+                <a href="/speaking" class="readmore__button">Talks</a>
+                <a href="/workshops" class="readmore__button">Workshops</a>
+                <a href="/videos" class="readmore__button">Videos</a>
+                <a href="/blog" class="readmore__button">Blog</a>
+            </div>
+        </div>
+    </div>
 </div>

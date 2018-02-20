@@ -11,6 +11,7 @@ googleimage:   /assets/img/running-docker-in-the-cloud.png
 twitter_card:  summary_large_image
 video:         https://youtu.be/gvQis2_-f4Y
 embed:         https://www.youtube-nocookie.com/embed/gvQis2_-f4Y?rel=0
+tags:          docker, devops
 ---
 
 Slides: https://slides.com/janoszen/running-docker-in-the-cloud

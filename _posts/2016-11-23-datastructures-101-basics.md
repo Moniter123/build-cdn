@@ -4,6 +4,7 @@ title:         "Datastructures 101: Basics"
 date:          "2016-11-23 00:00:00"
 categories:    blog
 excerpt:       Why would you learn data structures? You won't need it unless you are a programmer, database engineer or university student... wait, you are? Never mind, keep on reading.
+tags:          development, theory
 ---
 
 ## Why bother?

@@ -9,6 +9,7 @@ fbimage:       /assets/img/why-docker-matters-and-why-you-should-care.png
 twitterimage:  /assets/img/why-docker-matters-and-why-you-should-care.png
 googleimage:   /assets/img/why-docker-matters-and-why-you-should-care.png
 twitter_card:  summary_large_image
+tags:          docker, devops
 ---
 
 ## The Good Old Days

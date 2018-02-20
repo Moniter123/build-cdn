@@ -4,6 +4,7 @@ title:         Setting up Apache with PHP-FPM
 date:          2013-04-29 00:00:00
 categories:    blog
 excerpt:       "Nowadays nginx seems to experience a serious growth in terms of numbers when looking at HTTP server software. Almost all articles regarding PHP-FPM detail the setup with nginx, very few talk about the good old [Apache HTTPd](http://httpd.apache.org/). Admittedly, it’s a little harder to set up due to the myriad hacks layered in it’s internal infrastructure. It has one major advantage however: it handles _.htaccess_ files which allows customers to configure their own little corner of the webserver without poking the admin or endangering the server’s stability."
+tags:          devops, php
 ---
 
 ## How PHP-FPM works

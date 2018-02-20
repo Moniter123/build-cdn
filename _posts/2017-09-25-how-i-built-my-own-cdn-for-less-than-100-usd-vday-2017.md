@@ -19,6 +19,7 @@ eventCountryCode:   HU
 eventStartDate:     2017-11-07T08:30:00Z
 eventEndDate:       2017-11-07T15:00:00Z
 eventUrl:           https://vday.hu/2017/
+tags:               cdn, devops
 ---
 
 I spoke live on the 7<sup>th</sup> of November on the Hungarian Virtualization Day. The slides are available below.

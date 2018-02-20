@@ -4,6 +4,7 @@ title:         Debugging applications with strace
 date:          2012-04-19 00:00:00
 categories:    blog
 excerpt:       There are times, when we get an application and need to find out what it does fast. We don’t have the time to read the source code. Fortunately there are multiple tools to our rescue, one of which is the strace Linux utility. strace means system call trace, it shows us every system call the application does, such as opening or reading a file, writing data to a network socket. It’s not a magic pill, it won’t show the internal working of the application, but it’s still very useful to find out what it does externally (IO operations and such).
+tags:          devops, debugging
 ---
 
 The basic use of strace is to run an application directly:

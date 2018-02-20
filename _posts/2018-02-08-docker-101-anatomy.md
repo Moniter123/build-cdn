@@ -9,6 +9,7 @@ fbimage:       /assets/img/docker-101-anatomy.png
 twitterimage:  /assets/img/docker-101-anatomy.png
 googleimage:   /assets/img/docker-101-anatomy.png
 twitter_card:  summary_large_image
+tags:          docker, devops, theory
 ---
 
 If you are used to Windows system administration, you may be used to only being able to clone a system using
