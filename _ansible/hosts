@@ -2,6 +2,7 @@
 eu-central-1.cdn.opsbears.net hostname=eu-central-1 domainname=cdn.opsbears.net ansible_python_interpreter=/usr/bin/python3
 eu-west-2.cdn.opsbears.net hostname=eu-west-2 domainname=cdn.opsbears.net ansible_python_interpreter=/usr/bin/python3
 us-east-1.cdn.opsbears.net hostname=us-east-1 domainname=cdn.opsbears.net ansible_python_interpreter=/usr/bin/python3
+us-west-1.cdn.opsbears.net hostname=us-west-1 domainname=cdn.opsbears.net ansible_python_interpreter=/usr/bin/python3
 us-west-2.cdn.opsbears.net hostname=us-west-2 domainname=cdn.opsbears.net ansible_python_interpreter=/usr/bin/python3
 ap-northeast-1.cdn.opsbears.net hostname=ap-northeast-1 domainname=cdn.opsbears.net ansible_python_interpreter=/usr/bin/python3
 ap-southeast-2.cdn.opsbears.net hostname=ap-southeast-2 domainname=cdn.opsbears.net ansible_python_interpreter=/usr/bin/python3

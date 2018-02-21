@@ -18,9 +18,6 @@ four-five, but it quickly grows out of control and becomes
 with a friend about this problem and they suggested that the approach of putting only one action in one controller class
 may be a solution to that. As preposterous as that sounds, let's just follow this trail for a minute.
 
-> **Please note:** For the purposes of this article I'm going to assume that you write tests for your application.
-> If you don't... well, then you have bigger things to worry about.
-
 ## One controller...
 
 A very popular approach towards structuring controllers is the separation along the lines of CRUD
@@ -166,8 +163,9 @@ while we're at it, we can push things just a little bit further.
 ## Is this... functional?!
 
 If you squint a little you may see a strange pattern emerge: Our constructors have the sole purpose of storing the
-incoming dependency, in our case the `blogPostBusinessLogic` object, in a class variable. The `blogPostBusinessLogic`
-itself is also a class instance with a single *function* in it, which will be used by the action during the execution. 
+incoming dependency, in our case the `blogPostBusinessLogic` object, in an instance variable. The
+`blogPostBusinessLogic` itself is also a class instance with a single *function* in it, which will be used by the action
+during the execution. 
 
 As we will see in this section, a class with only one constructor and one method is very similar to the combination of
 two concepts used in *functional programming*: **higher order functions** and **currying**.
@@ -279,3 +277,8 @@ Object orientation gives you structure, whereas functional programming gives you
 
 The one controller one action paradigm, when combined with immutability, leads to a beneficial blend of
 OOP and FP in my opinion.
+
+> **Recommended resources:**
+> - [Why functional programming matters (video)](https://www.youtube.com/watch?v=oB8jN68KGcU)
+> - [The Entity-Boundary-Interactor pattern](http://ebi.readthedocs.io/en/latest/)
+> - [The Action Domain Responder pattern](https://github.com/pmjones/adr)
