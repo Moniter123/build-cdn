@@ -124,27 +124,31 @@ Feel free to learn from then and build your own!
         <span class="header__name">Janos Pasztor</span>
       </a>
       <div class="header__subscribe">
-        <a href="https://facebook.com/janoszen" class="header__sociallink" target="_blank" >
-          <img src="{% base64 /assets/img/facebook-round.svg %}" alt="Facebook" title="Follow me on Facebook" class="header__socialicon" />
-        </a>
-        <a href="https://twitter.com/janoszen" class="header__sociallink" target="_blank" >
-          <img src="{% base64 /assets/img/twitter-round.svg %}" alt="Twitter" title="Follow me on Twitter" class="header__socialicon" />
-        </a>
-        <a href="https://github.com/janoszen" class="header__sociallink" target="_blank" >
-          <img src="{% base64 /assets/img/github-round.svg %}" alt="GitHub" title="Visit me on GitHub" class="header__socialicon" />
-        </a>
-        <a href="https://www.youtube.com/c/JanosPasztor" class="header__sociallink" target="_blank">
-          <img src="{% base64 /assets/img/youtube-round.svg %}" alt="YouTube" title="Subscribe on YouTube" class="header__socialicon" />
-        </a>
-        <a href="https://discord.gg/sEWQcpe" class="header__sociallink" target="_blank" >
-          <img src="{% base64 /assets/img/discord-round.svg %}" alt="Discord" title="Join the Discord chat" class="header__socialicon" />
-        </a>
-        <a href="https://www.patreon.com/janoszen" class="header__sociallink" target="_blank" >
-          <img src="{% base64 /assets/img/patreon-round.svg %}" alt="Patreon" title="Support me on Patreon" class="header__socialicon" />
-        </a>
-        <a href="/feed.xml" class="header__sociallink" target="_blank">
-          <img src="{% base64 /assets/img/rss-round.svg %}" alt="RSS" title="Subscribe to my feed" class="header__socialicon" />
-        </a>
+        <span class="header__subscribesection">
+          <a href="https://www.patreon.com/janoszen" class="header__sociallink header__sociallink--full" target="_blank" data-event-category="sign_up" data-event="Patreon">
+            <img src="{% base64 /assets/img/patreon-wide.svg %}" alt="Patreon" title="Support me on Patreon" class="header__socialicon header__socialicon--full" />
+          </a>
+          <a href="https://discord.gg/sEWQcpe" class="header__sociallink header__sociallink" target="_blank" data-event-category="sign_up" data-event="Discord">
+            <img src="{% base64 /assets/img/discord-round.svg %}" alt="Discord" title="Join the community on Discord" class="header__socialicon header__socialicon" />
+          </a>
+        </span>
+        <span class="header__subscribesection">
+          <a href="https://facebook.com/janoszen" class="header__sociallink" target="_blank" data-event-category="sign_up" data-event="Facebook">
+            <img src="{% base64 /assets/img/facebook-round.svg %}" alt="Facebook" title="Follow me on Facebook" class="header__socialicon" />
+          </a>
+          <a href="https://twitter.com/janoszen" class="header__sociallink" target="_blank" data-event-category="sign_up" data-event="Twitter">
+            <img src="{% base64 /assets/img/twitter-round.svg %}" alt="Twitter" title="Follow me on Twitter" class="header__socialicon" />
+          </a>
+          <a href="https://github.com/janoszen" class="header__sociallink" target="_blank" data-event-category="sign_up" data-event="GitHub">
+            <img src="{% base64 /assets/img/github-round.svg %}" alt="GitHub" title="Visit me on GitHub" class="header__socialicon" />
+          </a>
+          <a href="https://www.youtube.com/c/JanosPasztor" class="header__sociallink" target="_blank" data-event-category="sign_up" data-event="YouTube">
+            <img src="{% base64 /assets/img/youtube-round.svg %}" alt="YouTube" title="Subscribe on YouTube" class="header__socialicon" />
+          </a>
+          <a href="/feed.xml" class="header__sociallink" target="_blank" data-event-category="sign_up" data-event="RSS">
+            <img src="{% base64 /assets/img/rss-round.svg %}" alt="RSS" title="Subscribe to my feed" class="header__socialicon" />
+          </a>
+        </span>
       </div>
     </header>
 
@@ -155,6 +159,22 @@ Feel free to learn from then and build your own!
       {% endif %}
       <a href="/" class="topmenu__item {{current}}">
         Home
+      </a>
+
+      {% assign current = '' %}
+      {% if page.url == '/blog' or page.url contains '/blog/' %}
+      {% assign current = 'topmenu__item--current' %}
+      {% endif %}
+      <a href="/blog" class="topmenu__item {{current}}">
+        Blog
+      </a>
+
+      {% assign current = '' %}
+      {% if page.url == '/videos' or page.url contains '/videos/' %}
+      {% assign current = 'topmenu__item--current' %}
+      {% endif %}
+      <a href="/videos" class="topmenu__item {{current}}">
+        Videos
       </a>
 
       {% assign current = '' %}
@@ -171,22 +191,6 @@ Feel free to learn from then and build your own!
       {% endif %}
       <a href="/workshops" class="topmenu__item {{current}}">
         Workshops
-      </a>
-
-      {% assign current = '' %}
-      {% if page.url == '/videos' or page.url contains '/videos/' %}
-      {% assign current = 'topmenu__item--current' %}
-      {% endif %}
-      <a href="/videos" class="topmenu__item {{current}}">
-        Videos
-      </a>
-
-      {% assign current = '' %}
-      {% if page.url == '/blog' or page.url contains '/blog/' %}
-      {% assign current = 'topmenu__item--current' %}
-      {% endif %}
-      <a href="/blog" class="topmenu__item {{current}}">
-        Blog
       </a>
 
       {% assign current = '' %}
@@ -251,7 +255,7 @@ Feel free to learn from then and build your own!
 
             function setCookie(cookieName, cookieValue, expiry) {
                 var now = new Date();
-                now.setTime(now.getTime() + expiry);
+                now.setTime(now.getTime() + expiry * 1000);
                 var expires = "expires=" + now.toUTCString();
                 document.cookie = cookieName + "=" + encodeURIComponent(cookieValue) + ";" + expires + ";path=/;domain=." + document.location.hostname;
                 document.cookie = cookieName + "=" + encodeURIComponent(cookieValue) + ";" + expires + ";path=/;domain=" + document.location.hostname;
@@ -353,6 +357,22 @@ Feel free to learn from then and build your own!
                 scriptElement.setAttribute("async", "async");
                 scriptElement.src = "https://www.googletagmanager.com/gtag/js?id=UA-108462692-1";
                 document.body.appendChild(scriptElement);
+
+                var eventLinks = document.querySelectorAll('[data-event]');
+                for (var i = 0; i < eventLinks.length; i++) {
+                    if (eventLinks.hasOwnProperty(i)) {
+                        var eventLink = eventLinks[i];
+                        eventLink.addEventListener("click", function() {
+                            gtag(
+                                'event',
+                                this.dataset.eventCategory,
+                                {
+                                    method: this.dataset.event
+                                }
+                            );
+                        });
+                    }
+                }
             }
 
             if (blockAnalytics) {

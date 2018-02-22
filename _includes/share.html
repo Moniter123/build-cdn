@@ -3,56 +3,82 @@
         Did you learn something? Why not share it?
     </h2>
     <div class="post__sharelinks">
+        <a title="Share on Hacker News"
+           data-event-category="share"
+           data-event="Hacker News"
+           target="_blank" rel="noopener noreferrer"
+           href="https://news.ycombinator.com/submitlink?u={{ page.url | absolute_url | url_escape }}&t={{ page.title | url_escape }}"
+           class="post__sharelink social__hackernews">
+            <img src="{% base64 /assets/share-icons/hackernews.svg %}" alt="Share on Hacker News" height="36" width="36" />
+        </a>
         <a title="Share on Facebook"
+           data-event-category="share"
+           data-event="Facebook"
            target="_blank" rel="noopener noreferrer"
            href="https://www.facebook.com/dialog/share?href={{ page.url | absolute_url | url_encode }}&amp;app_id=1916868571905927&amp;display=page&amp;redirect_uri={{ page.url | absolute_url | url_encode }}"
            class="post__sharelink social__facebook">
             <img src="{% base64 /assets/share-icons/facebook.svg %}" alt="Share on Facebook" height="36" width="36" />
         </a>
-        <a title="Share on Messenger"
+        <a title="Share on Reddit"
+           data-event-category="share"
+           data-event="Reddit"
            target="_blank" rel="noopener noreferrer"
-           href="https://www.facebook.com/dialog/send?link={{ page.url | absolute_url | url_encode }}&amp;app_id=1916868571905927&amp;redirect_uri={{ page.url | absolute_url | url_encode }}" class="post__sharelink social__messenger">
-            <img src="{% base64 /assets/share-icons/messenger.svg %}" alt="Share on Messenger" height="36" width="36" />
+           href="https://www.reddit.com/submit?url={{ page.url | absolute_url | url_encode }}&amp;title={{ page.title | url_encode }}" class="post__sharelink social__reddit">
+            <img src="{% base64 /assets/share-icons/reddit.svg %}" alt="Share on Reddit" height="36" width="36" />
         </a>
         <a title="Share on Twitter"
+           data-event-category="share"
+           data-event="Twitter"
            target="_blank" rel="noopener noreferrer"
            href="https://twitter.com/intent/tweet?url={{ page.url | absolute_url | url_encode }}&amp;text={{ page.title | url_encode }}&amp;via=janoszen"
            class="post__sharelink social__twitter">
             <img src="{% base64 /assets/share-icons/twitter.svg %}" alt="Share on Twitter" height="36" width="36" />
         </a>
+        <a title="Save on GetPocket"
+           data-event-category="share"
+           data-event="GetPocket"
+           target="_blank" rel="noopener noreferrer"
+           href="https://getpocket.com/edit?url={{ page.url | absolute_url | url_encode }}" class="post__sharelink social__getpocket">
+            <img src="{% base64 /assets/share-icons/pocket.svg %}" alt="Save on GetPocket" height="36" width="36" />
+        </a>
+        <a title="Share on Messenger"
+           data-event-category="share"
+           data-event="Messenger"
+           target="_blank" rel="noopener noreferrer"
+           href="https://www.facebook.com/dialog/send?link={{ page.url | absolute_url | url_encode }}&amp;app_id=1916868571905927&amp;redirect_uri={{ page.url | absolute_url | url_encode }}" class="post__sharelink social__messenger">
+            <img src="{% base64 /assets/share-icons/messenger.svg %}" alt="Share on Messenger" height="36" width="36" />
+        </a>
         <a title="Share on Google+"
+           data-event-category="share"
+           data-event="Google+"
            target="_blank" rel="noopener noreferrer"
            href="https://plus.google.com/share?url={{ page.url | absolute_url | url_encode }}&amp;hl=en" class="post__sharelink social__gplus">
             <img src="{% base64 /assets/share-icons/google-plus.svg %}" alt="Share on Google+" height="36" width="36" />
         </a>
         <a title="Share on Tumblr"
+           data-event-category="share"
+           data-event="Tumblr"
            target="_blank" rel="noopener noreferrer"
            href="https://tumblr.com/widgets/share/tool?canonicalUrl={{ page.url | absolute_url | url_encode }}" class="post__sharelink social__tumblr">
             <img src="{% base64 /assets/share-icons/tumblr.svg %}" alt="Share on Tumblr" height="36" width="36" />
         </a>
-
-        <a title="Share on Reddit"
-           target="_blank" rel="noopener noreferrer"
-           href="https://www.reddit.com/submit?url={{ page.url | absolute_url | url_encode }}&amp;title={{ page.title | url_encode }}" class="post__sharelink social__reddit">
-            <img src="{% base64 /assets/share-icons/reddit.svg %}" alt="Share on Reddit" height="36" width="36" />
-        </a>
-
         <a title="Share on Linkedin"
+           data-event-category="share"
+           data-event="Linkedin"
            target="_blank" rel="noopener noreferrer"
            href="https://www.linkedin.com/shareArticle?mini=true&url={{ page.url | absolute_url | url_encode }}" class="post__sharelink social__linkedin">
             <img src="{% base64 /assets/share-icons/linkedin.svg %}" alt="Share on Linkedin" height="36" width="36" />
         </a>
-        <a title="Save on GetPocket"
-           target="_blank" rel="noopener noreferrer"
-           href="https://getpocket.com/edit?url={{ page.url | absolute_url | url_encode }}" class="post__sharelink social__getpocket">
-            <img src="{% base64 /assets/share-icons/pocket.svg %}" alt="Save on GetPocket" height="36" width="36" />
-        </a>
         <a title="Share on VKontakte"
+           data-event-category="share"
+           data-event="VKontakte"
            target="_blank" rel="noopener noreferrer"
            href="http://vk.com/share.php?url={{ page.url | absolute_url | url_encode }}&amp;title={{ page.title | url_encode }}" class="post__sharelink social__vkontakte">
             <img src="{% base64 /assets/share-icons/vk.svg %}" alt="Share on VKontakte" height="36" width="36" />
         </a>
         <a title="Share on Wordpress"
+           data-event-category="share"
+           data-event="Wordpress"
            target="_blank" rel="noopener noreferrer"
            href="http://wordpress.com/press-this.php?u={{ page.url | absolute_url | url_encode }}&amp;title={{ page.title | url_encode }}" class="post__sharelink social__wordpress">
             <img src="{% base64 /assets/share-icons/wordpress.svg %}" alt="Share on Wordpress" height="36" width="36" />
@@ -60,50 +86,60 @@
     </div>
 </div>
 <div class="post__bio">
-    <img src="{% base64 /assets/avatar-64.jpg %}" alt="" class="post__bioavatar" />
     <div class="post__biodata">
-        <h2 class="post__bioname">Janos Pasztor</h2>
-        <div class="post__biotext">
-            <p>
-                I'm a DevOps engineer with a strong background in both backend development and operations, with a
-                history of hosting and delivering content.
-            </p>
-            <p>
-                When it comes to picking a solution, I end up diving head first into research and development, finding
-                a rather unusual but practical solution. This gives me a somewhat unique insight into technologies and
-                often lets me come up with better solutions to the problems.
-            </p>
+        <div class="post__biocontainer">
+            <img src="{% base64 /assets/avatar-64.jpg %}" alt="" class="post__bioavatar" />
+            <div class="post__biocol">
+                <h2 class="post__bioname">Janos Pasztor</h2>
+                <div class="post__biotext">
+                    <p>
+                        I'm a DevOps engineer with a strong background in both backend development and operations, with a
+                        history of hosting and delivering content.
+                    </p>
+                    <p>
+                        I run an active DevOps and development <a href="/discord" data-event-category="sign_up" data-event="Discord">community on Discord</a>, and if you
+                        like what I do and would like me to do more, you can also <a href="/patreon" data-event-category="sign_up" data-event="Patreon">support me on
+                        Patreon</a>.
+                    </p>
+                </div>
+            </div>
+            <div class="post__biojoin">
+                <div class="post__biojoinsection">
+                    <h2 class="post__biojoinheader">Support me on</h2>
+                    <a href="/patreon" class="post__joinlink" data-event-category="sign_up" data-event="Patreon">
+                        <img src="{% base64 /assets/img/patreon-wide.svg %}" alt="Patreon" class="post__biojoinimage" />
+                    </a>
+                </div>
+                <div class="post__biojoinsection">
+                    <h2 class="post__biojoinheader">Join the community</h2>
+                    <a href="/discord" class="post__joinlink" data-event-category="sign_up" data-event="Discord">
+                        <img src="{% base64 /assets/img/discord-wide.svg %}" alt="Discord" class="post__biojoinimage" />
+                    </a>
+                </div>
+            </div>
         </div>
         <h3 class="post__biosubscribe">Subscribe</h3>
         <div class="post__biosocial">
             <div class="post__biosocialcol">
-                <a href="https://facebook.com/janoszen" class="post__biosociallink" target="_blank" >
+                <a href="https://facebook.com/janoszen" class="post__biosociallink" target="_blank" data-event-category="follow" data-event="Facebook">
                     <img src="{% base64 /assets/img/facebook-round.svg %}" alt="Facebook" title="Follow me on Facebook" class="post__biosocialicon" />
                     Facebook
                 </a>
-                <a href="https://twitter.com/janoszen" class="post__biosociallink" target="_blank" >
+                <a href="https://twitter.com/janoszen" class="post__biosociallink" target="_blank" data-event-category="follow" data-event="Twitter">
                     <img src="{% base64 /assets/img/twitter-round.svg %}" alt="Twitter" title="Follow me on Twitter" class="post__biosocialicon" />
                     Twitter
                 </a>
-                <a href="https://github.com/janoszen" class="post__biosociallink" target="_blank" >
+                <a href="https://github.com/janoszen" class="post__biosociallink" target="_blank" data-event-category="follow" data-event="GitHub">
                     <img src="{% base64 /assets/img/github-round.svg %}" alt="GitHub" title="Visit me on GitHub" class="post__biosocialicon" />
                     GitHub
                 </a>
-                <a href="https://www.youtube.com/c/JanosPasztor" class="post__biosociallink" target="_blank" >
+            </div>
+            <div class="post__biosocialcol">
+                <a href="https://www.youtube.com/c/JanosPasztor" class="post__biosociallink" target="_blank" data-event-category="sign_up" data-event="YouTube">
                     <img src="{% base64 /assets/img/youtube-round.svg %}" alt="YouTube" title="Subscribe on YouTube" class="post__biosocialicon" />
                     YouTube
                 </a>
-            </div>
-            <div class="post__biosocialcol">
-                <a href="https://www.patreon.com/janoszen" class="post__biosociallink" target="_blank" >
-                    <img src="{% base64 /assets/img/patreon-round.svg %}" alt="Patreon" title="Support me on Patreon" class="post__biosocialicon" />
-                    Patreon
-                </a>
-                <a href="https://discord.gg/sEWQcpe" class="post__biosociallink" target="_blank" >
-                    <img src="{% base64 /assets/img/discord-round.svg %}" alt="Discord" title="Join the Discord chat" class="post__biosocialicon" />
-                    Discord
-                </a>
-                <a href="/feed.xml" class="post__biosociallink" target="_blank">
+                <a href="/feed.xml" class="post__biosociallink" target="_blank" data-event-category="sign_up" data-event="RSS">
                     <img src="{% base64 /assets/img/rss-round.svg %}" alt="RSS" title="Subscribe to my feed" class="post__biosocialicon" />
                     Atom Feed
                 </a>

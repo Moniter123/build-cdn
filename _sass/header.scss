@@ -16,7 +16,6 @@
     text-align:center;
     @media screen and (min-width: $sm) {
       text-align: left;
-      flex:1;
     }
   }
 
@@ -71,5 +70,11 @@
     width:32px;
     vertical-align: middle;
     text-decoration: none;
+  }
+
+  &__socialicon--full {
+    width:auto;
+    height:36px;
+    margin-bottom:-4px;
   }
 }

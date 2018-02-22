@@ -1,6 +1,9 @@
 ---
 # Default robots.txt
 ---
+User-agent: Googlebot-Image
+Disallow: /
+
 User-agent: *
 Allow: /
 Sitemap: {{ site.url }}/sitemap.xml

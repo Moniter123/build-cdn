@@ -23,12 +23,11 @@
   }
 
   &__share {
-    border-top: 1px solid rgba(0,0,0,.05);
-    border-bottom: 1px solid rgba(0,0,0,.05);
+    border-top: 1px solid rgba(0,0,0,.10);
+    border-bottom: 1px solid rgba(0,0,0,.10);
     margin-top:30px;
     padding-top:20px;
     padding-bottom:20px;
-    margin-bottom:10px;
   }
   &__sharelinks {
     margin-top:30px;
@@ -55,9 +54,77 @@
     float:left;
   }
 
-  &__biodata {
-    margin-left:74px;
+  &__biocontainer {
+    padding-bottom:20px;
+    border-bottom: 1px solid rgba(0,0,0,.10);
   }
+
+  &__biotext {
+    margin-left:74px;
+    a {
+      color:#000000;
+    }
+  }
+
+  &__biojoin {
+    margin-top:20px;
+    display:flex;
+  }
+
+  &__biojoinsection {
+    flex:1;
+    text-align:center;
+  }
+
+  &__joinlink {
+    display:block;
+    padding-left:10px;
+    padding-right:10px;
+  }
+
+  @media screen and (max-width: ($xxs - 1)) {
+    &__biojoin {
+      display:block;
+    }
+    &__biojoinsection {
+      margin-top:20px;
+    }
+    &__joinlink {
+      padding-left:40px;
+      padding-right:40px;
+    }
+  }
+
+  @media screen and (min-width: $sm) {
+    &__biojoin {
+      display:block;
+      margin-top:0;
+    }
+    &__biotext {
+      margin-left:0;
+    }
+    &__biocontainer {
+      display:flex;
+      flex-wrap:nowrap;
+    }
+    &__biocol {
+      flex: 1;
+    }
+
+    &__biojoin {
+      text-align: center;
+      width: 30%;
+      margin-left: 30px;
+    }
+  }
+
+  &__biojoinheader {
+    margin-bottom:10px;
+  }
+
+  &__biojoinimage {
+    max-width:100%;
+  };
 
   &__bioname {
     font-size: 21px;
@@ -66,6 +133,7 @@
 
   &__biosocial {
     margin-top:20px;
+    margin-left:74px;
   }
 
   @media screen and (min-width: $xs) {
@@ -73,14 +141,15 @@
       display:flex;
     }
     &__biosocialcol {
-      flex:1;
+      flex:2;
       width:50%;
     }
   }
 
   &__biosubscribe {
+    margin-left:74px;
     font-size:21px;
-    margin-top:30px;
+    margin-top:20px;
   }
 
   &__biosociallink {
@@ -127,7 +196,7 @@
   }
 }
 
-h2.post__cta, h1.post__recommendedheader {
+h2.post__cta, h1.post__recommendedheader, h2.post__joinheader {
     text-align:center;
     margin:0;
     padding:0;
@@ -138,6 +207,12 @@ h2.post__cta, h1.post__recommendedheader {
 h1.post__recommendedheader {
   margin-bottom:30px;
 }
+
+h2.post__joinheader {
+  margin-top:20px;
+  margin-bottom:20px;
+}
+
 
 a.post__link {
   text-decoration: none;

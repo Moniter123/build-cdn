@@ -21,7 +21,7 @@ Most web applications today are very centralized. You have one central server th
 application code and then sends you an HTML file that your browser can display. If you run into scaling issues, or you
 want to distribute your application across multiple continents, you may end up distributing the code and data across
 multiple servers and serving content from multiple locations. You could call this setup *decentralized*, and it comes
-with quite a few issues which I've described in [my article about the CAP theorem](/what-is-the-cap-theorem).
+with quite a few issues which I've described in [my article about the CAP theorem](/blog/cap-theorem).
 
 But most typical applications don't go as far as to implement a completely distributed system with no core architecture.
 Partially because it's really hard, and also because they don't want to hand out all their data and application to

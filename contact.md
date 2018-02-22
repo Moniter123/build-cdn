@@ -15,7 +15,7 @@ opportunity. Please contact me at &#106;&#097;&#110;&#111;&#115;&#064;&#112;&#09
 
 ## Community chat
 
-By far the most effective way of getting my attention is by [joining the community chat on Discord](/discord).
+By far the most effective way of getting my attention is by <a href="/discord" data-event-category="community" data-event="Discord">joining the community chat on Discord</a>.
 
 ## Found an error?
 
@@ -26,8 +26,8 @@ For other matters please feel free to contact me on any of the following platfor
 
 <div class="content__table">
 <table class="table">
-    <tr><th>Twitter:</th><td><a href="https://twitter.com/{{site.twitter_username}}" target="_blank" rel="noreferrer noopener">twitter.com/{{site.twitter_username}}</a></td></tr>
-    <tr><th>Facebook:</th><td><a href="https://facebook.com/{{site.facebook_username}}" target="_blank" rel="noreferrer noopener">facebook.com/{{site.facebook_username}}</a> (please follow or send a message request, don't friend)</td></tr>
+    <tr><th>Twitter:</th><td><a href="https://twitter.com/{{site.twitter_username}}" target="_blank" data-event-category="follow" data-event="Twitter" rel="noreferrer noopener">twitter.com/{{site.twitter_username}}</a></td></tr>
+    <tr><th>Facebook:</th><td><a href="https://facebook.com/{{site.facebook_username}}" target="_blank" data-event-category="follow" data-event="Facebook" rel="noreferrer noopener">facebook.com/{{site.facebook_username}}</a> (please follow or send a message request, don't friend)</td></tr>
 </table>
 </div>
 

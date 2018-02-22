@@ -3,7 +3,7 @@ layout:        post
 title:         "One Controller, One Action"
 date:          2018-02-20 00:00:00
 categories:    blog
-excerpt:       "How many actions you put in a controller? 5-6? 20? What would you say if I told you my limit is just one method?"
+excerpt:       "How many actions de you put in a controller? 5-6? 20? What would you say if I told you my limit is just one method?"
 preview:       /assets/img/one-controller-one-action.jpg
 fbimage:       /assets/img/one-controller-one-action.png
 twitterimage:  /assets/img/one-controller-one-action.png
