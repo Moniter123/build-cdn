@@ -1,22 +1,22 @@
 version: '3.4'
 services:
-#  traefik:
-#    build: ./images/traefik/
-#    environment:
-#      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
-#      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
-#      - AWS_REGION=us-east-1
-#      - AWS_HOSTED_ZONE_ID=${AWS_HOSTED_ZONE_ID}
-#    ports:
-#      - "80:80"
-#      - "443:443"
-#      - "8080:8080"
-#    volumes:
-#      - /srv/acme:/etc/traefik/acme
-#      - /var/run/docker.sock:/var/run/docker.sock
-#    networks:
-#      - web
-#    restart: unless-stopped
+  traefik:
+    build: ./images/traefik/
+    environment:
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - AWS_REGION=us-east-1
+      - AWS_HOSTED_ZONE_ID=${AWS_HOSTED_ZONE_ID}
+    ports:
+      - "80:80"
+      - "443:443"
+      - "8080:8080"
+    volumes:
+      - /srv/acme:/etc/traefik/acme
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - web
+    restart: unless-stopped
   nginx:
     container_name: nginx
     build:

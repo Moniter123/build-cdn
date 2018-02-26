@@ -2,6 +2,14 @@
 
 This is the Jekyll and architecture source code of the [pasztor.at](https://pasztor.at) website.
 
+## Support me
+
+If you want to support me in crazy endeavours like this, you can do so on
+
+[![Patreon](assets/img/patreon-wide.svg)](https://pasztor.at/patreon)
+
+(Click the image to go to my Patreon page.)
+
 ## License
 
 Text and images are protected by copyright, everything else is free for learning / copypasting. 

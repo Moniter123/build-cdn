@@ -50,7 +50,7 @@ as such criticism displays a substantial amount of original content.
 
 ## Search engines
 
-Furthermore, search machine operators may index and store this site as long as they follow the stipulations in the
+Search machine operators may index and store this site as long as they follow the stipulations in the
 [robots.txt](/robots.txt), and only display small segments of text for ease of use. The republishing of full articles is
 not permitted. Automated text processing, machine learning, and other bulk operating resulting in aggregate statistics
 are permitted.

@@ -2,7 +2,7 @@
     {% if include.categorylabel %}
         <div class="wall__categories--noimage">
             {% for category in post.categories %}
-                <a href="/{{category}}" class="wall__category--noimage">{{ category | replace:"blog","Blog" | replace:"speaking","Talk" | replace:"workshops","Workshop" }}</a>
+                <a href="/{{category}}" class="wall__category--noimage">{{ category | replace:"blog","Blog" | replace:"speaking","Talk" | replace:"workshops","Workshop" | replace:"projects","Project" }}</a>
             {% endfor %}
         </div>
     {% endif %}

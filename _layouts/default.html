@@ -178,6 +178,14 @@ Feel free to learn from then and build your own!
       </a>
 
       {% assign current = '' %}
+      {% if page.url == '/projects' or page.url contains '/projects/' %}
+      {% assign current = 'topmenu__item--current' %}
+      {% endif %}
+      <a href="/projects" class="topmenu__item {{current}}">
+        Projects
+      </a>
+
+      {% assign current = '' %}
       {% if page.url == '/speaking' or page.url contains '/speaking/' %}
       {% assign current = 'topmenu__item--current' %}
       {% endif %}

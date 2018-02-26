@@ -37,17 +37,19 @@ From a programmers perspective, the CPU has a set of very low-level instructions
 one memory address to the other, `JMP` to jump to a certain memory address and execute the code there, etc. This is
 called an assembly language and it translates 1:1 to machine readable binary code. High level languages, like C, C++,
 etc abstract this of course, and even higher level languages like Java have their own virtual machine (JVM) that
-has it's own, high level assembly language. (So yes, you can build a CPU that executes Java byte code directly.)
+has have their own, high level assembly language. (So yes, you can build a CPU that executes Java byte code directly.)
 
 However, if you look carefully, CPU assembly instructions can be very dangerous. A program could simply specify
 the memory address of another program and cause all sorts of havoc. A programmer writing code that is able to access all
 memory has to be extra careful not to mess up. Back in the MS-DOS days this was the only way programs could operate.
 
-This was not a big problem in MS-DOS since it only ran one program in parallel (save for a few drivers), but more modern
-systems like Windows, Linux, etc. needed some way to protect programs from each other. That's why the then-modern 80286
-CPU introduced a feature called **virtual memory**. The CPU could now operate in multiple modes. A part of the operating
-system would run in so-called real mode and had access to all memory space. This was also known as kernel or unprotected
-mode. User programs on the other hand would run in the so-called protected mode or user mode.
+This was not a big problem in MS-DOS since it only ran one program in parallel (save for a few drivers,
+[TSRs](https://en.wikipedia.org/wiki/Terminate_and_stay_resident_program)), but more modern systems needed some way to
+protect programs from each other. That's why the then-modern 80286 CPU introduced and the
+[80386 expanded upon](https://en.wikipedia.org/wiki/Virtual_8086_mode) a feature called **virtual memory**. The CPU
+could now operate in multiple modes. A part of the operating system would run in so-called real mode and had access to
+all memory space. This was also known as kernel or unprotected mode. User programs on the other hand would run in the
+so-called protected mode or user mode.
 
 Running in user mode meant that each program would have its own virtual memory space, which the CPU would then translate
 to a physical memory address, or if that chunk of memory was moved to a swap file, it would interrupt the program
@@ -68,7 +70,7 @@ intercepted by the so-called hypervisor, allowing you to run multiple kernels in
 
 When a machine boots, the first program being executed on the CPU is the BIOS program, or on more modern systems the
 UEFI program. This program is responsible for doing a low-level hardware check (such as detecting stuck keys) and
-then it looked at the hard drive to find the **bootloader**.
+then it looks at the hard drive to find the **bootloader**.
 
 The bootloader is a little piece of code that is responsible for loading the operating system kernel itself, and it
 has its origins in how the BIOS worked.
@@ -122,11 +124,11 @@ distributions.
 ## Containerization
 
 Containers are different from virtualization in that they don't have a separate kernel. Every container runs
-on the same Linux kernel, and use features in the kernel itself to achieve separation. This has been explained in
+on the same Linux kernel, and uses features in the kernel itself to achieve separation. This has been explained in
 great detail in my [previous article](/blog/under-the-hood-of-docker).
 
-When a container starts, the Linux kernel *simulates* a new environment, where it would give the newly started process
-a virtual process ID 1, their own network stack and even their own virtual or physical disk. This means that running 
+When a container starts, the Linux kernel *simulates* a new environment, where it gives the newly started process
+a virtual process ID 1, its own network stack and even its own virtual or physical disk. This means that running 
 containers can be much more efficient than a fully virtualized environment, since the container only requires minimal
 amounts of system resources for the parts of the Linux kernel that are run for the purposes of separation. You could,
 in fact, run thousands of containers on a single commodity machine.

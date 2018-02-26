@@ -1,0 +1,114 @@
+---
+layout: default
+---
+
+{% capture category_url %}/{{ page.categories|join: '/' }}{% endcapture %}
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+    "@type": "ListItem",
+    "position": 1,
+    "item": {
+      "@id": "https://pasztor.at/",
+      "name": "Janos Pasztor"
+    }
+  },{
+    "@type": "ListItem",
+    "position": 2,
+    "item": {
+      "@id": "{{ category_url | absolute_url}}",
+      "name": "{{ page.categories | join: ', '| capitalize }}"
+    }
+  },{
+    "@type": "ListItem",
+    "position": 3,
+    "item": {
+      "@id": "{{ page.url | absolute_url }}",
+      "name": "{{ page.title }}"
+    }
+  }]
+}
+</script>
+
+{% assign date_format = "%b %-d, %Y" %}
+<div class="post">
+    <article class="content" itemscope itemtype="https://schema.org/BlogPosting">
+        <header class="post__header">
+            <h1 class="post__title" itemprop="name headline">{{ page.title | escape }}</h1>
+            <div class="post__meta">
+                <span class="post__line">
+                    by <span class="post__author" itemprop="author" itemscope itemtype="https://schema.org/Person"><a
+                        href="https://pasztor.at/cv" itemprop="url"><span itemprop="name">Janos Pasztor</span></a></span>
+                </span>
+                &bullet;
+                <span class="post__line">
+                    published <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: date_format }}</time>
+                </span>
+                <span itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+                    <meta itemprop="name" content="Opsbears" />
+                    <meta itemprop="url" content="https://opsbears.com/" />
+                    <meta itemprop="logo" content="{{ "/assets/img/opsbears-logo.svg" | absolute_url }}" />
+                </span>
+                <meta itemprop="image" content="{{ page.googleimage | default: "/assets/avatar.jpg" | absolute_url}}" />
+                <meta itemprop="dateModified" content="{{page.last_modified_at|date_to_xmlschema}}" />
+                <meta itemprop="mainEntityOfPage" content="{{ page.url | absolute_url }}" />
+                <meta itemprop="keywords" content="{{ page.tags | join: '' }}" />
+                <p>
+                    {{page.excerpt}}
+                </p>
+            </div>
+        </header>
+
+        {% if page.preview %}
+            <div class="post__preview">
+                {% capture defaultImageSize %}{{ page.preview | replace:'/assets/img', '/assets/resized/217' }}{% endcapture %}
+                <img
+                    src="{% base64 defaultImageSize %}"
+                    class="post__imagelowres"
+                />
+                <img
+                    class="post__imagehighres"
+                    srcset="
+                        {{ page.preview | replace:'/assets/img', '/assets/resized/465' }} 465w,
+                        {{ page.preview | replace:'/assets/img', '/assets/resized/768' }} 768w,
+                        {{ page.preview | replace:'/assets/img', '/assets/resized/960' }} 960w
+                    "
+                    sizes="
+                        (min-width:466px) 768px,
+                        (min-width:769px) 960px,
+                        (min-width:961px) 465px,
+                        465px
+                    "
+                    src="{{ page.preview | replace:'/assets/img', '/assets/resized/960' }}"
+                    alt=""
+                />
+            </div>
+        {% endif %}
+
+        <div class="post__content" itemprop="articleBody">
+            {{ content }}
+        </div>
+
+        {% if page.external_link %}
+        <div class="post__links">
+           <a href="{{page.external_link}}" class="post__link post__externallink" target="blank" rel="noopener noreferrer">Learn more (external site) <img src="{% base64 /assets/diagonal-arrow.svg %}" alt="" class="icon" /></a>
+        </div>
+        {% endif %}
+    </article>
+
+    {% include share.html %}
+
+    <div class="post__recommended">
+        <div class="readmore">
+            <div class="readmore__cta">Do you want more? Click the buttons below!</div>
+            <div class="readmore__buttons">
+                <a href="/speaking" class="readmore__button">Talks</a>
+                <a href="/workshops" class="readmore__button">Workshops</a>
+                <a href="/videos" class="readmore__button">Videos</a>
+                <a href="/blog" class="readmore__button">Blog</a>
+            </div>
+        </div>
+    </div>
+</div>

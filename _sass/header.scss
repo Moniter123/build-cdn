@@ -44,6 +44,8 @@
 
   &__subscribe {
     text-align:center;
+    margin-left:-5px;
+    margin-right:-5px;
     @media screen and (min-width: $sm) {
       text-align: right;
       flex:1;

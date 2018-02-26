@@ -144,7 +144,7 @@ target character set. For example, let's say a multi-byte character is stored on
 of that 2 byte character is an US-ASCII quote mark (`"`), you may mistakenly escape it with a backslash, resulting in
 a changed multi-byte character and a standalone quote mark.
 
-In the best case scenario you end up with broken multi-byte characters. Worst case, you have an inection on your hand.
+In the best case scenario you end up with broken multi-byte characters. Worst case, you have an injection on your hand.
 Hence, the data should always be treated in accordance with the target character set.
 
 ## Better security through good programming practices
@@ -165,13 +165,13 @@ something more elaborate, like a HTML template, make sure your templating engine
 result in an injection:
 
 ```html
-<h1>Hello {name}!</h1>
+{% raw %}<h1>Hello {{ name }}!</h1>{% endraw %}
 ```
 
 When you really need the raw data, you should have to work extra hard:
 
 ```html
-<h1>Hello {myinjection | raw }!</h1>
+{% raw %}<h1>Hello {{ myinjection | raw }}!</h1>{% endraw %}
 ```
 
 When putting together data structures like JSON, YAML, etc. it is usually a good idea to create a data structure in
@@ -179,5 +179,6 @@ the program itself, instead of treating them as a string. This can be anything f
 creating full-on object bindings using tools like [Jackson](https://github.com/FasterXML/jackson-databind).
 
 At any rate, when performing output from your application, whether that is to the disk, into a database, to the web
-browser, or executing a shell command, **there is almost always a possibility for injection**. Make sure you keep that
-in mind and write abstractions for these IO channels properly *once* so you never have to deal with them again.
+browser, or executing a shell command, creating a formated set of data, **there is almost always a possibility for
+injection**. Make sure you keep that in mind and write abstractions for these channels properly *once* so you never have
+to deal with them again.
