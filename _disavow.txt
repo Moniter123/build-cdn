@@ -1,3 +1,4 @@
 domain:hk.saowen.com
 domain:www.tuicool.com
-
+domain:colabug.com
+domain:newlyread.com

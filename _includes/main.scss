@@ -40,3 +40,31 @@ body {
 }
 
 //{% endraw %}
+
+.content {
+  .tree {
+    list-style-type: none;
+    padding: 0;
+    &__subtree {
+      display: block;
+      margin-top: 0;
+      padding: 0;
+    }
+    &__item {
+      list-style-type: none;
+      padding-left: 40px;
+      &--folder {
+        background: url('{% base64 /assets/icons/folder.svg %}') no-repeat top left;
+      }
+      &--file {
+        background: url('{% base64 /assets/icons/file.svg %}') no-repeat top left;
+      }
+    }
+
+  }
+  figure .tree {
+    text-align: left;
+    display: inline-block;
+    margin:0;
+  }
+}
