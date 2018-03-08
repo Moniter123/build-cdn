@@ -1,0 +1,16 @@
+---
+title: {{ page.title }}
+layout: default
+description: Tag archive
+sass: wall.scss
+sitemap: false
+---
+
+<div class="wall">
+    <h1>All posts in {{ page.title }}</h1>
+    <div class="wall__postlist">
+        {% for post in page.posts %}
+        {% include wall-post-noimage.html categorylabel=true %}
+        {% endfor %}
+    </div>
+</div>

@@ -9,7 +9,7 @@ fbimage:       /assets/img/intercontinental-docker-swarm.png
 twitterimage:  /assets/img/intercontinental-docker-swarm.png
 googleimage:   /assets/img/intercontinental-docker-swarm.png
 twitter_card:  summary_large_image
-tags:          cdn, docker, devops
+tags:          [CDN, Docker, DevOps]
 ---
 
 ## Preparing AWS

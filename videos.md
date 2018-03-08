@@ -1,6 +1,6 @@
 ---
 title: Videos
-layout: default
+layout: wall
 description: Videos Janos Pasztor
 ---
 

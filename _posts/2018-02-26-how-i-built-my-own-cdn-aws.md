@@ -22,7 +22,7 @@ eventCountryCode:   AT
 eventStartDate:     2018-05-03T17:00:00Z 
 eventEndDate:       2018-05-03T20:00:00Z
 eventUrl:           https://www.meetup.com/Amazon-Web-Services-AWS-Vienna/
-tags:               docker, devops
+tags:               [Docker, DevOps, CDN]
 ---
 
 I already [wrote an article on my CDN](https://pasztor.at/blog/building-your-own-cdn), but this time we are going

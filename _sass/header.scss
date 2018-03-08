@@ -1,10 +1,15 @@
+@import "variables";
 .header {
+  @media print {
+    display: none;
+  }
   margin-top:10px;
   padding-left:10px;
   padding-right:10px;
   margin-left:auto;
   margin-right:auto;
   max-width:960px;
+  animation: $animation-in;
   @media screen and (min-width: $sm) {
     display:flex;
   }
@@ -36,6 +41,7 @@
     font-size: 24px;
     display: inline-block;
     vertical-align: top;
+    animation: $animation-in;
     @media screen and (min-width: $sm) {
       line-height: 64px;
       height:64px;
@@ -43,6 +49,7 @@
   }
 
   &__subscribe {
+    animation: $animation-in;
     text-align:center;
     margin-left:-5px;
     margin-right:-5px;

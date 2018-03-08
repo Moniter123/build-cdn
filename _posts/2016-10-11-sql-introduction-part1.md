@@ -4,7 +4,7 @@ title:         Introduction to SQL databases Part 1
 date:          "2016-10-11 00:00:00"
 categories:    blog
 excerpt:       Whether you are running a web app, a financial system or a game, you need some method of storing your data. SQL allows you to query most traditional databases, like MySQL or PostgreSQL. Let's take a look.
-tags:          development, sql
+tags:          [Development, SQL]
 ---
 
 SQL, short for Structured Query Language, is a method of querying traditional, relational databases (RDBMS). We'll take

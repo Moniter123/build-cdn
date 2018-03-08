@@ -11,7 +11,7 @@ googleimage:   /assets/img/lets-talk-about-terraform.png
 twitter_card:  summary_large_image
 video:         https://youtu.be/xm3QcGvxuF8
 embed:         https://www.youtube-nocookie.com/embed/xm3QcGvxuF8?rel=0
-tags:          devops
+tags:          [DevOps, Terraform]
 ---
 
 Learn how to have executable documentation for your cloud and how to avoid the nightmare that is a "hand-crafted", but forgotten setup.

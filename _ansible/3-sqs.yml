@@ -1,0 +1,49 @@
+---
+- hosts: 127.0.0.1
+  connection: local
+  tasks:
+  - name: SQS queue (ap-southeast-1)
+    sqs_queue:
+      name: notification-signup
+      region: ap-southeast-1
+  - name: SQS queue (ap-south-1)
+    sqs_queue:
+      name: notification-signup
+      region: ap-south-1
+  - name: SQS queue (ap-northeast-1)
+    sqs_queue:
+      name: notification-signup
+      region: ap-northeast-1
+  - name: SQS queue (ap-southeast-2)
+    sqs_queue:
+      name: notification-signup
+      region: ap-southeast-2
+  - name: SQS queue (eu-central-1)
+    sqs_queue:
+      name: notification-signup
+      region: eu-central-1
+  - name: SQS queue (eu-west-2(
+    sqs_queue:
+      name: notification-signup
+      region: eu-west-2
+  - name: SQS queue (us-west-2)
+    sqs_queue:
+      name: notification-signup
+      region: us-west-1
+  - name: SQS queue (us-west-2)
+    sqs_queue:
+      name: notification-signup
+      region: us-west-2
+  - name: SQS queue (us-east-1)
+    sqs_queue:
+      name: notification-signup
+      region: us-east-1
+  - dynamodb_table:
+      name: subscriptions
+      region: eu-central-1
+      hash_key_name: id
+      hash_key_type: STRING
+      range_key_name: created_at
+      range_key_type: NUMBER
+      read_capacity: 5
+      write_capacity: 5

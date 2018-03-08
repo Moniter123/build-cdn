@@ -1,4 +1,8 @@
+@import "variables";
 .readmore {
+  @media print {
+    display: none;
+  }
   max-width:$md;
   border-top: 1px solid rgba(0,0,0,0.05);
   padding-top: 20px;

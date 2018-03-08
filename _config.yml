@@ -27,14 +27,27 @@ env: production
 markdown: kramdown
 plugins:
   - jekyll-feed
-  - jekyll-sitemap
-sass:
-  style: compressed
-gem:
-  - jekyll_image_encode
+  - jekyll-archives
+  - rouge
   - jekyll-last-modified-at
   - jekyll-plantuml
+  - jekyll-responsive-image
   - jekyll-tidy
+  - classifier-reborn
+  - jekyll-tagging-related_posts
+  - jekyll-archives
+jekyll-archives:
+  enabled:
+    - tags
+  layouts:
+    tag: "tagarchive"
+  permalinks:
+    tag: '/tags/:name.html'
+jekyll_tidy:
+  exclude: ["robots.txt"]
+  compress_html: false
+sass:
+  style: compressed
 kramdown:
   input: GFM
   syntax_highlighter: rouge

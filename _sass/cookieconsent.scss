@@ -1,5 +1,7 @@
+@import "variables";
 .cookieconsent {
   &__notification {
+    animation: $animation-in;
     position:fixed;
     bottom:0;
     left:0;

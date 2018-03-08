@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!--
+<!--!
 Hey, looks like you're interested in the source code. Why not take a look at the original Jekyll source files on GitHub?
 
   https://github.com/janoszen/pasztor.at
@@ -13,8 +13,9 @@ Feel free to learn from then and build your own!
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1" />
 
     <title>{% if page.title %}{{ page.title | escape }}{% if page.eventName %} &mdash; {{ page.eventName }}{% endif %} &mdash; {{ site.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
+    {% assign pagecss = layout.sass %}
+    <style>{% capture include_to_scssify %}{% include {{ pagecss }} %}{% endcapture %}{{ include_to_scssify | scssify }}</style>
     <meta name="description" content="{{ page.description | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}" />
-    <style>{% capture include_to_scssify %}{% include main.scss %}{% endcapture %}{{ include_to_scssify | scssify }}</style>
     <link rel="canonical" href="{{ page.url | replace:'/index.html','' | absolute_url }}" />
     <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ "/feed.xml" | relative_url }}" />
 
@@ -225,6 +226,9 @@ Feel free to learn from then and build your own!
     <footer class="footer">
       <div class="footer__copyright"><a href="/terms">Copyright &copy; Janos Pasztor</a></div>
       <div class="footer__links"><a href="/imprint">Imprint</a> &bull; <a href="/terms">Terms of Use</a> &bull; <a href="/privacy">Privacy Policy</a></div>
+    </footer>
+    <footer class="footer--print">
+      This article is available for free on www.pasztor.at. &bull; Copyright &copy; Janos Pasztor
     </footer>
 
     <aside class="cookieconsent">

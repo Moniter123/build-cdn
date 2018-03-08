@@ -9,7 +9,7 @@ fbimage:       /assets/img/structure-based-on-intent.png
 twitterimage:  /assets/img/structure-based-on-intent.png
 googleimage:   /assets/img/structure-based-on-intent.png
 twitter_card:  summary_large_image
-tags:          development, clean code
+tags:          [Development, Clean Code]
 ---
 
 Let's set aside the fact that I think MVC is a horrible design pattern (we'll talk about that some other day) and focus

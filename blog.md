@@ -1,6 +1,6 @@
 ---
 title: Blog
-layout: default
+layout: wall
 description: Read the IT blog of Janos Pasztor
 ---
 

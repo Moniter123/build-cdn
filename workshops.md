@@ -1,6 +1,6 @@
 ---
 title: Workshops
-layout: default
+layout: wall
 description: Janos Pasztors workshops
 ---
 

@@ -9,7 +9,7 @@ fbimage:       /assets/img/building-your-own-cdn.png
 twitterimage:  /assets/img/building-your-own-cdn.png
 googleimage:   /assets/img/building-your-own-cdn.png
 twitter_card:  summary_large_image
-tags:          docker, devops, cdn
+tags:          [Docker, DevOps, CDN]
 ---
 
 As you can (hopefully) see from this site, I like my pages *fast*. Very, very fast. Now, before we jump into this, let

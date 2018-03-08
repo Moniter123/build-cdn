@@ -1,10 +1,16 @@
+@import "variables";
+
 .topmenu {
+  @media print {
+    display: none;
+  }
   padding-left: 10px;
   padding-right: 10px;
   line-height:48px;
   font-size: 16px;
   max-width: 960px;
   margin: 10px auto 20px;
+  animation: $animation-in;
 
   &__item {
     height:48px;

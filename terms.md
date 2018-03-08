@@ -32,6 +32,11 @@ to deal with without restriction, including without limitation the rights to use
 distribute, sublicense, and/or sell copies of the Program Code, and to permit persons to whom the Program Code is
 furnished to do so, subject to the liability disclaimer below.
 
+## Editorials
+
+For editorial purposes up to two (2) paragraphs of text may be used from any article, with a link to the original
+article. Complete or semi-complete republishes of any articles are not permitted.
+
 ## Academic use
 
 Materials on this site may be used for educational purposes in government-financed educational institutions, so long as:
@@ -75,4 +80,4 @@ There are no oral side agreements to these terms. All changes to the terms are m
 Any disputes are subject to Austrian law (Austrian domestic law under exclusion of the referral norms
 and UN commercial law), legal proceedings shall be held exclusively in Vienna, Austria.
 
-This document has last been updated: February 22, 2018
+This document has last been updated: February 28, 2018

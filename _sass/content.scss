@@ -1,3 +1,4 @@
+@import "variables";
 .content {
   font-family: $font-serif;
   font-size:21px;
@@ -10,17 +11,24 @@
     padding:10px;
     font-size:12px;
     line-height:20px;
+    @media print {
+      font-size:21px;
+    }
   }
 
   code {
     word-wrap: break-word;
   }
-  figure code {
+  figure code, pre code {
     word-wrap: normal;
   }
 
   pre, p, h2, h3, h4, h5, h6, table, figure, ul, ol {
     margin-top:30px;
+  }
+
+  &>* {
+    animation: fadein .375s;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -146,5 +154,9 @@
   a {
     color:inherit;
     text-decoration:underline;
+  }
+
+  p {
+    text-align:justify;
   }
 }

@@ -1,4 +1,19 @@
+@import "variables";
 .footer {
+  @media print {
+    display: none;
+  }
+  &--print {
+    display:none;
+    @media print {
+      page-break-before: avoid;
+      margin-top:20px;
+      padding-top:10px;
+      border-top:1px solid #333;
+      display: block;
+      text-align: center;
+    }
+  }
   position: relative;
   background:$bgshaded;
   color: $colorshaded;

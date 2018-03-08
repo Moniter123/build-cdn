@@ -1,6 +1,6 @@
 ---
 title: Projects
-layout: default
+layout: wall
 description: Open source projects by Janos Pasztor
 ---
 

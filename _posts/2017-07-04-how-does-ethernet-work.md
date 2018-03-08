@@ -11,7 +11,7 @@ googleimage:   /assets/img/how-does-ethernet-work.png
 twitter_card:  summary_large_image
 video:         https://youtu.be/5u52wbqBgEY
 embed:         https://www.youtube-nocookie.com/embed/5u52wbqBgEY?rel=0
-tags:          theory, animated
+tags:          [Theory, Animated]
 ---
 
 Sources:

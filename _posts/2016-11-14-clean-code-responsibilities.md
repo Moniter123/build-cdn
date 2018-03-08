@@ -4,12 +4,12 @@ title:         "Clean Code: Responsibilities"
 date:          "2016-11-14 00:00:00"
 categories:    blog
 excerpt:       I heard you want to be a better coder. You want to use reusable pieces, and you want to have an easier time maintaining older code. You may also want to work better in a team and ensure there are less bugs.
-tags:          development, oop, clean code
+tags:          [Development, OOP, Clean Code]
 ---
 
 The desire for better code usually leads people to discover the term “clean code”. It was most probably coined by 
 [Robert C. “Uncle Bob” Martin](https://cleancoders.com/), who wrote
-[a book with the same title](/book/uncle-bob-clean-code). You might want to give it a read, although, I find it to be
+a book with the same title. You might want to give it a read, although, I find it to be
 very wordy. The book covers a few underlying principles that should help you write modular code in such a way that you
 can later reuse those modules. In this series we are going to cover his principles and ideas, as well as those of 
 some other authors of the clean code movement.

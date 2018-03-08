@@ -6,4 +6,5 @@ node_modules
 uml/*
 _ansible/*.retry
 _ansible/aws.ini
+_ansible/subscribe.ini
 assets/graphviz/*

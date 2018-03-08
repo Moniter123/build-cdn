@@ -9,7 +9,7 @@ preview:       /assets/img/errorpages.jpg
 fbimage:       /assets/img/errorpages.png
 twitterimage:  /assets/img/errorpages.png
 googleimage:   /assets/img/derrorpages.png
-tags:          docker, devops
+tags:          [DevOps]
 ---
 
 User friendliness is not something that comes to mind when you think of error pages. They are mostly an unhelpful

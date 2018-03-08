@@ -11,5 +11,5 @@ googleimage:   /assets/img/hacking-myself.png
 twitter_card:  summary_large_image
 video:         https://youtu.be/Wc6SSnC18HA
 embed:         https://www.youtube-nocookie.com/embed/Wc6SSnC18HA?rel=0
-tags:          security
+tags:          [Security, Development]
 ---

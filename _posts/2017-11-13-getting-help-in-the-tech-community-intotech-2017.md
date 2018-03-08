@@ -19,7 +19,7 @@ eventCountryCode:   AT
 eventStartDate:     2017-11-11T09:00:00Z
 eventEndDate:       2017-11-11T17:00:00Z
 eventUrl:           https://into.technology/
-tags:               community
+tags:               [Community]
 ---
 
 I spoke on this topic at the IntoTech Conference 2017, the slides are available below.

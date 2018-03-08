@@ -9,7 +9,7 @@ fbimage:       /assets/img/injection-vuln.png
 twitterimage:  /assets/img/injection-vuln.png
 googleimage:   /assets/img/injection-vuln.png
 twitter_card:  summary_large_image
-tags:          development, security
+tags:          [Development, Security]
 ---
 
 I recently [found a video where a guy got a free burger](https://www.youtube.com/watch?v=WWJTsKaJT_g) using a very

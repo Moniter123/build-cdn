@@ -9,7 +9,7 @@ preview:       /assets/img/demo-container-runtime.jpg
 fbimage:       /assets/img/demo-container-runtime.png
 twitterimage:  /assets/img/demo-container-runtime.png
 googleimage:   /assets/img/demo-container-runtime.png
-tags:          docker, devops
+tags:          [Docker, DevOps]
 ---
 
 This container engine has been specifically built to learn Linux containerization from. The high level details are

@@ -4,7 +4,7 @@ title:         Introduction to SQL databases Part 2
 date:          "2016-10-21 00:00:00"
 categories:    blog
 excerpt:       In the previous episode of our journey we have spoken about the basics of writing an SQL query. However, we did not speak of the limitations you can place on SQL tables.
-tags:          development, sql
+tags:          [Development, SQL]
 ---
 
 If you remember the [previous part](/blog/sql-introduction-part1), in SQL we organize data into tables with fixed column

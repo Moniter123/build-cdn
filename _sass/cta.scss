@@ -1,4 +1,6 @@
+@import "variables";
 .cta {
+  animation: $animation-in;
   max-width:$md;
   position:relative;
   margin-left:auto;
@@ -9,5 +11,8 @@
   padding-right:10px;
   a {
     color:$activecolor;
+  }
+  @media print {
+    display: none;
   }
 }

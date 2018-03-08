@@ -9,7 +9,7 @@ fbimage:       /assets/img/heres-why-your-site-is-slow.png
 twitterimage:  /assets/img/heres-why-your-site-is-slow.png
 googleimage:   /assets/img/heres-why-your-site-is-slow.png
 twitter_card:  summary_large_image
-tags:          development
+tags:          [Development]
 ---
 
 ## It's not your Wordpress

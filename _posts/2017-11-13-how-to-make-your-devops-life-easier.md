@@ -18,7 +18,7 @@ eventCountryCode:   HU
 eventStartDate:     2017-11-24T18:00:00Z
 eventEndDate:       2017-11-24T21:00:00Z
 eventUrl:           https://www.meetup.com/Letscode-hu-meetup/
-tags:               devops, development
+tags:               [DevOps, Development]
 ---
 
 How to make your DevOps' life easier? A short guide for developers to write easy to operate software will be presented

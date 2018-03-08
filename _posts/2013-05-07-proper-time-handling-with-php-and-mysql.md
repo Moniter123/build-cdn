@@ -4,7 +4,7 @@ title:         Proper time handling with PHP and MySQL
 date:          2013-05-07 00:00:00
 categories:    blog
 excerpt:       Few developers actually know that not only character encodings but also time handling can cause you headaches when it comes to PHP and MySQL. Contrary to popular belief, PHP’s time handling actually works quite reasonably if you know how time actually works. If you don’t, you may be in for a big surprise when you add 3 days to a date and end up with a date 4 days from now. The answer lies within the *NIX time handling.
-tags:          php
+tags:          [PHP, Development]
 ---
 
 ## The Basics

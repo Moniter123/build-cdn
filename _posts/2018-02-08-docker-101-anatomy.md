@@ -9,7 +9,7 @@ fbimage:       /assets/img/docker-101-anatomy.png
 twitterimage:  /assets/img/docker-101-anatomy.png
 googleimage:   /assets/img/docker-101-anatomy.png
 twitter_card:  summary_large_image
-tags:          docker, devops, theory
+tags:          [Docker, DevOps, Theory]
 ---
 
 If you are used to Windows system administration, you may be used to only being able to clone a system using
@@ -47,9 +47,9 @@ This was not a big problem in MS-DOS since it only ran one program in parallel (
 [TSRs](https://en.wikipedia.org/wiki/Terminate_and_stay_resident_program)), but more modern systems needed some way to
 protect programs from each other. That's why the then-modern 80286 CPU introduced and the
 [80386 expanded upon](https://en.wikipedia.org/wiki/Virtual_8086_mode) a feature called **virtual memory**. The CPU
-could now operate in multiple modes. A part of the operating system would run in so-called real mode and had access to
-all memory space. This was also known as kernel or unprotected mode. User programs on the other hand would run in the
-so-called protected mode or user mode.
+could now operate in multiple modes. A part of the operating system would run in the so-called ring 0 and had access to
+all memory space. This was also known as kernel mode. User programs on the other hand would run in the
+so-called user mode or ring 3.
 
 Running in user mode meant that each program would have its own virtual memory space, which the CPU would then translate
 to a physical memory address, or if that chunk of memory was moved to a swap file, it would interrupt the program

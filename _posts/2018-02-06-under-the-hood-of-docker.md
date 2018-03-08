@@ -9,7 +9,7 @@ fbimage:       /assets/img/under-the-hood-of-docker.png
 twitterimage:  /assets/img/under-the-hood-of-docker.png
 googleimage:   /assets/img/under-the-hood-of-docker.png
 twitter_card:  summary_large_image
-tags:          docker, devops, theory
+tags:          [Docker, DevOps, Theory]
 ---
 
 It may come as a surprise to you, but containers are not a technology. They don't exist. They are actually a result

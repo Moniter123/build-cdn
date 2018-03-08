@@ -18,7 +18,7 @@ eventCountryCode:   LT
 eventStartDate:     2018-03-14T09:00:00Z
 eventEndDate:       2018-03-15T16:00:00Z
 eventUrl:           http://devopspro.lt/
-tags:               devops, docker, development
+tags:               [DevOps, Docker, Development]
 ---
 
 Docker is the hot new thing, the technology that really brought the DevOps movement to a next level. Every other week a new tool comes out that claims to make Docker easier to use, but information and good advice is often hard to come by.

@@ -1,5 +1,6 @@
 ---
 layout: default
+sass: contentpage.scss
 ---
 
 {% capture category_url %}/{{ page.categories|join: '/' }}{% endcapture %}
@@ -46,6 +47,13 @@ layout: default
                 <span class="post__line">
                     published <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="uploadDate">{{ page.date | date: date_format }}</time>
                 </span>
+                {% if page.tags %}
+                &bullet;
+                <span class="post__line" itemprop="keywords">
+                    {% capture tagscommas %}{% for tag in page.tags %}<a href="/tags/{{tag | downcase | replace: ' ', '-'}}">{{tag}}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}{% endcapture %}
+                    <span itemprop="keywords">{{ tagscommas }}</span>
+                </span>
+                {% endif %}
                 <span itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
                     <meta itemprop="name" content="Opsbears" />
                     <meta itemprop="url" content="https://opsbears.com/" />

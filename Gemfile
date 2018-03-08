@@ -4,7 +4,6 @@ gem "jekyll", "3.5.2"
 
 group :jekyll_plugins do
     gem "jekyll-feed", "~> 0.6"
-    gem 'jekyll-sitemap'
     gem 'rouge'
     gem 'jekyll-last-modified-at'
     gem 'jekyll-plantuml'
@@ -12,6 +11,7 @@ group :jekyll_plugins do
     gem 'jekyll-tidy'
     gem 'classifier-reborn'
     gem 'jekyll-tagging-related_posts'
+    gem 'jekyll-archives'
 end
 
 gem 'gsl'

@@ -4,7 +4,7 @@ title:         Logging PHP errors to syslog-ng
 date:          2012-04-26 00:00:00
 categories:    blog
 excerpt:       Ever so often I get to set up hosts for running PHP. When running a load balanced solution, you have more hosts and reading logs gets complicated, development gets tedious. So what helps, is a central logging server. This is pretty easy to set up with syslog-ng, however PHP has a annoying habit of logging everything with the NOTICE error level.
-tags:          devops, php
+tags:          [DevOps, PHP, Syslog]
 ---
 
 What we need to do is change the error level. Unfortunately the syslog-ng OSE documentation states:

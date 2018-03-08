@@ -4,7 +4,7 @@ title:         Filtering spam with Exim and Spamassassin (properly)
 date:          2013-07-24 00:00:00
 categories:    blog
 excerpt:       SpamAssassin is a frequently used companion for Exim. However, most people set it up in a synchronous manner – spam is checked directly when the SMTP session is opened. While this is certainly a valid technique, it has it’s drawbacks. It leaves the server vulnerable to DOS attacks because the spam filtering is a big resource hog. Having SpamAssassin headers in the mail from the remote servers is also an issue, because the `$h_X-Spam-*` variables will start misbehaving suddenly.
-tags:          devops, email
+tags:          [DevOps, Email, Exim, SpamAssassin]
 ---
 
 {% raw %}

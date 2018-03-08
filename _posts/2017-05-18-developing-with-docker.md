@@ -11,5 +11,5 @@ googleimage:   /assets/img/developing-with-docker.png
 twitter_card:  summary_large_image
 video:         https://youtu.be/73iAeXkJfSc
 embed:         https://www.youtube-nocookie.com/embed/73iAeXkJfSc?rel=0
-tags:          development, docker, devops
+tags:          [Development, Docker, DevOps]
 ---

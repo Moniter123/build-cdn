@@ -1,6 +1,6 @@
 ---
 title: Public speaking
-layout: default
+layout: wall
 description: Janos Pasztors public speaking engagements
 ---
 

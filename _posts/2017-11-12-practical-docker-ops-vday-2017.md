@@ -19,7 +19,7 @@ eventCountryCode:   HU
 eventStartDate:     2017-11-07T08:30:00Z
 eventEndDate:       2017-11-07T15:00:00Z
 eventUrl:           https://vday.hu/2017/
-tags:               docker, devops
+tags:               [Docker, DevOps]
 ---
 
 I spoke live on this topic at the Hungarian Virtualization Day, the slides are available below.

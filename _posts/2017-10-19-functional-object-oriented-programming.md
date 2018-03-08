@@ -10,7 +10,7 @@ fbimage:       /assets/img/functional-object-oriented-programming.png
 twitterimage:  /assets/img/functional-object-oriented-programming.png
 googleimage:   /assets/img/functional-object-oriented-programming.png
 twitter_card:  summary_large_image
-tags:          functional programming, oop, development
+tags:          [Functional Programming, OOP, Development]
 ---
 
 Here's the thing: I think functional programming is a good thing, but is lacking a few things that I found to be very

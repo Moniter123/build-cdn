@@ -1,0 +1,22 @@
+@import "variables";
+@import "reset";
+@import "syntax";
+@import "header";
+@import "topmenu";
+@import "footer";
+@import "cookieconsent";
+@import "cta";
+@import "readmore";
+
+body {
+  font-family: $font-sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -moz-font-feature-settings: "liga" on;
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}

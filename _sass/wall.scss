@@ -1,3 +1,5 @@
+@import "variables";
+
 .wall {
   position:relative;
   max-width: 960px;
@@ -5,6 +7,19 @@
   padding-right:10px;
   margin-left:auto;
   margin-right:auto;
+
+  h1 {
+    text-align:center;
+    font-size: 48px;
+    color: rgba(0,0,0,0.84);
+    font-family: Roboto,"Open Sans","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Helvetica,Arial,"sans-serif";
+    font-weight: 600;
+    letter-spacing: -.012em;
+    --x-height-multiplier: 0.342;
+    --baseline-multiplier: 0.22;
+    margin-bottom:30px;
+    animation: $animation-in;
+  }
 
   &__featurelist, &__postlist {
     display:flex;
@@ -14,6 +29,7 @@
     position:relative;
     margin-left:-15px;
     margin-right:-15px;
+    animation: $animation-in;
   }
 
   &__post {
@@ -70,6 +86,7 @@
     position: absolute;
     margin-top:10px;
     z-index: 3;
+    animation: $animation-in;
   }
 
   &__category {
@@ -111,6 +128,7 @@
     z-index:1;
   }
   &__imagehighres {
+    animation: $animation-in;
     position:absolute;
     top:0;
     left:0;
